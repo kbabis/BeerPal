@@ -1,0 +1,18 @@
+disabled_rules:
+ - line_length
+ - nesting
+
+excluded:
+  - Pods
+  - R.generated.swift
+
+identifier_name:
+ excluded:
+  - id
+  - to
+  - x
+  - y
+  - dx
+
+cyclomatic_complexity:
+  ignores_case_statements: true
