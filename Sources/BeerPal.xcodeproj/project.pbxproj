@@ -48,7 +48,7 @@
 		E6A05F4124F47F27004CF43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6A05F4A24F47F29004CF43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6A05F4D24F47F29004CF43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E6A05F4F24F47F29004CF43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A05F4F24F47F29004CF43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E6A05F5424F47F29004CF43B /* BeerPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A05F5824F47F29004CF43B /* BeerPalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPalTests.swift; sourceTree = "<group>"; };
 		E6A05F5A24F47F29004CF43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,11 +135,10 @@
 		E6A05F4024F47F27004CF43B /* BeerPal */ = {
 			isa = PBXGroup;
 			children = (
-				E6B0193724F5CCEA0074291A /* R.generated.swift */,
-				E6A05F4124F47F27004CF43B /* AppDelegate.swift */,
-				E6A05F4A24F47F29004CF43B /* Assets.xcassets */,
-				E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */,
-				E6A05F4F24F47F29004CF43B /* Info.plist */,
+				E6AD514724F712C6005D0A08 /* App */,
+				E6AD514624F712BD005D0A08 /* Resources */,
+				E6AD514824F712D0005D0A08 /* Scenes */,
+				E6AD514924F712D6005D0A08 /* Services */,
 			);
 			path = BeerPal;
 			sourceTree = "<group>";
@@ -160,6 +159,39 @@
 				E6A05F6524F47F29004CF43B /* Info.plist */,
 			);
 			path = BeerPalUITests;
+			sourceTree = "<group>";
+		};
+		E6AD514624F712BD005D0A08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6A05F4A24F47F29004CF43B /* Assets.xcassets */,
+				E6A05F4F24F47F29004CF43B /* Info.plist */,
+				E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */,
+				E6B0193724F5CCEA0074291A /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6AD514724F712C6005D0A08 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E6A05F4124F47F27004CF43B /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E6AD514824F712D0005D0A08 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E6AD514924F712D6005D0A08 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,7 +641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX9U4PU7DG;
-				INFOPLIST_FILE = BeerPal/Info.plist;
+				INFOPLIST_FILE = BeerPal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX9U4PU7DG;
-				INFOPLIST_FILE = BeerPal/Info.plist;
+				INFOPLIST_FILE = BeerPal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,13 +12,12 @@ import XCTest
 class BeerPalTests: XCTestCase {
     override func setUp() {}
     override func tearDown() {}
-
+    
     func testExample() {
         XCTAssert(true) // let tests pass
     }
-
+    
     func testPerformanceExample() {
         self.measure {}
     }
-
 }

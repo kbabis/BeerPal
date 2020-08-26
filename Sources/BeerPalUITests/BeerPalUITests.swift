@@ -28,3 +28,4 @@ class BeerPalUITests: XCTestCase {
         }
     }
 }
+
