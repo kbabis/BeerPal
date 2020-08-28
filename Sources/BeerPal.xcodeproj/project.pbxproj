@@ -411,10 +411,11 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = ();
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = ();
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks.sh\"\n";
@@ -428,10 +429,11 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = ();
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = ();
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks.sh\"\n";
@@ -467,10 +469,15 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = ();
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks.sh\"\n";
@@ -530,7 +537,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
