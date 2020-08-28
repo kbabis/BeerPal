@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C00E637F3F5C074BD302996 /* Pods_BeerPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DF800EF23D3AEA624734D8 /* Pods_BeerPal.framework */; };
-		5F6EBA975471FC2DF9456E65 /* Pods_BeerPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF151AAFBFF20E1E81E45A7 /* Pods_BeerPalTests.framework */; };
+		9AE8487CF8CDBDD78D3DA0D8 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F77DCBE1FF99AC53271AE /* Pods_BeerPal_BeerPalTests.framework */; };
 		D7F04B3D802B6B5C1BDCB511 /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF4CF9F53DA23F55F28F7AA /* Pods_BeerPal_BeerPalUITests.framework */; };
+		E609A77824F8731B00636D58 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609A77724F8731B00636D58 /* Endpoint.swift */; };
 		E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A05F4124F47F27004CF43B /* AppDelegate.swift */; };
 		E6A05F4B24F47F29004CF43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A05F4A24F47F29004CF43B /* Assets.xcassets */; };
 		E6A05F4E24F47F29004CF43B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */; };
@@ -40,13 +41,17 @@
 
 /* Begin PBXFileReference section */
 		10C561DB360BBD01071C686A /* Pods-BeerPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPalTests.release.xcconfig"; path = "Target Support Files/Pods-BeerPalTests/Pods-BeerPalTests.release.xcconfig"; sourceTree = "<group>"; };
+		16D80C51368099317EFA4FB9 /* Pods-BeerPal-BeerPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.release.xcconfig"; sourceTree = "<group>"; };
+		507F77DCBE1FF99AC53271AE /* Pods_BeerPal_BeerPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51743781713E199E08961DB0 /* Pods-BeerPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPalTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPalTests/Pods-BeerPalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		54BE8D9161082388F7A737F1 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74DF800EF23D3AEA624734D8 /* Pods_BeerPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9F433848C645617A313DBD /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DBFFCFA2097D8A9A53F50B7 /* Pods-BeerPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF4CF9F53DA23F55F28F7AA /* Pods_BeerPal_BeerPalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7E009403EE9B7616F7E176 /* Pods-BeerPal-BeerPalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E17739CEFAC7F9573F1582D3 /* Pods-BeerPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.release.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.release.xcconfig"; sourceTree = "<group>"; };
+		E609A77724F8731B00636D58 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E6A05F3E24F47F27004CF43B /* BeerPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A05F4124F47F27004CF43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6A05F4A24F47F29004CF43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		E6B98FD124F8613600F23124 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		E6B98FD324F861AF00F23124 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
-		EDF151AAFBFF20E1E81E45A7 /* Pods_BeerPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 		E6B98FD024F8612D00F23124 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E609A77724F8731B00636D58 /* Endpoint.swift */,
 				E6B98FD124F8613600F23124 /* URLBuilder.swift */,
 			);
 			path = Networking;
@@ -521,6 +526,7 @@
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
+				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
