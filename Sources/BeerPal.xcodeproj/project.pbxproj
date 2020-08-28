@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F6EBA975471FC2DF9456E65 /* Pods_BeerPalTests.framework in Frameworks */,
+				9AE8487CF8CDBDD78D3DA0D8 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +102,8 @@
 				BF7E009403EE9B7616F7E176 /* Pods-BeerPal-BeerPalUITests.release.xcconfig */,
 				51743781713E199E08961DB0 /* Pods-BeerPalTests.debug.xcconfig */,
 				10C561DB360BBD01071C686A /* Pods-BeerPalTests.release.xcconfig */,
+				54BE8D9161082388F7A737F1 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */,
+				16D80C51368099317EFA4FB9 /* Pods-BeerPal-BeerPalTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,7 +113,7 @@
 			children = (
 				74DF800EF23D3AEA624734D8 /* Pods_BeerPal.framework */,
 				BEF4CF9F53DA23F55F28F7AA /* Pods_BeerPal_BeerPalUITests.framework */,
-				EDF151AAFBFF20E1E81E45A7 /* Pods_BeerPalTests.framework */,
+				507F77DCBE1FF99AC53271AE /* Pods_BeerPal_BeerPalTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,6 +253,7 @@
 				E6A05F5024F47F29004CF43B /* Sources */,
 				E6A05F5124F47F29004CF43B /* Frameworks */,
 				E6A05F5224F47F29004CF43B /* Resources */,
+				C8BEA2FBB089B5C25BCF9449 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,11 +404,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BeerPalTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BeerPal-BeerPalTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8BEA2FBB089B5C25BCF9449 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CF83F28B45DD169CF847E366 /* [CP] Check Pods Manifest.lock */ = {
@@ -704,7 +724,7 @@
 		};
 		E6A05F6C24F47F29004CF43B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51743781713E199E08961DB0 /* Pods-BeerPalTests.debug.xcconfig */;
+			baseConfigurationReference = 54BE8D9161082388F7A737F1 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -726,7 +746,7 @@
 		};
 		E6A05F6D24F47F29004CF43B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10C561DB360BBD01071C686A /* Pods-BeerPalTests.release.xcconfig */;
+			baseConfigurationReference = 16D80C51368099317EFA4FB9 /* Pods-BeerPal-BeerPalTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
