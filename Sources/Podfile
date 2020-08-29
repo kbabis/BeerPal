@@ -1,14 +1,19 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
+def shared_pods
+   pod 'Alamofire', '~> 4.8'
+end
+
 target 'BeerPal' do
   use_frameworks!
 
+   shared_pods
    pod 'SwiftLint', '0.39.1'
    pod 'R.swift', '5.2.2'
 
   target 'BeerPalTests' do
-    inherit! :search_paths
+   shared_pods
   end
 
   target 'BeerPalUITests' do
