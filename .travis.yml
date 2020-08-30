@@ -1,6 +1,6 @@
 osx_image: xcode11
 language: swift
 os: osx
-xcode_workspace: BeerPal/BeerPal.xcworkspace
+xcode_workspace: BeerPal/Sources/BeerPal.xcworkspace
 xcode_scheme: BeerPal
 xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 8

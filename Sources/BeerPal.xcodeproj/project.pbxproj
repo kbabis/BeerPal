@@ -10,6 +10,8 @@
 		3A0D727AE37C618CB72F0A43 /* Pods_BeerPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6A7E47003A9C3B176619F8 /* Pods_BeerPal.framework */; };
 		A8C3AA4264FE72D91441A5DB /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7DAEAEADBCE5D0ED4E3A4C /* Pods_BeerPal_BeerPalUITests.framework */; };
 		C89D87568C2894767F3A07A8 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02220652441341AC60169CBB /* Pods_BeerPal_BeerPalTests.framework */; };
+		E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600869E24FC224C005173DC /* AppCoordinator.swift */; };
+		E60086A124FC233D005173DC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60086A024FC233D005173DC /* AppDependencies.swift */; };
 		E609A77824F8731B00636D58 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609A77724F8731B00636D58 /* Endpoint.swift */; };
 		E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */; };
 		E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FB62F24FA6607008CA896 /* TabsCoordinator.swift */; };
@@ -62,6 +64,8 @@
 		988199612F5CBB7BB971BE53 /* Pods-BeerPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.release.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.release.xcconfig"; sourceTree = "<group>"; };
 		9B7DAEAEADBCE5D0ED4E3A4C /* Pods_BeerPal_BeerPalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB6A7E47003A9C3B176619F8 /* Pods_BeerPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E600869E24FC224C005173DC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E60086A024FC233D005173DC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		E609A77724F8731B00636D58 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E69FB62F24FA6607008CA896 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
@@ -146,10 +150,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E600869D24FC1DD2005173DC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E600869E24FC224C005173DC /* AppCoordinator.swift */,
+				E60086A024FC233D005173DC /* AppDependencies.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		E69FB62A24FA6355008CA896 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */,
+				E600869D24FC1DD2005173DC /* App */,
 				E69FB62E24FA65D8008CA896 /* Tabs */,
 			);
 			path = Coordinators;
@@ -608,7 +622,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -621,6 +635,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
+				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
