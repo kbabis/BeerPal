@@ -8,6 +8,15 @@
 
 import UIKit
 
+/// the order of the cases matters - this is how the tabs will be arranged
+private enum TabCoordinatorChild: Int {
+    case beers
+    case breweries
+    case events
+    case favorites
+    case settings
+}
+
 final class TabsCoordinator: NavigationCoordinator {
     private var tabsController: UITabBarController?
     private var childCoordinators: [TabCoordinatorChild: NavigationCoordinator]
@@ -39,17 +48,6 @@ final class TabsCoordinator: NavigationCoordinator {
 extension TabsCoordinator {
     private func setUpBeersCoordinator() {
         
-    }
-}
-
-extension TabsCoordinator {
-    /// the order of the cases matters - this is how the tabs will be arranged
-    enum TabCoordinatorChild: Int {
-        case beers
-        case breweries
-        case events
-        case favorites
-        case settings
     }
 }
 
