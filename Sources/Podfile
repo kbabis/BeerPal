@@ -11,6 +11,9 @@ target 'BeerPal' do
    shared_pods
    pod 'SwiftLint', '0.39.1'
    pod 'R.swift', '5.2.2'
+   pod 'SnapKit', '~> 5.0.0'
+   pod 'RxSwift', '5.0'
+   pod 'RxCocoa', '5.0'
 
   target 'BeerPalTests' do
    shared_pods

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  BeerPal
+
+  Created by Krzysztof Babis on 07.09.2020 r..
+  Copyright © 2020 Krzysztof Babis. All rights reserved.
+*/
+
+// MARK: - State
+
+"state.base.reload.button" = "Try again";
+"state.loading.message" = "Loading...";
+"state.empty.default.title" = "Nothing here";
+"state.empty.default.message" = "Reload with the button below or come back in a few minutes";
+"state.error.default.title" = "Oops, your connection seems off...";
+"state.error.default.message" = "Keep calm, grab a bottle and tap below button to try again";

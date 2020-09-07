@@ -23,7 +23,8 @@ final class CoordinatorTests: XCTestCase {
         let expectedViewController = UIViewController()
         sut = CoordinatorMock(navigationController: UINavigationController())
         sut?.startingViewController = expectedViewController
+        sut?.start()
         
-        XCTAssertEqual(expectedViewController, sut?.navigationController.viewControllers.first)
+        XCTAssertTrue(expectedViewController === sut?.navigationController.viewControllers.first)
     }
 }
