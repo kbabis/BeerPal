@@ -13,6 +13,17 @@
 		E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600869E24FC224C005173DC /* AppCoordinator.swift */; };
 		E60086A124FC233D005173DC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60086A024FC233D005173DC /* AppDependencies.swift */; };
 		E609A77824F8731B00636D58 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609A77724F8731B00636D58 /* Endpoint.swift */; };
+		E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639ECD1250596280046E8E9 /* BaseLabel.swift */; };
+		E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639ECD3250596B00046E8E9 /* BaseButton.swift */; };
+		E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092024FED3D4009B5B45 /* BaseViewController.swift */; };
+		E660092324FED570009B5B45 /* StateRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092224FED570009B5B45 /* StateRendering.swift */; };
+		E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092424FED58D009B5B45 /* DataStateManager.swift */; };
+		E660092724FED73A009B5B45 /* DataReloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092624FED73A009B5B45 /* DataReloading.swift */; };
+		E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092924FED7D7009B5B45 /* ErrorStateView.swift */; };
+		E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092C24FEDA5F009B5B45 /* BaseStateView.swift */; };
+		E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092E24FEE080009B5B45 /* LoadingStateView.swift */; };
+		E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660093024FEE213009B5B45 /* EmptyStateView.swift */; };
+		E660093324FEF273009B5B45 /* StateManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660093224FEF273009B5B45 /* StateManaging.swift */; };
 		E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */; };
 		E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FB62F24FA6607008CA896 /* TabsCoordinator.swift */; };
 		E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FB63124FA671A008CA896 /* TabsDependencies.swift */; };
@@ -36,6 +47,10 @@
 		E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9A24F99DEB008C1BD8 /* NetworkingProtocol.swift */; };
 		E6D16F9D24F99F41008C1BD8 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9C24F99F41008C1BD8 /* NetworkingServiceTests.swift */; };
 		E6D16FA024F9A248008C1BD8 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9F24F9A248008C1BD8 /* EndpointTests.swift */; };
+		E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF14BD2506CE2200560839 /* Theme+Colors.swift */; };
+		E6EF14C02506CE3800560839 /* Theme+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF14BF2506CE3800560839 /* Theme+Fonts.swift */; };
+		E6EF14C32506D41400560839 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6EF14C52506D41400560839 /* Localizable.strings */; };
+		E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +82,17 @@
 		E600869E24FC224C005173DC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E60086A024FC233D005173DC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		E609A77724F8731B00636D58 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E639ECD1250596280046E8E9 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		E639ECD3250596B00046E8E9 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		E660092024FED3D4009B5B45 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E660092224FED570009B5B45 /* StateRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRendering.swift; sourceTree = "<group>"; };
+		E660092424FED58D009B5B45 /* DataStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStateManager.swift; sourceTree = "<group>"; };
+		E660092624FED73A009B5B45 /* DataReloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReloading.swift; sourceTree = "<group>"; };
+		E660092924FED7D7009B5B45 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		E660092C24FEDA5F009B5B45 /* BaseStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStateView.swift; sourceTree = "<group>"; };
+		E660092E24FEE080009B5B45 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		E660093024FEE213009B5B45 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E660093224FEF273009B5B45 /* StateManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManaging.swift; sourceTree = "<group>"; };
 		E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E69FB62F24FA6607008CA896 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
 		E69FB63124FA671A008CA896 /* TabsDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsDependencies.swift; sourceTree = "<group>"; };
@@ -96,6 +122,10 @@
 		E6D16F9A24F99DEB008C1BD8 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
 		E6D16F9C24F99F41008C1BD8 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 		E6D16F9F24F9A248008C1BD8 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		E6EF14BD2506CE2200560839 /* Theme+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Colors.swift"; sourceTree = "<group>"; };
+		E6EF14BF2506CE3800560839 /* Theme+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Fonts.swift"; sourceTree = "<group>"; };
+		E6EF14C42506D41400560839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
 		F4817C806EF98791B685D77C /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +189,47 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		E639ECD0250596140046E8E9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E639ECD3250596B00046E8E9 /* BaseButton.swift */,
+				E639ECD1250596280046E8E9 /* BaseLabel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E660091E24FED3AA009B5B45 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */,
+				E660092424FED58D009B5B45 /* DataStateManager.swift */,
+				E660092824FED759009B5B45 /* Views */,
+				E660092B24FED9DE009B5B45 /* Protocols */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		E660092824FED759009B5B45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E660092C24FEDA5F009B5B45 /* BaseStateView.swift */,
+				E660093024FEE213009B5B45 /* EmptyStateView.swift */,
+				E660092924FED7D7009B5B45 /* ErrorStateView.swift */,
+				E660092E24FEE080009B5B45 /* LoadingStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E660092B24FED9DE009B5B45 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E660092624FED73A009B5B45 /* DataReloading.swift */,
+				E660093224FEF273009B5B45 /* StateManaging.swift */,
+				E660092224FED570009B5B45 /* StateRendering.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E69FB62A24FA6355008CA896 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AD514724F712C6005D0A08 /* App */,
+				E6F5DF7624FD703F00E8B7F8 /* Components */,
 				E6AD514624F712BD005D0A08 /* Resources */,
 				E6AD514824F712D0005D0A08 /* Scenes */,
 				E6AD514924F712D6005D0A08 /* Services */,
@@ -246,7 +318,10 @@
 				E6A05F4A24F47F29004CF43B /* Assets.xcassets */,
 				E6A05F4F24F47F29004CF43B /* Info.plist */,
 				E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */,
+				E6EF14C52506D41400560839 /* Localizable.strings */,
 				E6B0193724F5CCEA0074291A /* R.generated.swift */,
+				E6EF14BD2506CE2200560839 /* Theme+Colors.swift */,
+				E6EF14BF2506CE3800560839 /* Theme+Fonts.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -316,6 +391,24 @@
 				E6C710A324F9B2CE0060A4C3 /* URLProtocolMock.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E6F5DF7624FD703F00E8B7F8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5DF7724FD704700E8B7F8 /* Architecture */,
+				E639ECD0250596140046E8E9 /* UI */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E6F5DF7724FD704700E8B7F8 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				E660091E24FED3AA009B5B45 /* State */,
+				E660092024FED3D4009B5B45 /* BaseViewController.swift */,
+			);
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A05F4E24F47F29004CF43B /* LaunchScreen.storyboard in Resources */,
+				E6EF14C32506D41400560839 /* Localizable.strings in Resources */,
 				E6A05F4B24F47F29004CF43B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,17 +729,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */,
+				E660092724FED73A009B5B45 /* DataReloading.swift in Sources */,
 				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
+				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
+				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
+				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
+				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
+				E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */,
+				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
+				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
+				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
+				E660092324FED570009B5B45 /* StateRendering.swift in Sources */,
 				E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */,
 				E6D16F9824F9987A008C1BD8 /* NetworkingService.swift in Sources */,
+				E6EF14C02506CE3800560839 /* Theme+Fonts.swift in Sources */,
+				E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
+				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +806,14 @@
 				E6A05F4D24F47F29004CF43B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E6EF14C52506D41400560839 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6EF14C42506D41400560839 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

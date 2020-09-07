@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DataReloading {
+protocol DataReloading: class {
     func reloadData()
 }
