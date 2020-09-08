@@ -34,6 +34,8 @@
 		E6A05F4E24F47F29004CF43B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */; };
 		E6A05F5924F47F29004CF43B /* BeerPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A05F5824F47F29004CF43B /* BeerPalTests.swift */; };
 		E6A05F6424F47F29004CF43B /* BeerPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A05F6324F47F29004CF43B /* BeerPalUITests.swift */; };
+		E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C725083E4C0095CD54 /* CachingProtocol.swift */; };
+		E6A850CA25083E570095CD54 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C925083E570095CD54 /* Cache.swift */; };
 		E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0193724F5CCEA0074291A /* R.generated.swift */; };
 		E6B98FCF24F8602C00F23124 /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */; };
 		E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD124F8613600F23124 /* URLBuilder.swift */; };
@@ -112,6 +114,8 @@
 		E6A05F5F24F47F29004CF43B /* BeerPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A05F6324F47F29004CF43B /* BeerPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPalUITests.swift; sourceTree = "<group>"; };
 		E6A05F6524F47F29004CF43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A850C725083E4C0095CD54 /* CachingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingProtocol.swift; sourceTree = "<group>"; };
+		E6A850C925083E570095CD54 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		E6B0193724F5CCEA0074291A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		E6B98FD124F8613600F23124 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -317,6 +321,15 @@
 			path = BeerPalUITests;
 			sourceTree = "<group>";
 		};
+		E6A850C625083E3D0095CD54 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E6A850C725083E4C0095CD54 /* CachingProtocol.swift */,
+				E6A850C925083E570095CD54 /* Cache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +364,7 @@
 		E6AD514924F712D6005D0A08 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E6A850C625083E3D0095CD54 /* Cache */,
 				E6B98FD024F8612D00F23124 /* Networking */,
 			);
 			path = Services;
@@ -738,11 +752,13 @@
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
+				E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */,
 				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
 				E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */,
 				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
+				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
 				E660092324FED570009B5B45 /* StateRendering.swift in Sources */,
