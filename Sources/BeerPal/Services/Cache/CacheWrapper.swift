@@ -17,9 +17,9 @@ final class CacheWrapper<K: Hashable, V>: Caching {
     private let removeAction: (Key) -> Void
     
     init<Cache: Caching>(base: Cache) where Cache.Key == K, Cache.Value == V {
-        self.insertAction = cache.insert
-        self.getAction = cache.value
-        self.removeAction = cache.removeValue
+        self.insertAction = base.insert
+        self.getAction = base.value
+        self.removeAction = base.removeValue
     }
     
     func insert(_ value: Value, forKey key: Key) {
