@@ -12,6 +12,8 @@ protocol Caching {
     associatedtype Key: Hashable
     associatedtype Value
     
+    subscript(key: Key) -> Value? { get set }
+    
     func insert(_ value: Value, forKey key: Key)
     func value(forKey key: Key) -> Value?
     func removeValue(forKey key: Key)

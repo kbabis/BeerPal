@@ -331,6 +331,7 @@
 			children = (
 				E6A850C725083E4C0095CD54 /* CachingProtocol.swift */,
 				E6A850C925083E570095CD54 /* Cache.swift */,
+				E6AEDAE825095B72004274E6 /* CacheWrapper.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -783,6 +784,7 @@
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,
+				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
