@@ -19,9 +19,9 @@ final class MockStateRenderer: StateRendering {
         switch state {
         case .idle:
             idleStateRendersCount += 1
-        case .empty(_):
+        case .empty:
             emptyStateRendersCount += 1
-        case .error(_):
+        case .error:
             errorStateRendersCount += 1
         case .loaded:
             loadedStateRendersCount += 1

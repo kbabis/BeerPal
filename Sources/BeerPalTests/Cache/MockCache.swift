@@ -25,4 +25,18 @@ final class MockCache<T: Hashable, Value>: Caching {
     func removeValue(forKey key: T) {
         store.removeValue(forKey: key)
     }
+    
+    subscript(key: Key) -> Value? {
+        get {
+            value(forKey: key)
+        }
+        set {
+            guard let value = newValue else {
+                removeValue(forKey: key)
+                return
+            }
+
+            insert(value, forKey: key)
+        }
+    }
 }
