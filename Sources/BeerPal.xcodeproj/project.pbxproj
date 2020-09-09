@@ -34,6 +34,18 @@
 		E6A05F4E24F47F29004CF43B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A05F4C24F47F29004CF43B /* LaunchScreen.storyboard */; };
 		E6A05F5924F47F29004CF43B /* BeerPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A05F5824F47F29004CF43B /* BeerPalTests.swift */; };
 		E6A05F6424F47F29004CF43B /* BeerPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A05F6324F47F29004CF43B /* BeerPalUITests.swift */; };
+		E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C725083E4C0095CD54 /* CachingProtocol.swift */; };
+		E6A850CA25083E570095CD54 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C925083E570095CD54 /* Cache.swift */; };
+		E6A850CD250847B30095CD54 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CC250847B30095CD54 /* CacheTests.swift */; };
+		E6A850CF250847BC0095CD54 /* MockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CE250847BC0095CD54 /* MockCache.swift */; };
+		E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850D125084B270095CD54 /* BeerListRepository.swift */; };
+		E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAE825095B72004274E6 /* CacheWrapper.swift */; };
+		E6AEDAEC25097C14004274E6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAEB25097C14004274E6 /* API.swift */; };
+		E6AEDAEF25097CCB004274E6 /* BeerListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAEE25097CCB004274E6 /* BeerListEndpoint.swift */; };
+		E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF02509836C004274E6 /* BeerListResponseModel.swift */; };
+		E6AEDAF425098CCC004274E6 /* DecodableBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF325098CCC004274E6 /* DecodableBool.swift */; };
+		E6AEDAF625098CDE004274E6 /* DefaultJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */; };
+		E6AEDAF82509912D004274E6 /* DecodableBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF72509912D004274E6 /* DecodableBoolTests.swift */; };
 		E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0193724F5CCEA0074291A /* R.generated.swift */; };
 		E6B98FCF24F8602C00F23124 /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */; };
 		E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD124F8613600F23124 /* URLBuilder.swift */; };
@@ -112,6 +124,18 @@
 		E6A05F5F24F47F29004CF43B /* BeerPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A05F6324F47F29004CF43B /* BeerPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPalUITests.swift; sourceTree = "<group>"; };
 		E6A05F6524F47F29004CF43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A850C725083E4C0095CD54 /* CachingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingProtocol.swift; sourceTree = "<group>"; };
+		E6A850C925083E570095CD54 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		E6A850CC250847B30095CD54 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		E6A850CE250847BC0095CD54 /* MockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCache.swift; sourceTree = "<group>"; };
+		E6A850D125084B270095CD54 /* BeerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListRepository.swift; sourceTree = "<group>"; };
+		E6AEDAE825095B72004274E6 /* CacheWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWrapper.swift; sourceTree = "<group>"; };
+		E6AEDAEB25097C14004274E6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E6AEDAEE25097CCB004274E6 /* BeerListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListEndpoint.swift; sourceTree = "<group>"; };
+		E6AEDAF02509836C004274E6 /* BeerListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListResponseModel.swift; sourceTree = "<group>"; };
+		E6AEDAF325098CCC004274E6 /* DecodableBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableBool.swift; sourceTree = "<group>"; };
+		E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJSONDecoder.swift; sourceTree = "<group>"; };
+		E6AEDAF72509912D004274E6 /* DecodableBoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableBoolTests.swift; sourceTree = "<group>"; };
 		E6B0193724F5CCEA0074291A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		E6B98FD124F8613600F23124 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -301,6 +325,7 @@
 			children = (
 				E6EF14CB2506E24000560839 /* Components */,
 				E69FB63324FAA57D008CA896 /* Coordinator */,
+				E6A850CB2508479F0095CD54 /* Cache */,
 				E6B98FCD24F8601800F23124 /* Networking */,
 				E6A05F5824F47F29004CF43B /* BeerPalTests.swift */,
 				E6A05F5A24F47F29004CF43B /* Info.plist */,
@@ -315,6 +340,33 @@
 				E6A05F6524F47F29004CF43B /* Info.plist */,
 			);
 			path = BeerPalUITests;
+			sourceTree = "<group>";
+		};
+		E6A850C625083E3D0095CD54 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E6A850C725083E4C0095CD54 /* CachingProtocol.swift */,
+				E6A850C925083E570095CD54 /* Cache.swift */,
+				E6AEDAE825095B72004274E6 /* CacheWrapper.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		E6A850CB2508479F0095CD54 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E6A850CC250847B30095CD54 /* CacheTests.swift */,
+				E6A850CE250847BC0095CD54 /* MockCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		E6A850D025084B1A0095CD54 /* BeerList */ = {
+			isa = PBXGroup;
+			children = (
+				E6A850D125084B270095CD54 /* BeerListRepository.swift */,
+			);
+			path = BeerList;
 			sourceTree = "<group>";
 		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
@@ -344,6 +396,7 @@
 		E6AD514824F712D0005D0A08 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E6A850D025084B1A0095CD54 /* BeerList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -351,15 +404,44 @@
 		E6AD514924F712D6005D0A08 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E6A850C625083E3D0095CD54 /* Cache */,
 				E6B98FD024F8612D00F23124 /* Networking */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E6AEDAEA25097C08004274E6 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				E6AEDAEB25097C14004274E6 /* API.swift */,
+				E6AEDAED25097C82004274E6 /* BeerList */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		E6AEDAED25097C82004274E6 /* BeerList */ = {
+			isa = PBXGroup;
+			children = (
+				E6AEDAEE25097CCB004274E6 /* BeerListEndpoint.swift */,
+				E6AEDAF02509836C004274E6 /* BeerListResponseModel.swift */,
+			);
+			path = BeerList;
+			sourceTree = "<group>";
+		};
+		E6AEDAF225098CBF004274E6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E6AEDAF325098CCC004274E6 /* DecodableBool.swift */,
+				E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E6B98FCD24F8601800F23124 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				E6D16F9E24F9A0E7008C1BD8 /* Helpers */,
+				E6AEDAF72509912D004274E6 /* DecodableBoolTests.swift */,
 				E6D16F9F24F9A248008C1BD8 /* EndpointTests.swift */,
 				E6D16F9C24F99F41008C1BD8 /* NetworkingServiceTests.swift */,
 				E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */,
@@ -370,6 +452,8 @@
 		E6B98FD024F8612D00F23124 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E6AEDAEA25097C08004274E6 /* Endpoint */,
+				E6AEDAF225098CBF004274E6 /* Helpers */,
 				E6D16F9924F99DDB008C1BD8 /* Protocols */,
 				E609A77724F8731B00636D58 /* Endpoint.swift */,
 				E6D16F9724F9987A008C1BD8 /* NetworkingService.swift */,
@@ -735,14 +819,20 @@
 				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
 				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
+				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
+				E6AEDAF625098CDE004274E6 /* DefaultJSONDecoder.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
+				E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */,
 				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
+				E6AEDAF425098CCC004274E6 /* DecodableBool.swift in Sources */,
 				E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */,
+				E6AEDAEF25097CCB004274E6 /* BeerListEndpoint.swift in Sources */,
 				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
+				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
 				E660092324FED570009B5B45 /* StateRendering.swift in Sources */,
@@ -750,9 +840,12 @@
 				E6D16F9824F9987A008C1BD8 /* NetworkingService.swift in Sources */,
 				E6EF14C02506CE3800560839 /* Theme+Fonts.swift in Sources */,
 				E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */,
+				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
+				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,
+				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
@@ -768,12 +861,15 @@
 				E6C710A024F9B0B50060A4C3 /* Ticket.swift in Sources */,
 				E6A05F5924F47F29004CF43B /* BeerPalTests.swift in Sources */,
 				E6D16F9D24F99F41008C1BD8 /* NetworkingServiceTests.swift in Sources */,
+				E6AEDAF82509912D004274E6 /* DecodableBoolTests.swift in Sources */,
 				E6D16FA024F9A248008C1BD8 /* EndpointTests.swift in Sources */,
 				E6B98FCF24F8602C00F23124 /* URLBuilderTests.swift in Sources */,
 				E69FB63724FAA628008CA896 /* CoordinatorMock.swift in Sources */,
 				E69FB63524FAA58E008CA896 /* CoordinatorTests.swift in Sources */,
 				E6C7109E24F9AF900060A4C3 /* JSONTestable.swift in Sources */,
+				E6A850CD250847B30095CD54 /* CacheTests.swift in Sources */,
 				E6EF14D02506E81000560839 /* DataStateManagerTests.swift in Sources */,
+				E6A850CF250847BC0095CD54 /* MockCache.swift in Sources */,
 				E6C710A224F9B2880060A4C3 /* ResponseMock.swift in Sources */,
 				E6C710A424F9B2CE0060A4C3 /* URLProtocolMock.swift in Sources */,
 			);

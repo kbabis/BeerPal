@@ -42,7 +42,7 @@ extension Endpoint where Response: Decodable {
                      encoding: ParameterEncoding = JSONEncoding.default,
                      headers: HTTPHeaders = SessionManager.defaultHTTPHeaders) {
         self.init(method: method, url: url, parameters: parameters, encoding: encoding) {
-            try JSONDecoder().decode(Response.self, from: $0)
+            try DefaultJSONDecoder().decode(Response.self, from: $0)
         }
     }
 }
