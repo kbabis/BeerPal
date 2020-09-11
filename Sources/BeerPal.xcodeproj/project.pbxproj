@@ -39,6 +39,9 @@
 		E6A850CD250847B30095CD54 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CC250847B30095CD54 /* CacheTests.swift */; };
 		E6A850CF250847BC0095CD54 /* MockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CE250847BC0095CD54 /* MockCache.swift */; };
 		E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850D125084B270095CD54 /* BeerListRepository.swift */; };
+		E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D3250AE82A00F836AF /* BreweryListRepository.swift */; };
+		E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D6250C21C400F836AF /* BreweryListResponseModel.swift */; };
+		E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D8250C27DE00F836AF /* BreweryListEndpoint.swift */; };
 		E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAE825095B72004274E6 /* CacheWrapper.swift */; };
 		E6AEDAEC25097C14004274E6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAEB25097C14004274E6 /* API.swift */; };
 		E6AEDAEF25097CCB004274E6 /* BeerListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAEE25097CCB004274E6 /* BeerListEndpoint.swift */; };
@@ -129,6 +132,9 @@
 		E6A850CC250847B30095CD54 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		E6A850CE250847BC0095CD54 /* MockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCache.swift; sourceTree = "<group>"; };
 		E6A850D125084B270095CD54 /* BeerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListRepository.swift; sourceTree = "<group>"; };
+		E6AAD7D3250AE82A00F836AF /* BreweryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListRepository.swift; sourceTree = "<group>"; };
+		E6AAD7D6250C21C400F836AF /* BreweryListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListResponseModel.swift; sourceTree = "<group>"; };
+		E6AAD7D8250C27DE00F836AF /* BreweryListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListEndpoint.swift; sourceTree = "<group>"; };
 		E6AEDAE825095B72004274E6 /* CacheWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWrapper.swift; sourceTree = "<group>"; };
 		E6AEDAEB25097C14004274E6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E6AEDAEE25097CCB004274E6 /* BeerListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListEndpoint.swift; sourceTree = "<group>"; };
@@ -369,6 +375,23 @@
 			path = BeerList;
 			sourceTree = "<group>";
 		};
+		E6AAD7D2250AE81200F836AF /* BreweryList */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAD7D3250AE82A00F836AF /* BreweryListRepository.swift */,
+			);
+			path = BreweryList;
+			sourceTree = "<group>";
+		};
+		E6AAD7D5250C21AD00F836AF /* BreweryList */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAD7D8250C27DE00F836AF /* BreweryListEndpoint.swift */,
+				E6AAD7D6250C21C400F836AF /* BreweryListResponseModel.swift */,
+			);
+			path = BreweryList;
+			sourceTree = "<group>";
+		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				E6A850D025084B1A0095CD54 /* BeerList */,
+				E6AAD7D2250AE81200F836AF /* BreweryList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -415,6 +439,7 @@
 			children = (
 				E6AEDAEB25097C14004274E6 /* API.swift */,
 				E6AEDAED25097C82004274E6 /* BeerList */,
+				E6AAD7D5250C21AD00F836AF /* BreweryList */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -824,6 +849,7 @@
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
 				E6AEDAF625098CDE004274E6 /* DefaultJSONDecoder.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
+				E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */,
 				E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */,
 				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
 				E6AEDAF425098CCC004274E6 /* DecodableBool.swift in Sources */,
@@ -832,6 +858,7 @@
 				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
+				E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */,
 				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
@@ -847,6 +874,7 @@
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,
 				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
+				E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
 			);
