@@ -14,3 +14,13 @@
 "state.empty.default.message" = "Reload with the button below or come back in a few minutes";
 "state.error.default.title" = "Oops, your connection seems off...";
 "state.error.default.message" = "Keep calm, grab a bottle and tap below button to try again";
+
+// MARK: - BreweryList
+"brewery.list.title" = "Breweries";
+
+"brewery.list.item.tag.inBusiness" = "Active";
+"brewery.list.item.tag.organic" = "Organic";
+"brewery.list.item.tag.verified" = "Verified";
+
+
+
