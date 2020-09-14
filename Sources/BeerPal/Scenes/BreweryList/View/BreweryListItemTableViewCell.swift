@@ -10,7 +10,7 @@ import UIKit
 
 final class BreweryListItemTableViewCell: UITableViewCell {
     private let horizontalSpacing: CGFloat = 20
-    private let verticalSpacing: CGFloat = 20
+    private let verticalSpacing: CGFloat = 10
     
     private var contentContainerView = UIView()
     private var logoImageView = UIImageView()
@@ -39,25 +39,32 @@ final class BreweryListItemTableViewCell: UITableViewCell {
     }
     
     private func setTags(for brewery: Brewery?) {
-        tagsStackView.removeFromSuperview()
+        tagsStackView.removeAllArrangedSubviews()
         
         let tags = [
             (canBeAdded: brewery?.isInBusiness, title: R.string.localizable.breweryListItemTagInBusiness(), color: UIColor.systemBlue),
             (canBeAdded: brewery?.isOrganic, title: R.string.localizable.breweryListItemTagOrganic(), color: UIColor.systemGreen),
-            (canBeAdded: brewery?.isVerified, title: R.string.localizable.breweryListItemTagVerified(), color: UIColor.systemOrange),
+            (canBeAdded: brewery?.isVerified, title: R.string.localizable.breweryListItemTagVerified(), color: UIColor.systemOrange)
         ]
         
         tags
             .filter { $0.canBeAdded == true }
             .forEach { (_, title, color) in
                 let tagView = TagView(title: title, color: color)
+                tagView.backgroundColor = color
                 tagsStackView.addArrangedSubview(tagView)
+                
+                tagView.snp.makeConstraints { (make) in
+                    make.height.equalTo(20)
+                    make.top.bottom.equalToSuperview()
+                }
             }
     }
 }
 
 extension BreweryListItemTableViewCell {
     private func setUp() {
+        selectionStyle = .none
         setUpContentContainerView()
         setUpLogoImageView()
         setUpNameLabel()
@@ -69,10 +76,10 @@ extension BreweryListItemTableViewCell {
         addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(horizontalInset)
-            make.top.equalToSuperview().offset(verticalInset)
-            make.right.equalToSuperview().inset(horizontalInset)
-            make.bottom.equalToSuperview().inset(verticalInset)
+            make.left.equalToSuperview().offset(horizontalSpacing)
+            make.top.equalToSuperview().offset(verticalSpacing)
+            make.right.equalToSuperview().inset(horizontalSpacing)
+            make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }
     
@@ -112,9 +119,10 @@ extension BreweryListItemTableViewCell {
         contentContainerView.addSubview(tagsStackView)
         
         tagsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(nameLabel)
+            make.left.equalTo(logoImageView)
             make.top.equalTo(establishmentDateLabel.snp.bottom).offset(verticalSpacing * 0.75)
             make.right.lessThanOrEqualTo(nameLabel)
+            make.width.equalTo(0).priority(.low)
             make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }
