@@ -12,7 +12,7 @@ final class TagView: UIView {
     private let horizontalInset: CGFloat = 8.0
     private let verticalInset: CGFloat = 4.0
     
-    let titleLabel = BaseLabel()
+    let titleLabel = TagTitleLabel()
     
     convenience init(title: String, color: UIColor) {
         self.init()
@@ -31,7 +31,6 @@ final class TagView: UIView {
     }
     
     private func setUp() {
-        titleLabel.textColor = .white
         addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { (make) in
@@ -40,5 +39,13 @@ final class TagView: UIView {
             make.right.equalToSuperview().inset(horizontalInset)
             make.bottom.equalToSuperview().inset(verticalInset)
         }
+    }
+}
+
+final class TagTitleLabel: BaseLabel {
+    override func setUp() {
+        super.setUp()
+        textColor = .white
+        font = Theme.Fonts.getFont(ofSize: .small, weight: .medium)
     }
 }
