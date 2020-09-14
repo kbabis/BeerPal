@@ -42,9 +42,19 @@ final class BreweryListViewController: BaseViewController {
                 cell.item = brewery
             }.disposed(by: disposeBag)
         
+        viewModel.output.endRefreshing?
+            .map { false }
+            .drive(breweryListView.refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
         breweryListView.tableView
             .rx.modelSelected(Brewery.self)
             .bind(to: viewModel.input.selectedModel)
+            .disposed(by: disposeBag)
+        
+        breweryListView.refreshControl
+            .rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.input.fetch)
             .disposed(by: disposeBag)
     }
     

@@ -25,6 +25,7 @@ final class BreweryListViewModel: ViewModelType, StateManaging {
     
     struct Output {
         let title = R.string.localizable.breweryListTitle()
+        var endRefreshing: Driver<Void>?
         var items: Driver<[Brewery]>?
     }
     
@@ -50,14 +51,15 @@ final class BreweryListViewModel: ViewModelType, StateManaging {
         let response = input.fetch
             .startWith(())
             .flatMapLatest { executeFetchRequest }
-            .do(onNext: { (breweries) in
-                print(breweries.count)
-            }, onError: { (error) in
-                print(error)
-            })
             .share()
         
+        let endRefreshing = response
+            .delay(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
+            .flatMapLatest { _ in Observable.just(()) }
+            .asDriver(onErrorJustReturn: ())
+        
         output.items = response.asDriver(onErrorJustReturn: [])
+        output.endRefreshing = endRefreshing
     }
 }
 
