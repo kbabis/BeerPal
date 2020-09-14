@@ -14,6 +14,11 @@ struct BreweryListResponseModel: Codable {
     let totalResults: Int
     let breweries: [Brewery]
     let status: String
+    
+    enum CodingKeys: String, CodingKey {
+        case currentPage, numberOfPages, totalResults, status
+        case breweries = "data"
+    }
 }
 
 struct Brewery: Codable {
