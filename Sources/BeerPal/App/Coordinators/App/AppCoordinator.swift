@@ -33,7 +33,7 @@ final class AppCoordinator: NavigationCoordinator {
     }
     
     private func showTabs() {
-        let tabsDependencies = TabsDependencies()
+        let tabsDependencies = TabsDependencies(from: dependencies)
         let tabsCoordinator = TabsCoordinator(
             navigationController: navigationController,
             dependencies: tabsDependencies)

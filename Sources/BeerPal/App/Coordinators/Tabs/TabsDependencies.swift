@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct TabsDependencies {
+struct TabsDependencies: HasNetworking {
+    let networkingService: Networking
     
+    init(from dependencies: HasNetworking) {
+        self.networkingService = dependencies.networkingService
+    }
 }

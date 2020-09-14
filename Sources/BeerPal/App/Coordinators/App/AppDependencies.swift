@@ -8,6 +8,12 @@
 
 import Foundation
 
-struct AppDependencies {
+struct AppDependencies: HasNetworking {
+    let networkingService: Networking
     
+    init() {
+        let networkingService = NetworkingService()
+        networkingService.adapter = RequestInterceptor()
+        self.networkingService = networkingService
+    }
 }
