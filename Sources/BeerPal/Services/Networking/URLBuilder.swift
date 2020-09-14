@@ -48,3 +48,14 @@ final class URLBuilder {
         return components.url
     }
 }
+
+private extension String {
+    mutating func appendPathComponent(_ component: String) {
+        guard !component.isEmpty else { return }
+        
+        if !component.hasPrefix("/") {
+            append("/")
+        }
+        append(component)
+    }
+}
