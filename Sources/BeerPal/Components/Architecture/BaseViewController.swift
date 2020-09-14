@@ -19,10 +19,11 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
+        setUpStateViews()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func bind(_ viewModel: StateManaging) {
+    func bindState(of viewModel: StateManaging) {
         viewModel.stateManager.currentState.drive(rx.viewState).disposed(by: disposeBag)
         
         if let reloadingViewModel = viewModel as? DataReloading {
@@ -60,7 +61,7 @@ extension Reactive where Base: BaseViewController {
 }
 
 extension BaseViewController {
-    private func setUp() {
+    private func setUpStateViews() {
         [emptyStateView, errorStateView, loadingStateView].forEach { setUpSubview($0) }
     }
     

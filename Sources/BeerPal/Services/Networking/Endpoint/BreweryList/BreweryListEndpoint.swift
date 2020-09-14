@@ -1,17 +1,17 @@
 //
-//  BeerListEndpoint.swift
+//  BreweryListEndpoint.swift
 //  BeerPal
 //
-//  Created by Krzysztof Babis on 09.09.2020 r..
+//  Created by Krzysztof Babis on 11.09.2020 r..
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
 import Foundation
 
 extension API {
-    static func beerList() -> Endpoint<BeerListResponseModel> {
+    static func breweryList() -> Endpoint<BreweryListResponseModel> {
         let url = URLBuilder()
-        .set(path: "beers")
+        .set(path: "breweries")
         .build()!
         
         return Endpoint(method: .get, url: url)

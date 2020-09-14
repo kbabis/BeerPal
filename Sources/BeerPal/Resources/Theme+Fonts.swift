@@ -11,9 +11,9 @@ import UIKit
 extension Theme {
     enum Fonts {
         enum TextSize: CGFloat {
-            case xxxSmall = 10.0
-            case xxSmall = 12.0
-            case xSmall = 14.0
+            case xxSmall = 10.0
+            case xSmall = 12.0
+            case small = 14.0
             case medium = 16.0
             case large = 18.0
             case xLarge = 20.0

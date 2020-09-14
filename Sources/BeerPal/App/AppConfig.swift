@@ -12,5 +12,6 @@ struct AppConfig {
     enum API {
         static let host: String = "sandbox-api.brewerydb.com"
         static let version: String = "v2"
+        static let key: String = "" // insert your API key here
     }
 }

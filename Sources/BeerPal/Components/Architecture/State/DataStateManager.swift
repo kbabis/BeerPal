@@ -13,7 +13,7 @@ final class DataStateManager {
     private let stateRelay: BehaviorRelay<DataState>
     var currentState: Driver<DataState> { return stateRelay.asDriver() }
     
-    init(defaultState: DataState = .idle, queueName: String) {
+    init(defaultState: DataState = .idle, queueName: String = "com.beerpal.datastatemanager") {
         self.stateRelay = BehaviorRelay<DataState>(value: defaultState)
         self.queue = DispatchQueue(label: queueName)
     }

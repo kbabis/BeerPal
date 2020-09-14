@@ -22,7 +22,7 @@ struct Beer: Codable {
     let glasswareID, styleID: Int?
     @DecodableBool var isOrganic: Bool
     @DecodableBool var isRetired: Bool
-    let labels: ImagePackage?
+    let images: Images?
     let status: VerificationStatus
     let statusDisplay: String
     let createDate: Date?
@@ -44,7 +44,9 @@ struct Beer: Codable {
         case alcoholByVolume = "abv"
         case glasswareID = "glasswareId"
         case styleID = "styleId"
-        case isOrganic, isRetired, labels, status, statusDisplay, createDate, updateDate, glass, style, description, ibu, originalGravity
+        case isOrganic, isRetired
+        case images = "labels"
+        case status, statusDisplay, createDate, updateDate, glass, style, description, ibu, originalGravity
         case availableID = "availableId"
         case foodPairings, available, year
         case colorIntensityID = "srmId"
@@ -53,50 +55,52 @@ struct Beer: Codable {
     }
 }
 
-struct AvailabilityInfo: Codable {
-    let id: Int
-    let name: String
-    let description: String
-}
+extension Beer {
+    enum VerificationStatus: String, Codable {
+        case verified
+    }
 
-struct Glass: Codable {
-    let id: Int
-    let name: String
-    let createDate: Date
-}
+    struct AvailabilityInfo: Codable {
+        let id: Int
+        let name: String
+        let description: String
+    }
 
-struct ImagePackage: Codable {
-    let icon: String
-    let medium: String
-    let large: String
-    let contentAwareIcon: String
-    let contentAwareMedium: String
-    let contentAwareLarge: String?
-}
+    struct Glass: Codable {
+        let id: Int
+        let name: String
+        let createDate: Date
+    }
 
-struct ColorIntensity: Codable {
-    let id: Int
-    let name: String
-    let hex: String
-}
+    struct Images: Codable {
+        let icon: String
+        let medium: String
+        let large: String
+        let contentAwareIcon: String
+        let contentAwareMedium: String
+        let contentAwareLarge: String?
+    }
 
-enum VerificationStatus: String, Codable {
-    case verified
-}
+    struct ColorIntensity: Codable {
+        let id: Int
+        let name: String
+        let hex: String
+    }
 
-struct BeerStyle: Codable {
-    let id, categoryID: Int
-    let category: Glass
-    let name, shortName, description: String
-    let ibuMin, ibuMax, abvMin, abvMax: String?
-    let srmMin, srmMax, ogMin, fgMin: String?
-    let fgMax: String?
-    let createDate: Date
-    let updateDate, ogMax: String?
+    struct BeerStyle: Codable {
+        let id, categoryID: Int
+        let category: Glass
+        let name, shortName, description: String
+        let ibuMin, ibuMax, abvMin, abvMax: String?
+        let srmMin, srmMax, ogMin, fgMin: String?
+        let fgMax: String?
+        let createDate: Date
+        let updateDate, ogMax: String?
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case categoryID = "categoryId"
-        case category, name, shortName, description, ibuMin, ibuMax, abvMin, abvMax, srmMin, srmMax, ogMin, fgMin, fgMax, createDate, updateDate, ogMax
+        enum CodingKeys: String, CodingKey {
+            case id
+            case categoryID = "categoryId"
+            case category, name, shortName, description, ibuMin, ibuMax, abvMin, abvMax, srmMin, srmMax, ogMin, fgMin, fgMax, createDate, updateDate, ogMax
+        }
     }
 }

@@ -25,11 +25,14 @@ final class URLBuilder {
     }
 
     func set(path: String) -> URLBuilder {
-        var path = version ?? "" + path
-        if !path.hasPrefix("/") {
-            path = "/" + path
+        var fullPath = ""
+
+        if let version = version {
+            fullPath.appendPathComponent(version)
         }
-        components.path = path
+        
+        fullPath.appendPathComponent(path)
+        components.path = fullPath
         return self
     }
 
@@ -43,5 +46,16 @@ final class URLBuilder {
 
     func build() -> URL? {
         return components.url
+    }
+}
+
+private extension String {
+    mutating func appendPathComponent(_ component: String) {
+        guard !component.isEmpty else { return }
+        
+        if !component.hasPrefix("/") {
+            append("/")
+        }
+        append(component)
     }
 }

@@ -23,13 +23,14 @@ final class BeerListRepository {
     }
     
     func fetchBeers(then handler: @escaping CompletionBlock) {
-        let cacheKey: String = "LatestBeerResponseModel"
+        let endpoint = API.beerList()
+        let cacheKey = endpoint.url.absoluteString
         
         if let cached = cache[cacheKey] {
             return handler(.success(cached))
         }
 
-        networkingService.request(API.beers(), then: { [weak self] (result) in
+        networkingService.request(endpoint, then: { [weak self] (result) in
             let beers = try? result.get()
             beers.map { self?.cache[cacheKey] = $0 }
             handler(result)
