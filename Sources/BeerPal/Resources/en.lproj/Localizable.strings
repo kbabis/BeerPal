@@ -22,5 +22,9 @@
 "brewery.list.item.tag.organic" = "Organic";
 "brewery.list.item.tag.verified" = "Verified";
 
-
+// MARK: - Tabs
+"tabs.beers" = "Beers";
+"tabs.breweries" = "Breweries";
+"tabs.events" = "Events";
+"tabs.settings" = "Settings";
 
