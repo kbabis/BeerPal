@@ -23,13 +23,11 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func bindState(of viewModel: StateManaging) {
-        viewModel.stateManager.currentState.drive(rx.viewState).disposed(by: disposeBag)
+    func bindState(of manager: StateManaging, dataReloader: DataReloading?) {
+        manager.currentState.drive(rx.viewState).disposed(by: disposeBag)
         
-        if let reloadingViewModel = viewModel as? DataReloading {
-            emptyStateView.reloadingDelegate = reloadingViewModel
-            errorStateView.reloadingDelegate = reloadingViewModel
-        }
+        emptyStateView.reloadingDelegate = dataReloader
+        errorStateView.reloadingDelegate = dataReloader
     }
 }
 

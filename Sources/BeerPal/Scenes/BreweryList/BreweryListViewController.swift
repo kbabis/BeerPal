@@ -35,15 +35,16 @@ final class BreweryListViewController: BaseViewController {
     }
     
     private func makeBindings() {
-        bindState(of: viewModel)
+        bindState(of: viewModel, dataReloader: viewModel)
         
-        viewModel.output.items?
+        viewModel.output.items
             .drive(breweryListView.tableView.rx.items(cellIdentifier: BreweryListItemTableViewCell.reuseIdentifier, cellType: BreweryListItemTableViewCell.self)) { (_, brewery, cell) in
                 cell.item = brewery
             }.disposed(by: disposeBag)
         
-        viewModel.output.endRefreshing?
+        viewModel.output.endRefreshing
             .map { false }
+            .delay(.milliseconds(300))
             .drive(breweryListView.refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
