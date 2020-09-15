@@ -53,7 +53,7 @@ class BaseStateView: UIView {
         
         iconImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-100)
+            make.centerY.equalToSuperview().offset(-130)
             make.width.equalToSuperview().multipliedBy(0.7)
             make.height.equalTo(iconImageView.snp.width)
         }
@@ -100,6 +100,7 @@ private class BaseStateTitleLabel: BaseLabel {
         super.setUp()
         font = Theme.Fonts.getFont(ofSize: .large, weight: .medium)
         textAlignment = .center
+        numberOfLines = 0
     }
 }
 
@@ -108,6 +109,7 @@ private class BaseStateMessageLabel: BaseLabel {
         super.setUp()
         font = Theme.Fonts.getFont(ofSize: .medium, weight: .medium)
         textAlignment = .center
+        numberOfLines = 0
     }
 }
 
