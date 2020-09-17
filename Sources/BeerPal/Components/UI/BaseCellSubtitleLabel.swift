@@ -8,12 +8,10 @@
 
 import UIKit
 
-class BaseCellSubtitleLabel: BaseLabel {
+class BaseCellSubtitleLabel: ExtendableLabel {
     override func setUp() {
         font = Theme.Fonts.getFont(ofSize: .xxSmall, weight: .light)
         textColor = Theme.Colors.Texts.secondary
         textAlignment = .left
-        lineBreakMode = .byWordWrapping
-        numberOfLines = 0
     }
 }

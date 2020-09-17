@@ -16,6 +16,9 @@ class BaseViewController: UIViewController {
     private let emptyStateView = EmptyStateView()
     private let errorStateView = ErrorStateView()
     private let loadingStateView = LoadingStateView()
+    var hasContent: Bool {
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +26,11 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func bindState(of viewModel: StateManaging) {
-        viewModel.stateManager.currentState.drive(rx.viewState).disposed(by: disposeBag)
+    func bindState(of manager: StateManaging, dataReloader: DataReloading?) {
+        manager.currentState.drive(rx.viewState).disposed(by: disposeBag)
         
-        if let reloadingViewModel = viewModel as? DataReloading {
-            emptyStateView.reloadingDelegate = reloadingViewModel
-            errorStateView.reloadingDelegate = reloadingViewModel
-        }
+        emptyStateView.reloadingDelegate = dataReloader
+        errorStateView.reloadingDelegate = dataReloader
     }
 }
 
@@ -40,14 +41,22 @@ extension BaseViewController: StateRendering {
         switch state {
         case .empty(let message):
             emptyStateView.message = message
-            emptyStateView.alpha = 1
+            emptyStateView.alpha = hasContent ? 0 : 1
         case .error(let message):
-            errorStateView.message = message
-            errorStateView.alpha = 1
+            showError(message, isDataOriented: hasContent)
         case .loading:
-            loadingStateView.alpha = 1
+            loadingStateView.alpha = hasContent ? 0 : 1
         default:
             break
+        }
+    }
+    
+    private func showError(_ message: String, isDataOriented: Bool) {
+        if isDataOriented {
+            showPopUp(message)
+        } else {
+            errorStateView.message = message
+            errorStateView.alpha = 1
         }
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
-import Foundation
+import RxCocoa
 
 protocol StateManaging {
-    var stateManager: DataStateManager { get }
+    var currentState: Driver<DataState> { get }
 }

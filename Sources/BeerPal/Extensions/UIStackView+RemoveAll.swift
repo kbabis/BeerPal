@@ -1,5 +1,5 @@
 //
-//  UIStackView+Extension.swift
+//  UIStackView+RemoveAll.swift
 //  BeerPal
 //
 //  Created by Krzysztof Babis on 13.09.2020 r..

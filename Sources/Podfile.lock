@@ -12,7 +12,6 @@ PODS:
   - RxSwift (5.0.0)
   - SnapKit (5.0.1)
   - SwiftLint (0.39.1)
-  - Wormholy (1.6.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
@@ -22,7 +21,6 @@ DEPENDENCIES:
   - RxSwift (= 5.0)
   - SnapKit (~> 5.0.0)
   - SwiftLint (= 0.39.1)
-  - Wormholy
 
 SPEC REPOS:
   trunk:
@@ -35,7 +33,6 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SwiftLint
-    - Wormholy
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -47,8 +44,7 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
-  Wormholy: bfc1c8679eefd0edd92638758e21c3961b1b3b50
 
-PODFILE CHECKSUM: af0698b71f3307698e116392b659cdef12611986
+PODFILE CHECKSUM: 454eabb2c3c72e36770fbf75a55fc9bf6e67f7d2
 
 COCOAPODS: 1.8.4

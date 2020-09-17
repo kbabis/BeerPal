@@ -9,14 +9,13 @@
 import RxSwift
 import RxCocoa
 
-final class BreweryListViewModel: ViewModelType, StateManaging {
+final class BreweryListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     private let repository: BreweryListRepository
+    private let stateManager: DataStateManager
     
-    let stateManager: DataStateManager = DataStateManager()
-    
-    private(set) var input: BreweryListViewModel.Input
-    private(set) var output: BreweryListViewModel.Output
+    let input: BreweryListViewModel.Input
+    let output: BreweryListViewModel.Output
     
     struct Input {
         let fetch = PublishSubject<Void>().asObserver()
@@ -25,21 +24,27 @@ final class BreweryListViewModel: ViewModelType, StateManaging {
     
     struct Output {
         let title = R.string.localizable.breweryListTitle()
-        var items: Driver<[Brewery]>?
+        var state: Driver<DataState>
+        var endRefreshing: Driver<Void>
+        var items: Driver<[Brewery]>
     }
     
     init(dependencies: Dependencies) {
-        repository = BreweryListRepository(networkingService: dependencies.networkingService)
-        input = Input()
-        output = Output()
+        let stateManager = DataStateManager()
+        let repository = BreweryListRepository(networkingService: dependencies.networkingService)
+        self.input = Input()
         
-        let executeFetchRequest: Observable<[Brewery]> = Observable.create { [weak self] (observer) -> Disposable in
-            self?.repository.fetchBreweryList { (result) in
+        let executeFetchRequest: Observable<[Brewery]> = Observable.create { (observer) -> Disposable in
+            stateManager.update(.loading)
+            
+            repository.fetchBreweryList { (result) in
                 switch result {
                 case .success(let response):
+                    stateManager.update(response.breweries.isEmpty ? .empty("") : .loaded)
                     observer.onNext(response.breweries)
                     observer.onCompleted()
                 case .failure(let error):
+                    stateManager.update(.error(error.localizedDescription))
                     observer.onError(error)
                 }
             }
@@ -49,15 +54,30 @@ final class BreweryListViewModel: ViewModelType, StateManaging {
         
         let response = input.fetch
             .startWith(())
-            .flatMapLatest { executeFetchRequest }
-            .do(onNext: { (breweries) in
-                print(breweries.count)
-            }, onError: { (error) in
-                print(error)
-            })
+            .flatMapLatest { executeFetchRequest.materialize() }
             .share()
         
-        output.items = response.asDriver(onErrorJustReturn: [])
+        let endRefreshing = response
+            .flatMapLatest { _ in Observable.just(()) }
+            .asDriver(onErrorJustReturn: ())
+        
+        self.stateManager = stateManager
+        self.repository = repository
+        self.output = Output(
+            state: stateManager.currentState,
+            endRefreshing: endRefreshing,
+            items: response.elements.asDriver(onErrorJustReturn: [])
+        )
+    }
+}
+
+extension BreweryListViewModel: StateManaging, DataReloading {
+    var currentState: Driver<DataState> {
+        return output.state
+    }
+    
+    func reloadData() {
+        input.fetch.onNext(())
     }
 }
 

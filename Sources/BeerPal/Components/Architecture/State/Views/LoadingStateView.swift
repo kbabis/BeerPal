@@ -22,10 +22,13 @@ final class LoadingStateView: UIView {
     }
     
     private func setUp() {
+        backgroundColor = .yellow
         setUpActivityIndicatorView()
     }
     
     private func setUpActivityIndicatorView() {
+        activityIndicatorView.color = .systemGray
+        activityIndicatorView.startAnimating()
         addSubview(activityIndicatorView)
         
         activityIndicatorView.snp.makeConstraints { (make) in

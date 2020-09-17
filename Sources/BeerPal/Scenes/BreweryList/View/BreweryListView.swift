@@ -10,6 +10,7 @@ import UIKit
 
 final class BreweryListView: UIView {
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -24,6 +25,7 @@ final class BreweryListView: UIView {
     private func setUp() {
         backgroundColor = Theme.Colors.Background.primary
         setUpTableView()
+        setUpRefreshControl()
     }
     
     private func setUpTableView() {
@@ -32,5 +34,9 @@ final class BreweryListView: UIView {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setUpRefreshControl() {
+        tableView.refreshControl = refreshControl
     }
 }
