@@ -8,11 +8,10 @@
 
 import UIKit
 
-class BaseCellTitleLabel: BaseLabel {
+class BaseCellTitleLabel: ExtendableLabel {
     override func setUp() {
         font = Theme.Fonts.getFont(ofSize: .xSmall, weight: .medium)
         textColor = Theme.Colors.Texts.primary
         textAlignment = .left
-        numberOfLines = 0
     }
 }

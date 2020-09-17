@@ -95,21 +95,19 @@ class BaseStateView: UIView {
     }
 }
 
-private class BaseStateTitleLabel: BaseLabel {
+private class BaseStateTitleLabel: ExtendableLabel {
     override func setUp() {
         super.setUp()
         font = Theme.Fonts.getFont(ofSize: .large, weight: .medium)
         textAlignment = .center
-        numberOfLines = 0
     }
 }
 
-private class BaseStateMessageLabel: BaseLabel {
+private class BaseStateMessageLabel: ExtendableLabel {
     override func setUp() {
         super.setUp()
         font = Theme.Fonts.getFont(ofSize: .medium, weight: .medium)
         textAlignment = .center
-        numberOfLines = 0
     }
 }
 
