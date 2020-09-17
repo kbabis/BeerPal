@@ -53,7 +53,7 @@
 		E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */; };
 		E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
-		E6AD18CA250EB94A00152842 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+Extension.swift */; };
+		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
 		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
 		E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18D0250EC34E00152842 /* BreweryListViewController.swift */; };
 		E6AD18D3250EC95D00152842 /* BreweryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18D2250EC95D00152842 /* BreweryListViewModel.swift */; };
@@ -65,6 +65,7 @@
 		E6AEDAF625098CDE004274E6 /* DefaultJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */; };
 		E6AEDAF82509912D004274E6 /* DecodableBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAF72509912D004274E6 /* DecodableBoolTests.swift */; };
 		E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0193724F5CCEA0074291A /* R.generated.swift */; };
+		E6B29E53251183E300AAE1CA /* Observable+Materialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */; };
 		E6B98FCF24F8602C00F23124 /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */; };
 		E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD124F8613600F23124 /* URLBuilder.swift */; };
 		E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD324F861AF00F23124 /* AppConfig.swift */; };
@@ -73,6 +74,9 @@
 		E6C710A224F9B2880060A4C3 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C710A124F9B2880060A4C3 /* ResponseMock.swift */; };
 		E6C710A424F9B2CE0060A4C3 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C710A324F9B2CE0060A4C3 /* URLProtocolMock.swift */; };
 		E6C710A824F9BA530060A4C3 /* NetworkingAdapterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C710A724F9BA530060A4C3 /* NetworkingAdapterSpy.swift */; };
+		E6D098772513628D00FE4EC3 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D098762513628D00FE4EC3 /* PopUpView.swift */; };
+		E6D0987925136E8400FE4EC3 /* ExtendableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */; };
+		E6D0987B25136EE800FE4EC3 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */; };
 		E6D16F9824F9987A008C1BD8 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9724F9987A008C1BD8 /* NetworkingService.swift */; };
 		E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9A24F99DEB008C1BD8 /* NetworkingProtocol.swift */; };
 		E6D16F9D24F99F41008C1BD8 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D16F9C24F99F41008C1BD8 /* NetworkingServiceTests.swift */; };
@@ -161,7 +165,7 @@
 		E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellSubtitleLabel.swift; sourceTree = "<group>"; };
 		E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
-		E6AD18C9250EB94A00152842 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
 		E6AD18D0250EC34E00152842 /* BreweryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListViewController.swift; sourceTree = "<group>"; };
 		E6AD18D2250EC95D00152842 /* BreweryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJSONDecoder.swift; sourceTree = "<group>"; };
 		E6AEDAF72509912D004274E6 /* DecodableBoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableBoolTests.swift; sourceTree = "<group>"; };
 		E6B0193724F5CCEA0074291A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Materialize.swift"; sourceTree = "<group>"; };
 		E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		E6B98FD124F8613600F23124 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		E6B98FD324F861AF00F23124 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -181,6 +186,9 @@
 		E6C710A124F9B2880060A4C3 /* ResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
 		E6C710A324F9B2CE0060A4C3 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		E6C710A724F9BA530060A4C3 /* NetworkingAdapterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAdapterSpy.swift; sourceTree = "<group>"; };
+		E6D098762513628D00FE4EC3 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableLabel.swift; sourceTree = "<group>"; };
+		E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PopUp.swift"; sourceTree = "<group>"; };
 		E6D16F9724F9987A008C1BD8 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		E6D16F9A24F99DEB008C1BD8 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
 		E6D16F9C24F99F41008C1BD8 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
@@ -269,6 +277,8 @@
 				E6AAD7DD250C365A00F836AF /* BaseCellTitleLabel.swift */,
 				E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */,
 				E639ECD1250596280046E8E9 /* BaseLabel.swift */,
+				E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */,
+				E6D098762513628D00FE4EC3 /* PopUpView.swift */,
 				E6AD18C7250E34AF00152842 /* TagView.swift */,
 			);
 			path = UI;
@@ -451,9 +461,11 @@
 		E6AAD7E1250C3DC500F836AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */,
 				E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */,
-				E6AD18C9250EB94A00152842 /* UIStackView+Extension.swift */,
+				E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */,
 				E66362DE250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift */,
+				E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -908,8 +920,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D098772513628D00FE4EC3 /* PopUpView.swift in Sources */,
 				E6AAD7DE250C365A00F836AF /* BaseCellTitleLabel.swift in Sources */,
 				E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */,
+				E6D0987B25136EE800FE4EC3 /* UIViewController+PopUp.swift in Sources */,
+				E6B29E53251183E300AAE1CA /* Observable+Materialize.swift in Sources */,
+				E6D0987925136E8400FE4EC3 /* ExtendableLabel.swift in Sources */,
 				E660092724FED73A009B5B45 /* DataReloading.swift in Sources */,
 				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
 				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
@@ -934,7 +950,7 @@
 				E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
-				E6AD18CA250EB94A00152842 /* UIStackView+Extension.swift in Sources */,
+				E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */,
 				E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */,
 				E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */,
 				E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */,

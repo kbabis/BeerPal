@@ -12,6 +12,9 @@ import RxCocoa
 final class BreweryListViewController: BaseViewController {
     private var breweryListView: BreweryListView!
     private let viewModel: BreweryListViewModel
+    override var hasContent: Bool {
+        return breweryListView.tableView.numberOfRows(inSection: 0) > 0
+    }
     
     override func loadView() {
         breweryListView = BreweryListView()
