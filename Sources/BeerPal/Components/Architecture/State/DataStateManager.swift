@@ -18,7 +18,7 @@ final class DataStateManager {
         self.queue = DispatchQueue(label: queueName)
     }
     
-    func updateState(_ state: DataState) {
+    func update(_ state: DataState) {
         queue.sync { stateRelay.accept(state) }
     }
 }

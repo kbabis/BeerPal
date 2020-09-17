@@ -35,16 +35,16 @@ final class BreweryListViewModel: ViewModelType {
         self.input = Input()
         
         let executeFetchRequest: Observable<[Brewery]> = Observable.create { (observer) -> Disposable in
-            stateManager.updateState(.loading)
+            stateManager.update(.loading)
             
             repository.fetchBreweryList { (result) in
                 switch result {
                 case .success(let response):
-                    stateManager.updateState(response.breweries.isEmpty ? .empty("") : .loaded)
+                    stateManager.update(response.breweries.isEmpty ? .empty("") : .loaded)
                     observer.onNext(response.breweries)
                     observer.onCompleted()
                 case .failure(let error):
-                    stateManager.updateState(.error(error.localizedDescription))
+                    stateManager.update(.error(error.localizedDescription))
                     observer.onError(error)
                 }
             }
