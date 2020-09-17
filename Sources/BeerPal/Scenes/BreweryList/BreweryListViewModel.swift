@@ -8,15 +8,14 @@
 
 import RxSwift
 import RxCocoa
-import RxSwiftExt
 
 final class BreweryListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     private let repository: BreweryListRepository
     private let stateManager: DataStateManager
     
-    private(set) var input: BreweryListViewModel.Input
-    private(set) var output: BreweryListViewModel.Output
+    let input: BreweryListViewModel.Input
+    let output: BreweryListViewModel.Output
     
     struct Input {
         let fetch = PublishSubject<Void>().asObserver()
@@ -67,7 +66,7 @@ final class BreweryListViewModel: ViewModelType {
         self.output = Output(
             state: stateManager.currentState,
             endRefreshing: endRefreshing,
-            items: response.elements().asDriver(onErrorJustReturn: [])
+            items: response.elements.asDriver(onErrorJustReturn: [])
         )
     }
 }
