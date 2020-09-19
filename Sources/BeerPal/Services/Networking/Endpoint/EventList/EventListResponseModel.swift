@@ -14,6 +14,11 @@ struct EventListResponseModel: Codable {
     let totalResults: Int
     let events: [Event]
     let status: String
+    
+    enum CodingKeys: String, CodingKey {
+        case currentPage, numberOfPages, totalResults, status
+        case events = "data"
+    }
 }
 
 struct Event: Codable {
@@ -23,7 +28,8 @@ struct Event: Codable {
     let description: String?
     let type: EventType
     let typeDisplay: String
-    let startDate, endDate: Date
+    @DecodableSpecialDate var startDate: Date?
+    @DecodableSpecialDate var endDate: Date?
     let time: String?
     let price: String?
     let venueName: String
