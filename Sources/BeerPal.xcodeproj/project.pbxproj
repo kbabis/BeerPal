@@ -54,6 +54,7 @@
 		E6AAD7DE250C365A00F836AF /* BaseCellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7DD250C365A00F836AF /* BaseCellTitleLabel.swift */; };
 		E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */; };
 		E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */; };
+		E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141425164AED000AECB9 /* EventListResponseModel.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
 		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
 		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
@@ -168,6 +169,7 @@
 		E6AAD7DD250C365A00F836AF /* BaseCellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellTitleLabel.swift; sourceTree = "<group>"; };
 		E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellSubtitleLabel.swift; sourceTree = "<group>"; };
 		E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
+		E6AC141425164AED000AECB9 /* EventListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponseModel.swift; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
@@ -484,6 +486,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E6AC141225164633000AECB9 /* EventList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EventList;
+			sourceTree = "<group>";
+		};
+		E6AC141325164AD3000AECB9 /* EventList */ = {
+			isa = PBXGroup;
+			children = (
+				E6AC141425164AED000AECB9 /* EventListResponseModel.swift */,
+			);
+			path = EventList;
+			sourceTree = "<group>";
+		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +530,7 @@
 			children = (
 				E6A850D025084B1A0095CD54 /* BeerList */,
 				E6AAD7D2250AE81200F836AF /* BreweryList */,
+				E6AC141225164633000AECB9 /* EventList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -532,6 +550,7 @@
 				E6AEDAEB25097C14004274E6 /* API.swift */,
 				E6AEDAED25097C82004274E6 /* BeerList */,
 				E6AAD7D5250C21AD00F836AF /* BreweryList */,
+				E6AC141325164AD3000AECB9 /* EventList */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -983,6 +1002,7 @@
 				E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */,
 				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
 				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
+				E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */,
 				E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
