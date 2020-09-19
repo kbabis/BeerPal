@@ -1,24 +1,25 @@
 //
-//  BreweryListItemTableViewCell.swift
+//  EventListItemTableViewCell.swift
 //  BeerPal
 //
-//  Created by Krzysztof Babis on 12.09.2020 r..
+//  Created by Krzysztof Babis on 19.09.2020 r..
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
 import UIKit
 
-final class BreweryListItemTableViewCell: UITableViewCell {
+final class EventListItemTableViewCell: UITableViewCell {
     private let horizontalSpacing: CGFloat = 20
     private let verticalSpacing: CGFloat = 10
     
+    private var dateLabel = BaseCellSubtitleLabel()
     private var contentContainerView = UIView()
     private var logoImageView = UIImageView()
     private var nameLabel = BaseCellTitleLabel()
-    private var establishmentDateLabel = BaseCellSubtitleLabel()
+    private var addressLabel = BaseCellSubtitleLabel()
     private var tagsStackView = UIStackView()
     
-    var item: Brewery? {
+    var item: EventListItemViewModel? {
         didSet { refresh() }
     }
     
@@ -32,43 +33,49 @@ final class BreweryListItemTableViewCell: UITableViewCell {
     }
     
     private func refresh() {
-        nameLabel.text = item?.name
-        establishmentDateLabel.text = item?.established
-        setTags(for: item)
-        logoImageView.loadImage(from: item?.images?.medium)
+        guard let event = item else { return }
+        
+        dateLabel.text = event.date
+        nameLabel.text = event.name
+        addressLabel.text = event.address
+        setTags(event.tags)
+        logoImageView.loadImage(from: event.imageURLString)
     }
     
-    private func setTags(for brewery: Brewery?) {
+    private func setTags(_ tags: [EventListItemViewModel.Tag]) {
         tagsStackView.removeAllArrangedSubviews()
-        
-        let tags = [
-            (canBeAdded: brewery?.isInBusiness, title: R.string.localizable.breweryListItemTagInBusiness(), color: UIColor.systemBlue),
-            (canBeAdded: brewery?.isOrganic, title: R.string.localizable.breweryListItemTagOrganic(), color: UIColor.systemGreen),
-            (canBeAdded: brewery?.isVerified, title: R.string.localizable.breweryListItemTagVerified(), color: UIColor.systemOrange)
-        ]
-        
-        tags
-            .filter { $0.canBeAdded == true }
-            .forEach { (_, title, color) in
-                let tagView = TagView(title: title, color: color)
-                tagsStackView.addArrangedSubview(tagView)
-                
-                tagView.snp.makeConstraints { (make) in
-                    make.height.equalTo(20)
-                    make.top.bottom.equalToSuperview()
-                }
+    
+        tags.forEach { (title, color) in
+            let tagView = TagView(title: title, color: color)
+            tagsStackView.addArrangedSubview(tagView)
+            
+            tagView.snp.makeConstraints { (make) in
+                make.height.equalTo(20)
+                make.top.bottom.equalToSuperview()
             }
+        }
     }
 }
 
-extension BreweryListItemTableViewCell {
+extension EventListItemTableViewCell {
     private func setUp() {
         selectionStyle = .none
+        setUpDateLabel()
         setUpContentContainerView()
         setUpLogoImageView()
         setUpNameLabel()
-        setUpEstablishmentDateLabel()
+        setUpAddressDateLabel()
         setUpTagsStackView()
+    }
+    
+    private func setUpDateLabel() {
+        addSubview(dateLabel)
+        
+        dateLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(horizontalSpacing)
+            make.top.equalToSuperview().offset(verticalSpacing)
+            make.right.equalToSuperview().inset(horizontalSpacing)
+        }
     }
     
     private func setUpContentContainerView() {
@@ -76,9 +83,8 @@ extension BreweryListItemTableViewCell {
         addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(horizontalSpacing)
-            make.top.equalToSuperview().offset(verticalSpacing)
-            make.right.equalToSuperview().inset(horizontalSpacing)
+            make.left.right.equalTo(dateLabel)
+            make.top.equalTo(dateLabel.snp.bottom).offset(verticalSpacing * 0.4)
             make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }
@@ -103,10 +109,10 @@ extension BreweryListItemTableViewCell {
         }
     }
     
-    private func setUpEstablishmentDateLabel() {
-        contentContainerView.addSubview(establishmentDateLabel)
+    private func setUpAddressDateLabel() {
+        contentContainerView.addSubview(addressLabel)
          
-        establishmentDateLabel.snp.makeConstraints { (make) in
+        addressLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(nameLabel)
             make.top.equalTo(nameLabel.snp.bottom).offset(verticalSpacing * 0.25)
         }

@@ -37,6 +37,7 @@ final class TabsCoordinator: NavigationCoordinator {
     private func setUpTabCoordinators() {
         setUpBeersCoordinator()
         setUpBreweriesCoordinator()
+        setUpEventsCoordinator()
     }
     
     private func showTabs() {
@@ -68,13 +69,25 @@ extension TabsCoordinator {
     private func setUpBreweriesCoordinator() {
         let tabNavigationController = createTabNavigationController(
             title: R.string.localizable.tabsBreweries(),
-            image: UIImage()) ; #warning("TODO: Set icon")
+            image: R.image.tabBrewery())
         let coordinator = BreweryCoordinator(
             navigationController: tabNavigationController,
             dependencies: BreweryDependencies(from: dependencies)
         )
         coordinator.start()
         store(coordinator, as: .breweries)
+    }
+    
+    private func setUpEventsCoordinator() {
+        let tabNavigationController = createTabNavigationController(
+            title: R.string.localizable.tabsEvents(),
+            image: R.image.tabEvent())
+        let coordinator = EventsCoordinator(
+            navigationController: tabNavigationController,
+            dependencies: EventsDependencies(from: dependencies)
+        )
+        coordinator.start()
+        store(coordinator, as: .events)
     }
 }
 

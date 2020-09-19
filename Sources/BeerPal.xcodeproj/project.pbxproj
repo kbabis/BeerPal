@@ -57,6 +57,15 @@
 		E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141425164AED000AECB9 /* EventListResponseModel.swift */; };
 		E6AC141725164F76000AECB9 /* EventListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141625164F76000AECB9 /* EventListEndpoint.swift */; };
 		E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141825165264000AECB9 /* EventListRepository.swift */; };
+		E6AC141C25165478000AECB9 /* EventListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */; };
+		E6AC141E251659B3000AECB9 /* EventListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */; };
+		E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141F25166BD4000AECB9 /* EventListView.swift */; };
+		E6AC142225166D59000AECB9 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142125166D59000AECB9 /* EventListViewController.swift */; };
+		E6AC142425166F78000AECB9 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142325166F78000AECB9 /* BaseTableViewController.swift */; };
+		E6AC142625167533000AECB9 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142525167533000AECB9 /* EventListViewModel.swift */; };
+		E6AC14292516A33C000AECB9 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC14282516A33C000AECB9 /* EventsCoordinator.swift */; };
+		E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142A2516A34B000AECB9 /* EventsDependencies.swift */; };
+		E6AC142D2516B587000AECB9 /* DecodableSpecialDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142C2516B587000AECB9 /* DecodableSpecialDate.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
 		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
 		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
@@ -174,6 +183,15 @@
 		E6AC141425164AED000AECB9 /* EventListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponseModel.swift; sourceTree = "<group>"; };
 		E6AC141625164F76000AECB9 /* EventListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListEndpoint.swift; sourceTree = "<group>"; };
 		E6AC141825165264000AECB9 /* EventListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRepository.swift; sourceTree = "<group>"; };
+		E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemTableViewCell.swift; sourceTree = "<group>"; };
+		E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemViewModel.swift; sourceTree = "<group>"; };
+		E6AC141F25166BD4000AECB9 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		E6AC142125166D59000AECB9 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		E6AC142325166F78000AECB9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		E6AC142525167533000AECB9 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		E6AC14282516A33C000AECB9 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
+		E6AC142A2516A34B000AECB9 /* EventsDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDependencies.swift; sourceTree = "<group>"; };
+		E6AC142C2516B587000AECB9 /* DecodableSpecialDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableSpecialDate.swift; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
@@ -342,6 +360,7 @@
 				E69FB62B24FA6375008CA896 /* CoordinatorProtocol.swift */,
 				E600869D24FC1DD2005173DC /* App */,
 				E6338932250ED51B002CFB35 /* Brewery */,
+				E6AC14272516A32E000AECB9 /* Events */,
 				E69FB62E24FA65D8008CA896 /* Tabs */,
 			);
 			path = Coordinators;
@@ -493,7 +512,11 @@
 		E6AC141225164633000AECB9 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */,
 				E6AC141825165264000AECB9 /* EventListRepository.swift */,
+				E6AC142125166D59000AECB9 /* EventListViewController.swift */,
+				E6AC142525167533000AECB9 /* EventListViewModel.swift */,
+				E6AC141A25165468000AECB9 /* View */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -505,6 +528,24 @@
 				E6AC141425164AED000AECB9 /* EventListResponseModel.swift */,
 			);
 			path = EventList;
+			sourceTree = "<group>";
+		};
+		E6AC141A25165468000AECB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */,
+				E6AC141F25166BD4000AECB9 /* EventListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6AC14272516A32E000AECB9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				E6AC14282516A33C000AECB9 /* EventsCoordinator.swift */,
+				E6AC142A2516A34B000AECB9 /* EventsDependencies.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
@@ -574,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AEDAF325098CCC004274E6 /* DecodableBool.swift */,
+				E6AC142C2516B587000AECB9 /* DecodableSpecialDate.swift */,
 				E6AEDAF525098CDE004274E6 /* DefaultJSONDecoder.swift */,
 			);
 			path = Helpers;
@@ -657,6 +699,7 @@
 			children = (
 				E660091E24FED3AA009B5B45 /* State */,
 				E660092024FED3D4009B5B45 /* BaseViewController.swift */,
+				E6AC142325166F78000AECB9 /* BaseTableViewController.swift */,
 				E6338930250ECEF9002CFB35 /* ViewModelType.swift */,
 			);
 			path = Architecture;
@@ -968,6 +1011,7 @@
 				E660092724FED73A009B5B45 /* DataReloading.swift in Sources */,
 				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
 				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
+				E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
@@ -986,8 +1030,10 @@
 				E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */,
 				E6AEDAEF25097CCB004274E6 /* BeerListEndpoint.swift in Sources */,
 				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
+				E6AC14292516A33C000AECB9 /* EventsCoordinator.swift in Sources */,
 				E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */,
 				E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */,
+				E6AC142625167533000AECB9 /* EventListViewModel.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6AC141725164F76000AECB9 /* EventListEndpoint.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
@@ -996,6 +1042,7 @@
 				E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */,
 				E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */,
 				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
+				E6AC142225166D59000AECB9 /* EventListViewController.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
 				E6338936250ED552002CFB35 /* BreweryDependencies.swift in Sources */,
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
@@ -1007,19 +1054,24 @@
 				E6AD18C8250E34AF00152842 /* TagView.swift in Sources */,
 				E6EF14C02506CE3800560839 /* Theme+Fonts.swift in Sources */,
 				E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */,
+				E6AC141E251659B3000AECB9 /* EventListItemViewModel.swift in Sources */,
+				E6AC142425166F78000AECB9 /* BaseTableViewController.swift in Sources */,
 				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
 				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
 				E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */,
 				E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
+				E6AC141C25165478000AECB9 /* EventListItemTableViewCell.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,
 				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
 				E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */,
+				E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */,
 				E6AD18D3250EC95D00152842 /* BreweryListViewModel.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */,
+				E6AC142D2516B587000AECB9 /* DecodableSpecialDate.swift in Sources */,
 				E609A77824F8731B00636D58 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

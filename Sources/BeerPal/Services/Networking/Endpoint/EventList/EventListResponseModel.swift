@@ -14,6 +14,11 @@ struct EventListResponseModel: Codable {
     let totalResults: Int
     let events: [Event]
     let status: String
+    
+    enum CodingKeys: String, CodingKey {
+        case currentPage, numberOfPages, totalResults, status
+        case events = "data"
+    }
 }
 
 struct Event: Codable {
@@ -23,7 +28,8 @@ struct Event: Codable {
     let description: String?
     let type: EventType
     let typeDisplay: String
-    let startDate, endDate: Date
+    @DecodableSpecialDate var startDate: Date?
+    @DecodableSpecialDate var endDate: Date?
     let time: String?
     let price: String?
     let venueName: String
@@ -55,6 +61,10 @@ struct Event: Codable {
     struct Images: Codable {
         let icon, medium, large: String
     }
+
+    enum Status: String, Codable {
+        case verified = "verified"
+    }
     
     enum EventType: String, Codable {
         case comboFestivalCompetition = "festival_competition"
@@ -64,9 +74,24 @@ struct Event: Codable {
         case other
         case seminar
         case tasting
-    }
-
-    enum Status: String, Codable {
-        case verified = "verified"
+        
+        var displayedName: String {
+            switch self {
+            case .comboFestivalCompetition:
+                return R.string.localizable.eventTypeComboFestivalCompetition()
+            case .competition:
+                return R.string.localizable.eventTypeCompetition()
+            case .festival:
+                return R.string.localizable.eventTypeFestival()
+            case .meetup:
+                return R.string.localizable.eventTypeMeetup()
+            case .other:
+                return R.string.localizable.eventTypeOther()
+            case .seminar:
+                return R.string.localizable.eventTypeSeminar()
+            case .tasting:
+                return R.string.localizable.eventTypeTasting()
+            }
+        }
     }
 }
