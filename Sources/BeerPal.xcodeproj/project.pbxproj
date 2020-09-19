@@ -20,6 +20,8 @@
 		E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639ECD3250596B00046E8E9 /* BaseButton.swift */; };
 		E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE843250FDDB300F6B305 /* HasNetworking.swift */; };
 		E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */; };
+		E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */; };
+		E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB22514014500F58554 /* TableViewAnimationFactory.swift */; };
 		E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092024FED3D4009B5B45 /* BaseViewController.swift */; };
 		E660092324FED570009B5B45 /* StateRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092224FED570009B5B45 /* StateRendering.swift */; };
 		E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092424FED58D009B5B45 /* DataStateManager.swift */; };
@@ -126,6 +128,8 @@
 		E639ECD3250596B00046E8E9 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		E64FE843250FDDB300F6B305 /* HasNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNetworking.swift; sourceTree = "<group>"; };
 		E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
+		E6552CB22514014500F58554 /* TableViewAnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimationFactory.swift; sourceTree = "<group>"; };
 		E660092024FED3D4009B5B45 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E660092224FED570009B5B45 /* StateRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRendering.swift; sourceTree = "<group>"; };
 		E660092424FED58D009B5B45 /* DataStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStateManager.swift; sourceTree = "<group>"; };
@@ -280,8 +284,18 @@
 				E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */,
 				E6D098762513628D00FE4EC3 /* PopUpView.swift */,
 				E6AD18C7250E34AF00152842 /* TagView.swift */,
+				E6552CAF2513FF3F00F58554 /* TableViewAnimations */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E6552CAF2513FF3F00F58554 /* TableViewAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */,
+				E6552CB22514014500F58554 /* TableViewAnimationFactory.swift */,
+			);
+			path = TableViewAnimations;
 			sourceTree = "<group>";
 		};
 		E660091E24FED3AA009B5B45 /* State */ = {
@@ -932,6 +946,7 @@
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
+				E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */,
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
 				E6AEDAF625098CDE004274E6 /* DefaultJSONDecoder.swift in Sources */,
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
@@ -968,6 +983,7 @@
 				E660092524FED58D009B5B45 /* DataStateManager.swift in Sources */,
 				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
 				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
+				E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
 				E6D16F9B24F99DEB008C1BD8 /* NetworkingProtocol.swift in Sources */,

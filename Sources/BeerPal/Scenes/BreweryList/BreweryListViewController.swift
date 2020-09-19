@@ -11,6 +11,7 @@ import RxCocoa
 
 final class BreweryListViewController: BaseViewController {
     private var breweryListView: BreweryListView!
+    private var animator: TableViewAnimator?
     private let viewModel: BreweryListViewModel
     override var hasContent: Bool {
         return breweryListView.tableView.numberOfRows(inSection: 0) > 0
@@ -56,6 +57,12 @@ final class BreweryListViewController: BaseViewController {
             .bind(to: viewModel.input.selectedModel)
             .disposed(by: disposeBag)
         
+        breweryListView.tableView
+            .rx.willDisplayCell
+            .subscribe(onNext: { [weak self] (cell, indexPath) in
+                self?.animateCell(cell, at: indexPath)
+            }).disposed(by: disposeBag)
+        
         breweryListView.refreshControl
             .rx.controlEvent(.valueChanged)
             .bind(to: viewModel.input.fetch)
@@ -67,5 +74,14 @@ final class BreweryListViewController: BaseViewController {
         breweryListView.tableView.estimatedRowHeight = 90
         breweryListView.tableView.rowHeight = UITableView.automaticDimension
         breweryListView.tableView.separatorStyle = .none
+    }
+    
+    private func animateCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
+        let animation = TableViewAnimationFactory.makeTopSlide(offset: cell.frame.height, duration: 0.8)
+        if animator == nil {
+            animator = TableViewAnimator(animation: animation)
+        }
+        
+        animator?.animate(cell: cell, at: indexPath, in: breweryListView.tableView)
     }
 }
