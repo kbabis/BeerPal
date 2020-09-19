@@ -16,7 +16,7 @@ struct Theme {
             }
             
             static var secondary: UIColor {
-                return .getProperColor(lightModeColor: .gray, darkModeColor: .black)
+                return .getProperColor(lightModeColor: .black, darkModeColor: .black)
             }
         }
         
@@ -58,7 +58,7 @@ struct Theme {
         
         enum Texts {
             static var primary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .white)
+                return .getProperColor(lightModeColor: .white, darkModeColor: .black)
             }
             
             static var secondary: UIColor {

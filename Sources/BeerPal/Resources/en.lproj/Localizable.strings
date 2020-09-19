@@ -23,6 +23,7 @@
 "brewery.list.item.tag.verified" = "Verified";
 
 // MARK: - Events
+"event.list.title" = "Events";
 "event.status.verified" = "Verified";
 "event.type.comboFestivalCompetition" = "🎉🏆Festival/Competition";
 "event.type.competition" = "🏆Competition";
