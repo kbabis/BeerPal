@@ -59,6 +59,7 @@
 		E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141825165264000AECB9 /* EventListRepository.swift */; };
 		E6AC141C25165478000AECB9 /* EventListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */; };
 		E6AC141E251659B3000AECB9 /* EventListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */; };
+		E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141F25166BD4000AECB9 /* EventListView.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
 		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
 		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
@@ -178,6 +179,7 @@
 		E6AC141825165264000AECB9 /* EventListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRepository.swift; sourceTree = "<group>"; };
 		E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemTableViewCell.swift; sourceTree = "<group>"; };
 		E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemViewModel.swift; sourceTree = "<group>"; };
+		E6AC141F25166BD4000AECB9 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */,
+				E6AC141F25166BD4000AECB9 /* EventListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1033,6 +1036,7 @@
 				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
 				E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */,
+				E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */,
 				E6AD18D3250EC95D00152842 /* BreweryListViewModel.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */,
