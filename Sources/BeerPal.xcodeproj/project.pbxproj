@@ -55,6 +55,7 @@
 		E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */; };
 		E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */; };
 		E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141425164AED000AECB9 /* EventListResponseModel.swift */; };
+		E6AC141725164F76000AECB9 /* EventListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141625164F76000AECB9 /* EventListEndpoint.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
 		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
 		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
@@ -170,6 +171,7 @@
 		E6AAD7DF250C36A000F836AF /* BaseCellSubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellSubtitleLabel.swift; sourceTree = "<group>"; };
 		E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
 		E6AC141425164AED000AECB9 /* EventListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponseModel.swift; sourceTree = "<group>"; };
+		E6AC141625164F76000AECB9 /* EventListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListEndpoint.swift; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 		E6AC141325164AD3000AECB9 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC141625164F76000AECB9 /* EventListEndpoint.swift */,
 				E6AC141425164AED000AECB9 /* EventListResponseModel.swift */,
 			);
 			path = EventList;
@@ -983,6 +986,7 @@
 				E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */,
 				E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
+				E6AC141725164F76000AECB9 /* EventListEndpoint.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */,
 				E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */,
