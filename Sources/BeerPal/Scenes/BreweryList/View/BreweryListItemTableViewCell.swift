@@ -119,7 +119,7 @@ extension BreweryListItemTableViewCell {
         
         tagsStackView.snp.makeConstraints { (make) in
             make.left.equalTo(logoImageView)
-            make.top.equalTo(establishmentDateLabel.snp.bottom).offset(verticalSpacing * 0.75)
+            make.top.equalTo(logoImageView.snp.bottom).offset(verticalSpacing * 0.75)
             make.right.lessThanOrEqualTo(nameLabel)
             make.width.equalTo(0).priority(.low)
             make.bottom.equalToSuperview().inset(verticalSpacing)

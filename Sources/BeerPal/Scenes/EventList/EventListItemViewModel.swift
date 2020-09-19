@@ -27,7 +27,9 @@ final class EventListItemViewModel {
         self.event = event
     }
     
-    private func prepareDisplayableDate(from date: Date) -> String {
+    private func prepareDisplayableDate(from date: Date?) -> String {
+        guard let date = date else { return "" }
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, yyyy"
         return formatter.string(from: date)

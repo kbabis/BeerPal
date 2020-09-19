@@ -22,7 +22,6 @@ final class LoadingStateView: UIView {
     }
     
     private func setUp() {
-        backgroundColor = .yellow
         setUpActivityIndicatorView()
     }
     

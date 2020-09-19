@@ -39,7 +39,7 @@ final class EventListItemTableViewCell: UITableViewCell {
         nameLabel.text = event.name
         addressLabel.text = event.address
         setTags(event.tags)
-        imageView?.loadImage(from: event.imageURLString)
+        logoImageView.loadImage(from: event.imageURLString)
     }
     
     private func setTags(_ tags: [EventListItemViewModel.Tag]) {
@@ -84,7 +84,7 @@ extension EventListItemTableViewCell {
         
         contentContainerView.snp.makeConstraints { (make) in
             make.left.right.equalTo(dateLabel)
-            make.top.equalTo(dateLabel).offset(verticalSpacing * 0.4)
+            make.top.equalTo(dateLabel.snp.bottom).offset(verticalSpacing * 0.4)
             make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }
@@ -125,7 +125,7 @@ extension EventListItemTableViewCell {
         
         tagsStackView.snp.makeConstraints { (make) in
             make.left.equalTo(logoImageView)
-            make.top.equalTo(addressLabel.snp.bottom).offset(verticalSpacing * 0.75)
+            make.top.equalTo(logoImageView.snp.bottom).offset(verticalSpacing * 0.75)
             make.right.lessThanOrEqualTo(nameLabel)
             make.width.equalTo(0).priority(.low)
             make.bottom.equalToSuperview().inset(verticalSpacing)

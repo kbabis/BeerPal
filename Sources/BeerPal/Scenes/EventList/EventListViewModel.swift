@@ -1,47 +1,47 @@
 //
-//  BreweryListViewModel.swift
+//  EventListViewModel.swift
 //  BeerPal
 //
-//  Created by Krzysztof Babis on 13.09.2020 r..
+//  Created by Krzysztof Babis on 19.09.2020 r..
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
 import RxSwift
 import RxCocoa
 
-final class BreweryListViewModel: ViewModelType {
+final class EventListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
-    private let repository: BreweryListRepository
+    private let repository: EventListRepository
     private let stateManager: DataStateManager
     
-    let input: BreweryListViewModel.Input
-    let output: BreweryListViewModel.Output
+    let input: EventListViewModel.Input
+    let output: EventListViewModel.Output
     
     struct Input {
         let fetch = PublishRelay<Void>()
-        let selectedModel = PublishRelay<Brewery>()
+        let selectedModel = PublishRelay<EventListItemViewModel>()
     }
     
     struct Output {
-        let title = R.string.localizable.breweryListTitle()
+        let title = R.string.localizable.eventListTitle()
         var state: Driver<DataState>
         var endRefreshing: Driver<Void>
-        var items: Driver<[Brewery]>
+        var items: Driver<[EventListItemViewModel]>
     }
     
     init(dependencies: Dependencies) {
         let stateManager = DataStateManager()
-        let repository = BreweryListRepository(networkingService: dependencies.networkingService)
+        let repository = EventListRepository(networkingService: dependencies.networkingService)
         self.input = Input()
         
-        let executeFetchRequest: Observable<[Brewery]> = Observable.create { (observer) -> Disposable in
+        let executeFetchRequest: Observable<[EventListItemViewModel]> = Observable.create { (observer) -> Disposable in
             stateManager.update(.loading)
             
-            repository.fetchBreweryList { (result) in
+            repository.fetchEventList { (result) in
                 switch result {
                 case .success(let response):
-                    stateManager.update(response.breweries.isEmpty ? .empty("") : .loaded)
-                    observer.onNext(response.breweries)
+                    stateManager.update(response.events.isEmpty ? .empty("") : .loaded)
+                    observer.onNext(response.events.map { EventListItemViewModel(with: $0) })
                     observer.onCompleted()
                 case .failure(let error):
                     stateManager.update(.error(error.localizedDescription))
@@ -71,7 +71,7 @@ final class BreweryListViewModel: ViewModelType {
     }
 }
 
-extension BreweryListViewModel: StateManaging, DataReloading {
+extension EventListViewModel: StateManaging, DataReloading {
     var currentState: Driver<DataState> {
         return output.state
     }
@@ -81,6 +81,6 @@ extension BreweryListViewModel: StateManaging, DataReloading {
     }
 }
 
-extension BreweryListViewModel {
+extension EventListViewModel {
     typealias Dependencies = HasNetworking
 }
