@@ -22,6 +22,16 @@
 "brewery.list.item.tag.organic" = "Organic";
 "brewery.list.item.tag.verified" = "Verified";
 
+// MARK: - Events
+"event.status.verified" = "Verified";
+"event.type.comboFestivalCompetition" = "🎉🏆Festival/Competition";
+"event.type.competition" = "🏆Competition";
+"event.type.festival" = "🎉Festival";
+"event.type.meetup" = "🤝Meetup";
+"event.type.other" = "❓Other";
+"event.type.seminar" = "🎓Seminar";
+"event.type.tasting" = "👅Tasting";
+
 // MARK: - Tabs
 "tabs.beers" = "Beers";
 "tabs.breweries" = "Breweries";
