@@ -9,9 +9,8 @@
 import RxSwift
 import RxCocoa
 
-final class BreweryListViewController: BaseViewController {
+final class BreweryListViewController: BaseTableViewController {
     private var breweryListView: BreweryListView!
-    private var animator: TableViewAnimator?
     private let viewModel: BreweryListViewModel
     override var hasContent: Bool {
         return breweryListView.tableView.numberOfRows(inSection: 0) > 0
@@ -34,15 +33,16 @@ final class BreweryListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.output.title
-        configureTableView()
+        configureTableView(breweryListView.tableView, cellType: BreweryListItemTableViewCell.self, estimatedRowHeight: 90)
         makeBindings()
     }
     
     private func makeBindings() {
+        let tableView = breweryListView.tableView
         bindState(of: viewModel, dataReloader: viewModel)
         
         viewModel.output.items
-            .drive(breweryListView.tableView.rx.items(cellIdentifier: BreweryListItemTableViewCell.reuseIdentifier, cellType: BreweryListItemTableViewCell.self)) { (_, brewery, cell) in
+            .drive(tableView.rx.items(cellIdentifier: BreweryListItemTableViewCell.reuseIdentifier, cellType: BreweryListItemTableViewCell.self)) { (_, brewery, cell) in
                 cell.item = brewery
             }.disposed(by: disposeBag)
         
@@ -52,36 +52,20 @@ final class BreweryListViewController: BaseViewController {
             .drive(breweryListView.refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
-        breweryListView.tableView
+        tableView
             .rx.modelSelected(Brewery.self)
             .bind(to: viewModel.input.selectedModel)
             .disposed(by: disposeBag)
         
-        breweryListView.tableView
+        tableView
             .rx.willDisplayCell
             .subscribe(onNext: { [weak self] (cell, indexPath) in
-                self?.animateCell(cell, at: indexPath)
+                self?.animateCell(cell, at: indexPath, of: tableView)
             }).disposed(by: disposeBag)
         
         breweryListView.refreshControl
             .rx.controlEvent(.valueChanged)
             .bind(to: viewModel.input.fetch)
             .disposed(by: disposeBag)
-    }
-    
-    private func configureTableView() {
-        breweryListView.tableView.register(BreweryListItemTableViewCell.self, forCellReuseIdentifier: BreweryListItemTableViewCell.reuseIdentifier)
-        breweryListView.tableView.estimatedRowHeight = 90
-        breweryListView.tableView.rowHeight = UITableView.automaticDimension
-        breweryListView.tableView.separatorStyle = .none
-    }
-    
-    private func animateCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        let animation = TableViewAnimationFactory.makeTopSlide(offset: cell.frame.height, duration: 0.8)
-        if animator == nil {
-            animator = TableViewAnimator(animation: animation)
-        }
-        
-        animator?.animate(cell: cell, at: indexPath, in: breweryListView.tableView)
     }
 }
