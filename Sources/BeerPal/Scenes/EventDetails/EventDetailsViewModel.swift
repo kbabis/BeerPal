@@ -7,53 +7,49 @@
 //
 
 import Foundation
+import RxSwift
+import class RxCocoa.PublishRelay
+import struct RxCocoa.Driver
 
-struct EventDetailsViewModel {
-    typealias LocationCoordinates = (latitude: Double, longitude: Double)
+final class EventDetailsViewModel: NSObject, ViewModelType {
+    private let disposeBag = DisposeBag()
     
-    private let event: Event
+    let input: Input
+    let output: Output
     
-    var name: String { event.name }
-    var imageURLString: String { event.images.large }
-    var coordinates: LocationCoordinates { (latitude: event.latitude, longitude: event.longitude) }
-    var dateInfo: String { makeDateInfo(for: event) }
-    var fullAddress: String { makeFullAddress(for: event) }
-    var priceFormatted: String? { event.price }
-    var phoneNumber: String? { event.phone}
-    var description: String? { event.description }
-    var websiteURL: URL? { makeURL(for: event.website) }
+    struct Input {
+        let navigate = PublishRelay<Void>()
+        let call = PublishRelay<Void>()
+        let share = PublishRelay<Void>()
+    }
+    
+    struct Output {
+        let itemViewModel: EventDetailsItemViewModel
+        let shareURL: Driver<URL?>
+    }
     
     init(from event: Event) {
-        self.event = event
-    }
-    
-    private func makeFullAddress(for event: Event) -> String {
-        var fullAddress = event.venueName
-        fullAddress.appendLn(event.streetAddress)
+        let itemViewModel = EventDetailsItemViewModel(from: event)
+        self.input = Input()
         
-        let regionInfo = [event.postalCode, event.locality, event.region].compactMap { $0 }.reduce("", { $0 == "" ? $1 : $0 + ", " + $1 })
-        if !regionInfo.isEmpty { fullAddress.appendLn(regionInfo) }
+        input.navigate
+            .subscribe(onNext: { (_) in
+                NavigationHelper.openMapsAppWithDirections(
+                    to: event.venueName,
+                    latitude: event.latitude,
+                    longitude: event.longitude
+                )
+            }).disposed(by: disposeBag)
         
-        return fullAddress
-    }
-    
-    private func makeDateInfo(for event: Event) -> String {
-        var dateInfo = event.startDate?.presentableFormat ?? ""
-
-        if !dateInfo.isEmpty, let endInfo = event.endDate?.presentableFormat {
-            dateInfo.append(" - " + endInfo)
-        }
+        input.call
+            .subscribe(onNext: { (_) in
+                PhoneCallHelper.call(event.phone)
+            }).disposed(by: disposeBag)
         
-        if let timeInfo = event.time {
-            dateInfo.appendLn(timeInfo)
-        }
+        let shareURL = input.share
+            .flatMapLatest { Observable.just(itemViewModel.websiteURL) }
+            .asDriver(onErrorJustReturn: nil)
         
-        return dateInfo
-    }
-    
-    private func makeURL(for urlString: String?) -> URL? {
-        guard let urlString = urlString else { return nil }
-        
-        return URL(string: urlString)
+        self.output = Output(itemViewModel: itemViewModel, shareURL: shareURL)
     }
 }
