@@ -7,12 +7,15 @@
 //
 
 import RxSwift
-import RxCocoa
+import struct RxCocoa.Driver
+import class RxRelay.PublishRelay
 
 final class EventListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     private let repository: EventListRepository
     private let stateManager: DataStateManager
+    
+    weak var delegate: EventListDelegate?
     
     let input: EventListViewModel.Input
     let output: EventListViewModel.Output
@@ -68,6 +71,14 @@ final class EventListViewModel: ViewModelType {
             endRefreshing: endRefreshing,
             items: response.elements.asDriver(onErrorJustReturn: [])
         )
+        
+        setUp()
+    }
+    
+    private func setUp() {
+        input.selectedModel.subscribe(onNext: { [weak self] (item) in
+            self?.delegate?.didSelect(item.event)
+        }).disposed(by: disposeBag)
     }
 }
 
