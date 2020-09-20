@@ -20,6 +20,6 @@ class BaseLabel: UILabel {
     }
     
     func setUp() {
-        
+        textColor = Theme.Colors.Texts.primary
     }
 }
