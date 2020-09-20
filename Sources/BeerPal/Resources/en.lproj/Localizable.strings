@@ -32,6 +32,7 @@
 "event.type.other" = "❓Other";
 "event.type.seminar" = "🎓Seminar";
 "event.type.tasting" = "👅Tasting";
+"event.details.missing.price" = "Free";
 
 // MARK: - Tabs
 "tabs.beers" = "Beers";
