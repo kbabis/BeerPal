@@ -10,6 +10,7 @@ import Foundation
 
 class ExtendableLabel: BaseLabel {
     override func setUp() {
+        super.setUp()
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
     }

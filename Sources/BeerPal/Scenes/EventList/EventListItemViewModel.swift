@@ -9,13 +9,13 @@
 import UIKit
 
 final class EventListItemViewModel {
-    private let event: Event
+    let event: Event
     
-    var id: String { return event.id }
-    var name: String { return event.name }
-    var imageURLString: String { return event.images.medium }
-    var date: String { return prepareDisplayableDate(from: event.startDate) }
-    var address: String { return String(format: "%@, %@", (event.locality ?? event.region), event.country.displayName) }
+    var id: String { event.id }
+    var name: String { event.name }
+    var imageURLString: String { event.images.medium }
+    var date: String { event.startDate?.presentableFormat ?? "" }
+    var address: String { String(format: "%@, %@", (event.locality ?? event.region), event.country.displayName) }
     var tags: [Tag] {
         return [
             (name: event.type.displayedName, color: .systemBlue),
@@ -25,14 +25,6 @@ final class EventListItemViewModel {
     
     init(with event: Event) {
         self.event = event
-    }
-    
-    private func prepareDisplayableDate(from date: Date?) -> String {
-        guard let date = date else { return "" }
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d, yyyy"
-        return formatter.string(from: date)
     }
 }
 

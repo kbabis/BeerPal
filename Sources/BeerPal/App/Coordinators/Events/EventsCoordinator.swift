@@ -22,10 +22,23 @@ final class EventsCoordinator: NavigationCoordinator {
     }
 }
 
+extension EventsCoordinator: EventListDelegate {
+    func didSelect(_ event: Event) {
+        showDetails(of: event)
+    }
+}
+
 extension EventsCoordinator {
     private func showEventList() {
         let viewModel = EventListViewModel(dependencies: dependencies)
+        viewModel.delegate = self
         let viewController = EventListViewController(viewModel: viewModel)
+        navigationController.show(viewController, sender: self)
+    }
+    
+    private func showDetails(of event: Event) {
+        let viewModel = EventDetailsViewModel(from: event)
+        let viewController = EventDetailsViewController(viewModel: viewModel)
         navigationController.show(viewController, sender: self)
     }
 }

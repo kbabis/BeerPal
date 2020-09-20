@@ -18,6 +18,15 @@
 		E6338936250ED552002CFB35 /* BreweryDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6338935250ED552002CFB35 /* BreweryDependencies.swift */; };
 		E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639ECD1250596280046E8E9 /* BaseLabel.swift */; };
 		E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639ECD3250596B00046E8E9 /* BaseButton.swift */; };
+		E64C0E98251774A000A605A1 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E97251774A000A605A1 /* EventDetailsViewModel.swift */; };
+		E64C0E9C2517772200A605A1 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E9B2517772200A605A1 /* Date+Format.swift */; };
+		E64C0E9E2517806C00A605A1 /* String+AppendLn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */; };
+		E64C0EA02517A11500A605A1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */; };
+		E64C0EA22517A33400A605A1 /* EventListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA12517A33400A605A1 /* EventListDelegate.swift */; };
+		E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */; };
+		E64C0EA62517F3A600A605A1 /* EventDetailsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */; };
+		E64C0EA92517F99C00A605A1 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */; };
+		E64C0EAB2517FA4200A605A1 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */; };
 		E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE843250FDDB300F6B305 /* HasNetworking.swift */; };
 		E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */; };
 		E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */; };
@@ -83,6 +92,10 @@
 		E6B98FCF24F8602C00F23124 /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */; };
 		E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD124F8613600F23124 /* URLBuilder.swift */; };
 		E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B98FD324F861AF00F23124 /* AppConfig.swift */; };
+		E6BCBA582516BE820027D9CD /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCBA572516BE820027D9CD /* EventDetailsView.swift */; };
+		E6BCBA5A2516C6410027D9CD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCBA592516C6410027D9CD /* MapView.swift */; };
+		E6BCBA5C2516C9BF0027D9CD /* RichLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCBA5B2516C9BF0027D9CD /* RichLinkView.swift */; };
+		E6BCBA5E2516CEB20027D9CD /* DetailsFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCBA5D2516CEB20027D9CD /* DetailsFieldView.swift */; };
 		E6C7109E24F9AF900060A4C3 /* JSONTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7109D24F9AF900060A4C3 /* JSONTestable.swift */; };
 		E6C710A024F9B0B50060A4C3 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7109F24F9B0B50060A4C3 /* Ticket.swift */; };
 		E6C710A224F9B2880060A4C3 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C710A124F9B2880060A4C3 /* ResponseMock.swift */; };
@@ -138,6 +151,15 @@
 		E6338935250ED552002CFB35 /* BreweryDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDependencies.swift; sourceTree = "<group>"; };
 		E639ECD1250596280046E8E9 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		E639ECD3250596B00046E8E9 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		E64C0E97251774A000A605A1 /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		E64C0E9B2517772200A605A1 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AppendLn.swift"; sourceTree = "<group>"; };
+		E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		E64C0EA12517A33400A605A1 /* EventListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListDelegate.swift; sourceTree = "<group>"; };
+		E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveDetailsFieldView.swift; sourceTree = "<group>"; };
+		E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsItemViewModel.swift; sourceTree = "<group>"; };
+		E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		E64FE843250FDDB300F6B305 /* HasNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNetworking.swift; sourceTree = "<group>"; };
 		E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
@@ -209,6 +231,10 @@
 		E6B98FCE24F8602C00F23124 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		E6B98FD124F8613600F23124 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		E6B98FD324F861AF00F23124 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		E6BCBA572516BE820027D9CD /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		E6BCBA592516C6410027D9CD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E6BCBA5B2516C9BF0027D9CD /* RichLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLinkView.swift; sourceTree = "<group>"; };
+		E6BCBA5D2516CEB20027D9CD /* DetailsFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFieldView.swift; sourceTree = "<group>"; };
 		E6C7109D24F9AF900060A4C3 /* JSONTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTestable.swift; sourceTree = "<group>"; };
 		E6C7109F24F9B0B50060A4C3 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		E6C710A124F9B2880060A4C3 /* ResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
@@ -307,10 +333,20 @@
 				E639ECD1250596280046E8E9 /* BaseLabel.swift */,
 				E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */,
 				E6D098762513628D00FE4EC3 /* PopUpView.swift */,
+				E6BCBA5B2516C9BF0027D9CD /* RichLinkView.swift */,
 				E6AD18C7250E34AF00152842 /* TagView.swift */,
 				E6552CAF2513FF3F00F58554 /* TableViewAnimations */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E64C0EA72517F98800A605A1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */,
+				E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E6552CAF2513FF3F00F58554 /* TableViewAnimations */ = {
@@ -500,7 +536,9 @@
 		E6AAD7E1250C3DC500F836AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E64C0E9B2517772200A605A1 /* Date+Format.swift */,
 				E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */,
+				E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */,
 				E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */,
 				E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */,
 				E66362DE250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift */,
@@ -517,6 +555,7 @@
 				E6AC142125166D59000AECB9 /* EventListViewController.swift */,
 				E6AC142525167533000AECB9 /* EventListViewModel.swift */,
 				E6AC141A25165468000AECB9 /* View */,
+				E64C0EA12517A33400A605A1 /* EventListDelegate.swift */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -548,6 +587,28 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		E6AC142E2516BD27000AECB9 /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */,
+				E64C0E97251774A000A605A1 /* EventDetailsViewModel.swift */,
+				E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */,
+				E6AC142F2516BD33000AECB9 /* View */,
+			);
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		E6AC142F2516BD33000AECB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6BCBA5D2516CEB20027D9CD /* DetailsFieldView.swift */,
+				E6BCBA572516BE820027D9CD /* EventDetailsView.swift */,
+				E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */,
+				E6BCBA592516C6410027D9CD /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E6AD514624F712BD005D0A08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +638,7 @@
 			children = (
 				E6A850D025084B1A0095CD54 /* BeerList */,
 				E6AAD7D2250AE81200F836AF /* BreweryList */,
+				E6AC142E2516BD27000AECB9 /* EventDetails */,
 				E6AC141225164633000AECB9 /* EventList */,
 			);
 			path = Scenes;
@@ -689,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				E6F5DF7724FD704700E8B7F8 /* Architecture */,
+				E64C0EA72517F98800A605A1 /* Helpers */,
 				E639ECD0250596140046E8E9 /* UI */,
 			);
 			path = Components;
@@ -1014,6 +1077,8 @@
 				E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
+				E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */,
+				E64C0E9C2517772200A605A1 /* Date+Format.swift in Sources */,
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
 				E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */,
 				E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */,
@@ -1023,10 +1088,14 @@
 				E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */,
 				E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */,
 				E6338931250ECEF9002CFB35 /* ViewModelType.swift in Sources */,
+				E64C0EA62517F3A600A605A1 /* EventDetailsItemViewModel.swift in Sources */,
 				E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */,
 				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
+				E64C0EA92517F99C00A605A1 /* NavigationHelper.swift in Sources */,
+				E6BCBA582516BE820027D9CD /* EventDetailsView.swift in Sources */,
 				E6AEDAF425098CCC004274E6 /* DecodableBool.swift in Sources */,
 				E6AAD7DC250C2CBB00F836AF /* BreweryListItemTableViewCell.swift in Sources */,
+				E64C0EA22517A33400A605A1 /* EventListDelegate.swift in Sources */,
 				E660092D24FEDA5F009B5B45 /* BaseStateView.swift in Sources */,
 				E6AEDAEF25097CCB004274E6 /* BeerListEndpoint.swift in Sources */,
 				E660093324FEF273009B5B45 /* StateManaging.swift in Sources */,
@@ -1034,11 +1103,14 @@
 				E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */,
 				E6AAD7E3250C3DE000F836AF /* UIImageView+Nuke.swift in Sources */,
 				E6AC142625167533000AECB9 /* EventListViewModel.swift in Sources */,
+				E64C0E9E2517806C00A605A1 /* String+AppendLn.swift in Sources */,
 				E639ECD4250596B00046E8E9 /* BaseButton.swift in Sources */,
 				E6AC141725164F76000AECB9 /* EventListEndpoint.swift in Sources */,
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */,
 				E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */,
+				E6BCBA5E2516CEB20027D9CD /* DetailsFieldView.swift in Sources */,
+				E64C0EA02517A11500A605A1 /* EventDetailsViewController.swift in Sources */,
 				E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */,
 				E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */,
 				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
@@ -1058,8 +1130,12 @@
 				E6AC142425166F78000AECB9 /* BaseTableViewController.swift in Sources */,
 				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
 				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
+				E64C0E98251774A000A605A1 /* EventDetailsViewModel.swift in Sources */,
+				E64C0EAB2517FA4200A605A1 /* PhoneCallHelper.swift in Sources */,
 				E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */,
+				E6BCBA5A2516C6410027D9CD /* MapView.swift in Sources */,
 				E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */,
+				E6BCBA5C2516C9BF0027D9CD /* RichLinkView.swift in Sources */,
 				E6B98FD224F8613600F23124 /* URLBuilder.swift in Sources */,
 				E6AC141C25165478000AECB9 /* EventListItemTableViewCell.swift in Sources */,
 				E69FB63024FA6607008CA896 /* TabsCoordinator.swift in Sources */,
