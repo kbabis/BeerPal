@@ -23,6 +23,10 @@
 		E64C0E9E2517806C00A605A1 /* String+AppendLn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */; };
 		E64C0EA02517A11500A605A1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */; };
 		E64C0EA22517A33400A605A1 /* EventListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA12517A33400A605A1 /* EventListDelegate.swift */; };
+		E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */; };
+		E64C0EA62517F3A600A605A1 /* EventDetailsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */; };
+		E64C0EA92517F99C00A605A1 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */; };
+		E64C0EAB2517FA4200A605A1 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */; };
 		E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE843250FDDB300F6B305 /* HasNetworking.swift */; };
 		E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */; };
 		E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */; };
@@ -152,6 +156,10 @@
 		E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AppendLn.swift"; sourceTree = "<group>"; };
 		E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		E64C0EA12517A33400A605A1 /* EventListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListDelegate.swift; sourceTree = "<group>"; };
+		E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveDetailsFieldView.swift; sourceTree = "<group>"; };
+		E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsItemViewModel.swift; sourceTree = "<group>"; };
+		E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		E64FE843250FDDB300F6B305 /* HasNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNetworking.swift; sourceTree = "<group>"; };
 		E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
@@ -330,6 +338,15 @@
 				E6552CAF2513FF3F00F58554 /* TableViewAnimations */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E64C0EA72517F98800A605A1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E64C0EA82517F99C00A605A1 /* NavigationHelper.swift */,
+				E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E6552CAF2513FF3F00F58554 /* TableViewAnimations */ = {
@@ -575,6 +592,7 @@
 			children = (
 				E64C0E9F2517A11500A605A1 /* EventDetailsViewController.swift */,
 				E64C0E97251774A000A605A1 /* EventDetailsViewModel.swift */,
+				E64C0EA52517F3A600A605A1 /* EventDetailsItemViewModel.swift */,
 				E6AC142F2516BD33000AECB9 /* View */,
 			);
 			path = EventDetails;
@@ -585,6 +603,7 @@
 			children = (
 				E6BCBA5D2516CEB20027D9CD /* DetailsFieldView.swift */,
 				E6BCBA572516BE820027D9CD /* EventDetailsView.swift */,
+				E64C0EA32517E7FD00A605A1 /* InteractiveDetailsFieldView.swift */,
 				E6BCBA592516C6410027D9CD /* MapView.swift */,
 			);
 			path = View;
@@ -732,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				E6F5DF7724FD704700E8B7F8 /* Architecture */,
+				E64C0EA72517F98800A605A1 /* Helpers */,
 				E639ECD0250596140046E8E9 /* UI */,
 			);
 			path = Components;
@@ -1057,6 +1077,7 @@
 				E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
+				E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */,
 				E64C0E9C2517772200A605A1 /* Date+Format.swift in Sources */,
 				E660092A24FED7D7009B5B45 /* ErrorStateView.swift in Sources */,
 				E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */,
@@ -1067,8 +1088,10 @@
 				E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */,
 				E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */,
 				E6338931250ECEF9002CFB35 /* ViewModelType.swift in Sources */,
+				E64C0EA62517F3A600A605A1 /* EventDetailsItemViewModel.swift in Sources */,
 				E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */,
 				E660092F24FEE080009B5B45 /* LoadingStateView.swift in Sources */,
+				E64C0EA92517F99C00A605A1 /* NavigationHelper.swift in Sources */,
 				E6BCBA582516BE820027D9CD /* EventDetailsView.swift in Sources */,
 				E6AEDAF425098CCC004274E6 /* DecodableBool.swift in Sources */,
 				E6AAD7DC250C2CBB00F836AF /* BreweryListItemTableViewCell.swift in Sources */,
@@ -1108,6 +1131,7 @@
 				E6AEDAF12509836C004274E6 /* BeerListResponseModel.swift in Sources */,
 				E6AEDAEC25097C14004274E6 /* API.swift in Sources */,
 				E64C0E98251774A000A605A1 /* EventDetailsViewModel.swift in Sources */,
+				E64C0EAB2517FA4200A605A1 /* PhoneCallHelper.swift in Sources */,
 				E6AC141525164AED000AECB9 /* EventListResponseModel.swift in Sources */,
 				E6BCBA5A2516C6410027D9CD /* MapView.swift in Sources */,
 				E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */,

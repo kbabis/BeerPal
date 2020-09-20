@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailsFieldView: UIView {
+class DetailsFieldView: UIView {
     private let horizontalSpacing: CGFloat = 5
     private let verticalSpacing: CGFloat = 10
     

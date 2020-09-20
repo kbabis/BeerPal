@@ -13,16 +13,17 @@ final class EventDetailsView: UIView {
     private let verticalSpacing: CGFloat = 10
     
     private let scrollView = UIScrollView()
-    private let mapView = MapView()
     private let contentContainerView = UIView()
     private let logoImageView = UIImageView()
     private let nameLabel = NameLabel()
     private let dateField = DetailsFieldView()
-    private let addressField = DetailsFieldView()
     private let fieldsStackView = UIStackView()
     private let descriptionLabel = ExtendableLabel()
+    private(set) var phoneField: InteractiveDetailsFieldView?
+    let addressField = InteractiveDetailsFieldView()
+    let mapView = MapView()
     
-    init(using event: EventDetailsViewModel, frame: CGRect = .zero) {
+    init(using event: EventDetailsItemViewModel, frame: CGRect = .zero) {
         super.init(frame: frame)
         setUp()
         fill(with: event)
@@ -32,7 +33,7 @@ final class EventDetailsView: UIView {
         fatalError("init(coder:) is not supported")
     }
     
-    private func fill(with event: EventDetailsViewModel) {
+    private func fill(with event: EventDetailsItemViewModel) {
         nameLabel.text = event.name
         dateField.set(text: event.dateInfo, icon: R.image.tabEvent())
         addressField.set(text: event.fullAddress, icon: R.image.location())
@@ -46,8 +47,8 @@ final class EventDetailsView: UIView {
         }
         
         if let phoneNumber = event.phoneNumber {
-            let phoneField = DetailsFieldView(text: phoneNumber, icon: R.image.phone())
-            fieldsStackView.addArrangedSubview(phoneField)
+            phoneField = InteractiveDetailsFieldView(text: phoneNumber, icon: R.image.phone())
+            fieldsStackView.addArrangedSubview(phoneField!)
         }
         
         if let url = event.websiteURL {
@@ -141,15 +142,14 @@ extension EventDetailsView {
         contentContainerView.addSubview(addressField)
         
         addressField.snp.makeConstraints { (make) in
-            make.top.equalTo(dateField.snp.bottom).offset(verticalSpacing)
+            make.top.equalTo(dateField.snp.bottom)
             make.left.right.equalTo(dateField)
         }
     }
     
     private func setUpFieldsStackView() {
         fieldsStackView.axis = .vertical
-        fieldsStackView.distribution = .equalSpacing
-        fieldsStackView.spacing = verticalSpacing
+        fieldsStackView.distribution = .fill
         contentContainerView.addSubview(fieldsStackView)
         
         fieldsStackView.snp.makeConstraints { (make) in
