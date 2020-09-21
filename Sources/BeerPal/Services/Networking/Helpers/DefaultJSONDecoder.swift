@@ -14,5 +14,6 @@ final class DefaultJSONDecoder: JSONDecoder {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
         dateDecodingStrategy = .formatted(dateFormatter)
+        keyDecodingStrategy = .convertFromSnakeCase
     }
 }
