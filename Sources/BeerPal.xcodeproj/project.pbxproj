@@ -29,6 +29,7 @@
 		E64C0EAB2517FA4200A605A1 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */; };
 		E64FE844250FDDB300F6B305 /* HasNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE843250FDDB300F6B305 /* HasNetworking.swift */; };
 		E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */; };
+		E651BA5525196D3F00955F37 /* URL+QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651BA5425196D3F00955F37 /* URL+QueryItem.swift */; };
 		E6552CB12513FF4F00F58554 /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */; };
 		E6552CB32514014500F58554 /* TableViewAnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6552CB22514014500F58554 /* TableViewAnimationFactory.swift */; };
 		E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660092024FED3D4009B5B45 /* BaseViewController.swift */; };
@@ -162,6 +163,7 @@
 		E64C0EAA2517FA4200A605A1 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		E64FE843250FDDB300F6B305 /* HasNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNetworking.swift; sourceTree = "<group>"; };
 		E64FE845250FF0D400F6B305 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		E651BA5425196D3F00955F37 /* URL+QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryItem.swift"; sourceTree = "<group>"; };
 		E6552CB02513FF4F00F58554 /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
 		E6552CB22514014500F58554 /* TableViewAnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimationFactory.swift; sourceTree = "<group>"; };
 		E660092024FED3D4009B5B45 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */,
 				E66362DE250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift */,
 				E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */,
+				E651BA5425196D3F00955F37 /* URL+QueryItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1076,6 +1079,7 @@
 				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
 				E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
+				E651BA5525196D3F00955F37 /* URL+QueryItem.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
 				E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */,
 				E64C0E9C2517772200A605A1 /* Date+Format.swift in Sources */,
