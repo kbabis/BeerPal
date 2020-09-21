@@ -16,7 +16,7 @@ final class BeerListRepository {
 
     init(
         networkingService: Networking,
-        cache: CacheWrapper<String, [Beer]> = CacheWrapper(base: Cache<String, [Beer]>(maximumEntryCount: 10))
+        cache: CacheWrapper<String, [Beer]> = CacheWrapper(base: Cache<String, [Beer]>(maximumEntryCount: 15))
     ) {
         self.networkingService = networkingService
         self.cache = cache

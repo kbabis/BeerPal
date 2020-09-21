@@ -351,6 +351,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E651BA5625196E0000955F37 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */,
+				E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */,
+				E66362DE250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift */,
+				E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		E6552CAF2513FF3F00F58554 /* TableViewAnimations */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,11 +552,8 @@
 				E64C0E9B2517772200A605A1 /* Date+Format.swift */,
 				E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */,
 				E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */,
-				E6AAD7E2250C3DE000F836AF /* UIImageView+Nuke.swift */,
-				E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */,
-				E66362DE250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift */,
-				E6D0987A25136EE800FE4EC3 /* UIViewController+PopUp.swift */,
 				E651BA5425196D3F00955F37 /* URL+QueryItem.swift */,
+				E651BA5625196E0000955F37 /* UI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
