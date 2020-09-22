@@ -63,7 +63,15 @@ extension TabsCoordinator {
 
 extension TabsCoordinator {
     private func setUpBeersCoordinator() {
-        
+        let tabNavigationController = createTabNavigationController(
+            title: R.string.localizable.tabsBeers(),
+            image: R.image.tabBeer())
+        let coordinator = BeersCoordinator(
+            navigationController: tabNavigationController,
+            dependencies: BeersDependencies(from: dependencies)
+        )
+        coordinator.start()
+        store(coordinator, as: .beers)
     }
     
     private func setUpBreweriesCoordinator() {
