@@ -13,7 +13,7 @@ final class EventListItemTableViewCell: UITableViewCell {
     private let verticalSpacing: CGFloat = 10
     
     private var dateLabel = BaseCellSubtitleLabel()
-    private var contentContainerView = UIView()
+    private var contentContainerView = ContainerView(cornerRadius: 5)
     private var logoImageView = UIImageView()
     private var nameLabel = BaseCellTitleLabel()
     private var addressLabel = BaseCellSubtitleLabel()
@@ -79,7 +79,6 @@ extension EventListItemTableViewCell {
     }
     
     private func setUpContentContainerView() {
-        contentContainerView.backgroundColor = Theme.Colors.Background.secondary
         addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in

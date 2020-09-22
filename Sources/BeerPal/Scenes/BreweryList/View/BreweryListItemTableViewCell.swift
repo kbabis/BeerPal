@@ -12,7 +12,7 @@ final class BreweryListItemTableViewCell: UITableViewCell {
     private let horizontalSpacing: CGFloat = 20
     private let verticalSpacing: CGFloat = 10
     
-    private var contentContainerView = UIView()
+    private var contentContainerView = ContainerView(cornerRadius: 5)
     private var logoImageView = UIImageView()
     private var nameLabel = BaseCellTitleLabel()
     private var establishmentDateLabel = BaseCellSubtitleLabel()
@@ -72,7 +72,6 @@ extension BreweryListItemTableViewCell {
     }
     
     private func setUpContentContainerView() {
-        contentContainerView.backgroundColor = Theme.Colors.Background.secondary
         addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in
