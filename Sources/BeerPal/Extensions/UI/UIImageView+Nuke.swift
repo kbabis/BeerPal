@@ -10,26 +10,27 @@ import UIKit
 import Nuke
 
 extension UIImageView {
-    enum ImageSize: CGFloat {
-        case small = 25
-        case medium = 50
-        case big = 100
+    func loadImage(from urlString: String?, estimatedSize: CGSize? = nil) {
+        guard let urlString = urlString, let imageURL = URL(string: urlString) else { return }
+        
+        loadImage(from: imageURL, isCircular: false)
     }
     
-    func loadImage(from url: URL, size: ImageSize = .medium) {
-        let request = ImageRequest(url: url, processors: [
-            ImageProcessors.Resize(size: .init(width: size.rawValue, height: size.rawValue)),
-            ImageProcessors.Circle()
-        ])
+    func loadCircularImage(from urlString: String?, estimatedSize: CGSize = .init(width: 50, height: 50)) {
+        guard let urlString = urlString, let imageURL = URL(string: urlString) else { return }
         
+        loadImage(from: imageURL, estimatedSize: estimatedSize, isCircular: true)
+    }
+    
+    private func loadImage(from url: URL, estimatedSize: CGSize? = nil, isCircular: Bool) {
+        var processors = [ImageProcessing]()
+        
+        if let size = estimatedSize { processors.append(ImageProcessors.Resize(size: size)) }
+        if isCircular { processors.append(ImageProcessors.Circle()) }
+        
+        let request = ImageRequest(url: url, processors: processors)
         let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.5))
         
         Nuke.loadImage(with: request, options: options, into: self)
-    }
-    
-    func loadImage(from urlString: String?, size: ImageSize = .medium) {
-        guard let urlString = urlString, let imageURL = URL(string: urlString) else { return }
-        
-        loadImage(from: imageURL, size: size)
     }
 }

@@ -35,7 +35,7 @@ final class BreweryListItemTableViewCell: UITableViewCell {
         nameLabel.text = item?.name
         establishmentDateLabel.text = item?.established
         setTags(for: item)
-        logoImageView.loadImage(from: item?.images?.medium)
+        logoImageView.loadCircularImage(from: item?.images?.medium)
     }
     
     private func setTags(for brewery: Brewery?) {

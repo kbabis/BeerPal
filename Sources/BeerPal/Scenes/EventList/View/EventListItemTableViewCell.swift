@@ -39,7 +39,7 @@ final class EventListItemTableViewCell: UITableViewCell {
         nameLabel.text = event.name
         addressLabel.text = event.address
         setTags(event.tags)
-        logoImageView.loadImage(from: event.imageURLString)
+        logoImageView.loadCircularImage(from: event.imageURLString)
     }
     
     private func setTags(_ tags: [EventListItemViewModel.Tag]) {
