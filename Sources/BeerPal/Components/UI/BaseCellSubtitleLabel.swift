@@ -10,7 +10,8 @@ import UIKit
 
 class BaseCellSubtitleLabel: ExtendableLabel {
     override func setUp() {
-        font = Theme.Fonts.getFont(ofSize: .xxSmall, weight: .light)
+        super.setUp()
+        font = Theme.Fonts.getFont(ofSize: .small, weight: .light)
         textColor = Theme.Colors.Texts.secondary
         textAlignment = .left
     }
