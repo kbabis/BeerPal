@@ -10,14 +10,14 @@ import RxSwift
 import RxCocoa
 
 final class BreweryListViewController: BaseTableViewController {
-    private var breweryListView: BreweryListView!
+    private var breweryListView: ListView!
     private let viewModel: BreweryListViewModel
     override var hasContent: Bool {
         return breweryListView.tableView.numberOfRows(inSection: 0) > 0
     }
     
     override func loadView() {
-        breweryListView = BreweryListView()
+        breweryListView = ListView()
         view = breweryListView
     }
     
