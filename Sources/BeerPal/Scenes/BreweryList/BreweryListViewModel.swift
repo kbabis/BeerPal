@@ -7,7 +7,8 @@
 //
 
 import RxSwift
-import RxCocoa
+import struct RxCocoa.Driver
+import class RxRelay.PublishRelay
 
 final class BreweryListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()

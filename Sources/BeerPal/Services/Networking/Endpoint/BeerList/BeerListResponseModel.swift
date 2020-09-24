@@ -19,7 +19,7 @@ struct Beer: Codable {
     let ibu: Double?
     let targetFg: Int
     let targetOg: Double
-    let ebc: Int?
+    let ebc: Double?
     let srm: Double?
     let ph: Double?
     let attenuationLevel: Double

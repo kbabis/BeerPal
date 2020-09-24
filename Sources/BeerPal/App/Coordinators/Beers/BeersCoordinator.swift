@@ -24,10 +24,9 @@ final class BeersCoordinator: NavigationCoordinator {
 
 extension BeersCoordinator {
     private func showBeerList() {
-//        let viewModel = BeerListViewModel(dependencies: dependencies)
-//        let viewController = BeerListViewController(viewModel: viewModel)
-//        navigationController.show(viewController, sender: self)
-        navigationController.show(UIViewController(), sender: self)
+        let viewModel = BeerListViewModel(dependencies: dependencies)
+        let viewController = BeerListViewController(viewModel: viewModel)
+        navigationController.show(viewController, sender: self)
     }
 }
 
