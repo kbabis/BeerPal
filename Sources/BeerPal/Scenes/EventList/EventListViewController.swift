@@ -9,14 +9,14 @@
 import RxSwift
 
 final class EventListViewController: BaseTableViewController {
-    private var eventListView: EventListView!
+    private var eventListView: ListView!
     private let viewModel: EventListViewModel
     override var hasContent: Bool {
         return eventListView.tableView.numberOfRows(inSection: 0) > 0
     }
     
     override func loadView() {
-        eventListView = EventListView()
+        eventListView = ListView()
         view = eventListView
     }
     

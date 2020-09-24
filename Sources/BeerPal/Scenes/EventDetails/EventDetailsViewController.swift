@@ -17,7 +17,6 @@ final class EventDetailsViewController: UIViewController {
     private let shareButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
     private var eventDetailsView: EventDetailsView!
     private let viewModel: EventDetailsViewModel
-    private var urlToShare: URL?
     
     override func loadView() {
         eventDetailsView = EventDetailsView(using: viewModel.output.itemViewModel)
@@ -59,14 +58,11 @@ final class EventDetailsViewController: UIViewController {
         viewModel.output.shareURL
             .filter { $0 != nil }
             .drive(onNext: { [weak self] (url) in
-                self?.urlToShare = url
-                self?.share()
+                self?.share(url: url!)
             }).disposed(by: disposeBag)
     }
     
-    private func share() {
-        guard let url = urlToShare else { return }
-        
+    private func share(url: URL) {
         let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
     }

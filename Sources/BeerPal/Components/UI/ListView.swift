@@ -1,14 +1,14 @@
 //
-//  EventListView.swift
+//  ListView.swift
 //  BeerPal
 //
-//  Created by Krzysztof Babis on 19.09.2020 r..
+//  Created by Krzysztof Babis on 23.09.2020 r..
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
 import UIKit
 
-final class EventListView: UIView {
+final class ListView: UIView {
     let tableView = UITableView()
     let refreshControl = UIRefreshControl()
     

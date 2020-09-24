@@ -38,7 +38,7 @@ final class EventDetailsView: UIView {
         dateField.set(text: event.dateInfo, icon: R.image.tabEvent())
         addressField.set(text: event.fullAddress, icon: R.image.location())
         descriptionLabel.text = event.description
-        logoImageView.loadImage(from: event.imageURLString)
+        logoImageView.loadCircularImage(from: event.imageURLString, estimatedSize: .init(width: 100, height: 100))
         mapView.setFocusPoint(latitude: event.coordinates.latitude, longitude: event.coordinates.longitude)
         
         if let price = event.priceFormatted {

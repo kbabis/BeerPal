@@ -15,6 +15,9 @@
 "state.error.default.title" = "Oops, your connection seems off...";
 "state.error.default.message" = "Keep calm, grab a bottle and tap below button to try again";
 
+// MARK: - Beers
+"beer.list.title" = "Beers";
+
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
 

@@ -15,15 +15,3 @@ final class RequestInterceptor: RequestAdapter {
         return modifiedUrlRequest
     }
 }
-
-private extension URL {
-    mutating func addQueryItem(name: String, value: String?) {
-        guard var components = URLComponents(string: absoluteString) else { return }
-
-        var queryItems: [URLQueryItem] = components.queryItems ?? []
-        let queryItem = URLQueryItem(name: name, value: value)
-        queryItems.append(queryItem)
-        components.queryItems = queryItems
-        self = components.url!
-    }
-}
