@@ -55,11 +55,16 @@
 		E6A34E2F251AACB200DBE839 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A34E2E251AACB200DBE839 /* ContainerView.swift */; };
 		E6A34E32251AAFD400DBE839 /* BeersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A34E31251AAFD400DBE839 /* BeersCoordinator.swift */; };
 		E6A34E34251AAFDC00DBE839 /* BeersDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A34E33251AAFDC00DBE839 /* BeersDependencies.swift */; };
+		E6A34E38251AB85D00DBE839 /* BeerListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A34E37251AB85D00DBE839 /* BeerListItemTableViewCell.swift */; };
+		E6A34E3A251AB9AB00DBE839 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A34E39251AB9AB00DBE839 /* BeerListViewController.swift */; };
 		E6A850C825083E4C0095CD54 /* CachingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C725083E4C0095CD54 /* CachingProtocol.swift */; };
 		E6A850CA25083E570095CD54 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850C925083E570095CD54 /* Cache.swift */; };
 		E6A850CD250847B30095CD54 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CC250847B30095CD54 /* CacheTests.swift */; };
 		E6A850CF250847BC0095CD54 /* MockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850CE250847BC0095CD54 /* MockCache.swift */; };
 		E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A850D125084B270095CD54 /* BeerListRepository.swift */; };
+		E6A9C0C4251BDC4B0070F8AF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A9C0C3251BDC4B0070F8AF /* ListView.swift */; };
+		E6A9C0C6251BE06B0070F8AF /* BeerListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A9C0C5251BE06B0070F8AF /* BeerListItemViewModel.swift */; };
+		E6A9C0C8251C09DA0070F8AF /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A9C0C7251C09DA0070F8AF /* BeerListViewModel.swift */; };
 		E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D3250AE82A00F836AF /* BreweryListRepository.swift */; };
 		E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D6250C21C400F836AF /* BreweryListResponseModel.swift */; };
 		E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAD7D8250C27DE00F836AF /* BreweryListEndpoint.swift */; };
@@ -72,7 +77,6 @@
 		E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141825165264000AECB9 /* EventListRepository.swift */; };
 		E6AC141C25165478000AECB9 /* EventListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */; };
 		E6AC141E251659B3000AECB9 /* EventListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */; };
-		E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC141F25166BD4000AECB9 /* EventListView.swift */; };
 		E6AC142225166D59000AECB9 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142125166D59000AECB9 /* EventListViewController.swift */; };
 		E6AC142425166F78000AECB9 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142325166F78000AECB9 /* BaseTableViewController.swift */; };
 		E6AC142625167533000AECB9 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142525167533000AECB9 /* EventListViewModel.swift */; };
@@ -81,7 +85,6 @@
 		E6AC142D2516B587000AECB9 /* DecodableSpecialDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC142C2516B587000AECB9 /* DecodableSpecialDate.swift */; };
 		E6AD18C8250E34AF00152842 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C7250E34AF00152842 /* TagView.swift */; };
 		E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */; };
-		E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18CB250EC07F00152842 /* BreweryListView.swift */; };
 		E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18D0250EC34E00152842 /* BreweryListViewController.swift */; };
 		E6AD18D3250EC95D00152842 /* BreweryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD18D2250EC95D00152842 /* BreweryListViewModel.swift */; };
 		E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AEDAE825095B72004274E6 /* CacheWrapper.swift */; };
@@ -198,11 +201,16 @@
 		E6A34E2E251AACB200DBE839 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		E6A34E31251AAFD400DBE839 /* BeersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCoordinator.swift; sourceTree = "<group>"; };
 		E6A34E33251AAFDC00DBE839 /* BeersDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersDependencies.swift; sourceTree = "<group>"; };
+		E6A34E37251AB85D00DBE839 /* BeerListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListItemTableViewCell.swift; sourceTree = "<group>"; };
+		E6A34E39251AB9AB00DBE839 /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
 		E6A850C725083E4C0095CD54 /* CachingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingProtocol.swift; sourceTree = "<group>"; };
 		E6A850C925083E570095CD54 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		E6A850CC250847B30095CD54 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		E6A850CE250847BC0095CD54 /* MockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCache.swift; sourceTree = "<group>"; };
 		E6A850D125084B270095CD54 /* BeerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListRepository.swift; sourceTree = "<group>"; };
+		E6A9C0C3251BDC4B0070F8AF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		E6A9C0C5251BE06B0070F8AF /* BeerListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListItemViewModel.swift; sourceTree = "<group>"; };
+		E6A9C0C7251C09DA0070F8AF /* BeerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewModel.swift; sourceTree = "<group>"; };
 		E6AAD7D3250AE82A00F836AF /* BreweryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListRepository.swift; sourceTree = "<group>"; };
 		E6AAD7D6250C21C400F836AF /* BreweryListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListResponseModel.swift; sourceTree = "<group>"; };
 		E6AAD7D8250C27DE00F836AF /* BreweryListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListEndpoint.swift; sourceTree = "<group>"; };
@@ -215,7 +223,6 @@
 		E6AC141825165264000AECB9 /* EventListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRepository.swift; sourceTree = "<group>"; };
 		E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemTableViewCell.swift; sourceTree = "<group>"; };
 		E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemViewModel.swift; sourceTree = "<group>"; };
-		E6AC141F25166BD4000AECB9 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		E6AC142125166D59000AECB9 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		E6AC142325166F78000AECB9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		E6AC142525167533000AECB9 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
@@ -224,7 +231,6 @@
 		E6AC142C2516B587000AECB9 /* DecodableSpecialDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableSpecialDate.swift; sourceTree = "<group>"; };
 		E6AD18C7250E34AF00152842 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E6AD18C9250EB94A00152842 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
-		E6AD18CB250EC07F00152842 /* BreweryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListView.swift; sourceTree = "<group>"; };
 		E6AD18D0250EC34E00152842 /* BreweryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListViewController.swift; sourceTree = "<group>"; };
 		E6AD18D2250EC95D00152842 /* BreweryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryListViewModel.swift; sourceTree = "<group>"; };
 		E6AEDAE825095B72004274E6 /* CacheWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWrapper.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 				E639ECD1250596280046E8E9 /* BaseLabel.swift */,
 				E6A34E2E251AACB200DBE839 /* ContainerView.swift */,
 				E6D0987825136E8400FE4EC3 /* ExtendableLabel.swift */,
+				E6A9C0C3251BDC4B0070F8AF /* ListView.swift */,
 				E6D098762513628D00FE4EC3 /* PopUpView.swift */,
 				E6BCBA5B2516C9BF0027D9CD /* RichLinkView.swift */,
 				E6AD18C7250E34AF00152842 /* TagView.swift */,
@@ -501,6 +508,7 @@
 		E6A34E2B251AA79400DBE839 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6A34E37251AB85D00DBE839 /* BeerListItemTableViewCell.swift */,
 			);
 			name = View;
 			path = BeerPal/Scenes/BeerList/View;
@@ -537,7 +545,10 @@
 		E6A850D025084B1A0095CD54 /* BeerList */ = {
 			isa = PBXGroup;
 			children = (
+				E6A9C0C7251C09DA0070F8AF /* BeerListViewModel.swift */,
+				E6A9C0C5251BE06B0070F8AF /* BeerListItemViewModel.swift */,
 				E6A850D125084B270095CD54 /* BeerListRepository.swift */,
+				E6A34E39251AB9AB00DBE839 /* BeerListViewController.swift */,
 				E6A34E2B251AA79400DBE839 /* View */,
 			);
 			path = BeerList;
@@ -566,7 +577,6 @@
 		E6AAD7DA250C2CA800F836AF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E6AD18CB250EC07F00152842 /* BreweryListView.swift */,
 				E6AAD7DB250C2CBB00F836AF /* BreweryListItemTableViewCell.swift */,
 			);
 			path = View;
@@ -587,12 +597,12 @@
 		E6AC141225164633000AECB9 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
+				E64C0EA12517A33400A605A1 /* EventListDelegate.swift */,
 				E6AC141D251659B3000AECB9 /* EventListItemViewModel.swift */,
 				E6AC141825165264000AECB9 /* EventListRepository.swift */,
 				E6AC142125166D59000AECB9 /* EventListViewController.swift */,
 				E6AC142525167533000AECB9 /* EventListViewModel.swift */,
 				E6AC141A25165468000AECB9 /* View */,
-				E64C0EA12517A33400A605A1 /* EventListDelegate.swift */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -610,7 +620,6 @@
 			isa = PBXGroup;
 			children = (
 				E6AC141B25165478000AECB9 /* EventListItemTableViewCell.swift */,
-				E6AC141F25166BD4000AECB9 /* EventListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1103,6 +1112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D098772513628D00FE4EC3 /* PopUpView.swift in Sources */,
+				E6A9C0C8251C09DA0070F8AF /* BeerListViewModel.swift in Sources */,
 				E6AAD7DE250C365A00F836AF /* BaseCellTitleLabel.swift in Sources */,
 				E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */,
 				E6D0987B25136EE800FE4EC3 /* UIViewController+PopUp.swift in Sources */,
@@ -1110,9 +1120,11 @@
 				E6D0987925136E8400FE4EC3 /* ExtendableLabel.swift in Sources */,
 				E660092724FED73A009B5B45 /* DataReloading.swift in Sources */,
 				E60086A124FC233D005173DC /* AppDependencies.swift in Sources */,
+				E6A34E38251AB85D00DBE839 /* BeerListItemTableViewCell.swift in Sources */,
 				E660093124FEE213009B5B45 /* EmptyStateView.swift in Sources */,
 				E6AC142B2516A34B000AECB9 /* EventsDependencies.swift in Sources */,
 				E6EF14BE2506CE2200560839 /* Theme+Colors.swift in Sources */,
+				E6A34E3A251AB9AB00DBE839 /* BeerListViewController.swift in Sources */,
 				E651BA5525196D3F00955F37 /* URL+QueryItem.swift in Sources */,
 				E6A850D225084B270095CD54 /* BeerListRepository.swift in Sources */,
 				E64C0EA42517E7FD00A605A1 /* InteractiveDetailsFieldView.swift in Sources */,
@@ -1152,16 +1164,17 @@
 				E6BCBA5E2516CEB20027D9CD /* DetailsFieldView.swift in Sources */,
 				E64C0EA02517A11500A605A1 /* EventDetailsViewController.swift in Sources */,
 				E6AD18D1250EC34E00152842 /* BreweryListViewController.swift in Sources */,
+				E6A9C0C4251BDC4B0070F8AF /* ListView.swift in Sources */,
 				E6AAD7D4250AE82A00F836AF /* BreweryListRepository.swift in Sources */,
 				E6A850CA25083E570095CD54 /* Cache.swift in Sources */,
 				E6AC142225166D59000AECB9 /* EventListViewController.swift in Sources */,
 				E69FB62C24FA6375008CA896 /* CoordinatorProtocol.swift in Sources */,
 				E6338936250ED552002CFB35 /* BreweryDependencies.swift in Sources */,
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
+				E6A9C0C6251BE06B0070F8AF /* BeerListItemViewModel.swift in Sources */,
 				E660092324FED570009B5B45 /* StateRendering.swift in Sources */,
 				E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */,
 				E66362DF250D83AA008ABFF2 /* UITableViewCell+ReuseId.swift in Sources */,
-				E6AD18CC250EC07F00152842 /* BreweryListView.swift in Sources */,
 				E6D16F9824F9987A008C1BD8 /* NetworkingService.swift in Sources */,
 				E6AD18C8250E34AF00152842 /* TagView.swift in Sources */,
 				E6EF14C02506CE3800560839 /* Theme+Fonts.swift in Sources */,
@@ -1184,7 +1197,6 @@
 				E6AEDAE925095B72004274E6 /* CacheWrapper.swift in Sources */,
 				E69FB63224FA671A008CA896 /* TabsDependencies.swift in Sources */,
 				E6AAD7D9250C27DE00F836AF /* BreweryListEndpoint.swift in Sources */,
-				E6AC142025166BD4000AECB9 /* EventListView.swift in Sources */,
 				E6AD18D3250EC95D00152842 /* BreweryListViewModel.swift in Sources */,
 				E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */,
 				E6AC141925165264000AECB9 /* EventListRepository.swift in Sources */,
