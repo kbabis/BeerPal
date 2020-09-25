@@ -24,6 +24,7 @@ struct BeerDetailsItemViewModel {
     var method: [BrewageMethodStep] { makeMethodSteps(from: beer.method) }
     var ingredientsSections: [Section<String>] { makeSections(for: beer.ingredients) }
     var foodPairing: [String] { beer.foodPairing }
+    var imageURL: URL? { beer.imageUrl?.url }
     
     private func makeSections(for ingredients: Beer.Ingredients) -> [Section<String>] {
         let maltItems = ingredients.malt.map {
@@ -38,11 +39,11 @@ struct BeerDetailsItemViewModel {
             items: maltItems)
         
         let hopItems = ingredients.hops.map {
-            String(format: "%@ of %@ %@ %@",
+            String(format: "%@ of %@ %@ (%@)",
                    $0.amount.description,
                    $0.name,
                    $0.attribute.description,
-                   $0.add.description)
+                   $0.add)
         }
         
         let hopSection = Section<String>(
@@ -96,36 +97,29 @@ private extension Double {
     }
 }
 
+private extension String {
+    var url: URL? {
+        return URL(string: self)
+    }
+}
+
 private extension Beer.Measure {
     var description: String {
         return String(format: "%.1d %@", value, unit)
     }
 }
 
-private extension Beer.HopAdditionMoment {
-    var description: String {
-        switch self {
-        case .start:
-            return R.string.localizable.beerDetailsHopAdditionStart()
-        case .middle:
-            return R.string.localizable.beerDetailsHopAdditionMiddle()
-        case .end:
-            return R.string.localizable.beerDetailsHopAdditionEnd()
-        case .dryHop:
-            return R.string.localizable.beerDetailsHopAdditionDryHop()
-        }
-    }
-}
-
 private extension Beer.Attribute {
     var description: String {
         switch self {
-        case .aroma:
+        case .aroma, .aromaAlternative:
             return R.string.localizable.beerDetailsAttributeAroma()
-        case .bitter:
+        case .bitter, .bittering, .bitterAlternative:
             return R.string.localizable.beerDetailsAttributeBitterness()
-        case .flavour:
+        case .flavour, .flavourAlternative:
             return R.string.localizable.beerDetailsAttributeFlavour()
+        case .aromaBitter:
+            return R.string.localizable.beerDetailsAttributeAromaBitterness()
         }
     }
 }

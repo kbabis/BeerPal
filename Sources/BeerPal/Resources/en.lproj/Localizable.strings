@@ -22,6 +22,7 @@
 "beer.details.attribute.aroma" = "for the aroma";
 "beer.details.attribute.bitterness" = "for bitterness";
 "beer.details.attribute.flavour" = "for flavour";
+"beer.details.attribute.aroma.bitterness" = "for aroma and bitterness";
 
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";

@@ -25,8 +25,21 @@ final class BeersCoordinator: NavigationCoordinator {
 extension BeersCoordinator {
     private func showBeerList() {
         let viewModel = BeerListViewModel(dependencies: dependencies)
+        viewModel.delegate = self
         let viewController = BeerListViewController(viewModel: viewModel)
         navigationController.show(viewController, sender: self)
+    }
+    
+    private func showDetails(of beer: Beer) {
+        let viewModel = BeerDetailsItemViewModel(from: beer)
+        let viewController = BeerDetailsViewController(viewModel: viewModel)
+        navigationController.show(viewController, sender: self)
+    }
+}
+
+extension BeersCoordinator: BeerListDelegate {
+    func didSelect(_ beer: Beer) {
+        showDetails(of: beer)
     }
 }
 
