@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BeerDetailsViewController: BaseViewController {
+final class BeerDetailsViewController: UIViewController {
     private var beerDetailsView: BeerDetailsView!
     private let viewModel: BeerDetailsItemViewModel
     
@@ -24,5 +24,10 @@ final class BeerDetailsViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
     }
 }

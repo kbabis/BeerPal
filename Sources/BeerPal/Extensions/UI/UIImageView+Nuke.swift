@@ -13,7 +13,7 @@ extension UIImageView {
     func loadImage(from urlString: String?, estimatedSize: CGSize? = nil) {
         guard let urlString = urlString, let imageURL = URL(string: urlString) else { return }
         
-        loadImage(from: imageURL, isCircular: false)
+        loadImage(from: imageURL, estimatedSize: estimatedSize, isCircular: false)
     }
     
     func loadCircularImage(from urlString: String?, estimatedSize: CGSize = .init(width: 50, height: 50)) {
