@@ -13,6 +13,7 @@
 		E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600869E24FC224C005173DC /* AppCoordinator.swift */; };
 		E60086A124FC233D005173DC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60086A024FC233D005173DC /* AppDependencies.swift */; };
 		E609A77824F8731B00636D58 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609A77724F8731B00636D58 /* Endpoint.swift */; };
+		E60E5AB52522871E002BC7E2 /* BeerDetailsContributorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E5AB42522871E002BC7E2 /* BeerDetailsContributorLabel.swift */; };
 		E617036D2520F96800B62DDA /* BeerDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = E617036C2520F96800B62DDA /* BeerDetails.xib */; };
 		E617037225212A7F00B62DDA /* BeerPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617037125212A7F00B62DDA /* BeerPropertyView.swift */; };
 		E617037F252144EC00B62DDA /* BeerDetailsTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617037E252144EC00B62DDA /* BeerDetailsTitleLabel.swift */; };
@@ -164,6 +165,7 @@
 		E600869E24FC224C005173DC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E60086A024FC233D005173DC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		E609A77724F8731B00636D58 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E60E5AB42522871E002BC7E2 /* BeerDetailsContributorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsContributorLabel.swift; sourceTree = "<group>"; };
 		E617036C2520F96800B62DDA /* BeerDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerDetails.xib; sourceTree = "<group>"; };
 		E617037125212A7F00B62DDA /* BeerPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPropertyView.swift; sourceTree = "<group>"; };
 		E617037E252144EC00B62DDA /* BeerDetailsTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsTitleLabel.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				E66D6036251D319300CB0974 /* BeerDetailsView.swift */,
+				E60E5AB42522871E002BC7E2 /* BeerDetailsContributorLabel.swift */,
 				E617037125212A7F00B62DDA /* BeerPropertyView.swift */,
 				E617036C2520F96800B62DDA /* BeerDetails.xib */,
 				E617037E252144EC00B62DDA /* BeerDetailsTitleLabel.swift */,
@@ -1190,6 +1193,7 @@
 				E6A05F4224F47F27004CF43B /* AppDelegate.swift in Sources */,
 				E6338934250ED52C002CFB35 /* BreweryCoordinator.swift in Sources */,
 				E6AAD7D7250C21C400F836AF /* BreweryListResponseModel.swift in Sources */,
+				E60E5AB52522871E002BC7E2 /* BeerDetailsContributorLabel.swift in Sources */,
 				E6AAD7E0250C36A000F836AF /* BaseCellSubtitleLabel.swift in Sources */,
 				E6338931250ECEF9002CFB35 /* ViewModelType.swift in Sources */,
 				E64C0EA62517F3A600A605A1 /* EventDetailsItemViewModel.swift in Sources */,

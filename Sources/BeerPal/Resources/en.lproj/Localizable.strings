@@ -23,11 +23,11 @@
 "beer.details.attribute.bitterness" = "for bitterness";
 "beer.details.attribute.flavour" = "for flavour";
 "beer.details.attribute.aroma.bitterness" = "for aroma and bitterness";
-"beer.details.description.header" = "Characteristics";
 "beer.details.property.name.abv" = "abv";
 "beer.details.property.name.gravity" = "gravity";
 "beer.details.property.name.bitterness" = "bitterness";
-
+"beer.details.description.header" = "Characteristics";
+"beer.details.brewage.header" = "Brewage";
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
 

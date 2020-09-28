@@ -26,11 +26,11 @@ struct Theme {
         
         enum Components {
             static var background: UIColor {
-                return .systemYellow
+                return .systemOrange
             }
             
             static var foreground: UIColor {
-                return .brown
+                return .black
             }
         }
         

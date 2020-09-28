@@ -19,7 +19,7 @@ struct BeerDetailsItemViewModel {
     var ebc: String? { beer.ebc?.intValue.stringValue }
     var description: String { beer.description }
     var attenuationLevel: String { beer.attenuationLevel.stringValue + "%" }
-    var contributor: String { beer.contributedBy }
+    var contributor: String { "~ " + beer.contributedBy }
     var tips: String { beer.brewersTips }
     var method: [BrewageMethodStep] { makeMethodSteps(from: beer.method) }
     var ingredientsSections: [Section<String>] { makeSections(of: beer.ingredients) }
