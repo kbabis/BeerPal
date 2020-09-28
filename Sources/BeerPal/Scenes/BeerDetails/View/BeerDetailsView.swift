@@ -24,9 +24,7 @@ final class BeerDetailsView: UIView {
     private let colorView = BeerPropertyView()
     private let descriptionHeaderLabel = HeaderLabel()
     private let descriptionLabel = BeerDetailsDescriptionLabel()
-    private let brewageHeaderLabel = HeaderLabel()
-    private let brewageTipsLabel = BeerDetailsDescriptionLabel()
-    private let contributorLabel = BeerDetailsContributorLabel()
+    private let recipeButton = BaseButton()
     
     init(using beer: BeerDetailsItemViewModel, frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -48,8 +46,6 @@ final class BeerDetailsView: UIView {
         colorView.value = beer.ebc
         //colorView.image = .image(from: color(for: beer.ebc))
         descriptionLabel.text = beer.description
-        brewageTipsLabel.text = beer.tips
-        contributorLabel.text = beer.contributor
     }
 }
 
@@ -68,9 +64,7 @@ extension BeerDetailsView {
         setUpColorView()
         setUpDescriptionHeaderLabel()
         setUpDescriptionLabel()
-        setUpBrewageHeaderLabel()
-        setUpBrewageTipsLabel()
-        setUpContributorLabel()
+        setUpRecipeButton()
     }
     
     private func setUpScrollView() {
@@ -99,7 +93,8 @@ extension BeerDetailsView {
     }
     
     private func setUpBackgroundImageView() {
-        backgroundImageView.image = R.image.pxLACMTA_Circle_Gold_LineSvg()
+        backgroundImageView.image = R.image.backgroundCircle()?.withRenderingMode(.alwaysTemplate)
+        backgroundImageView.tintColor = Theme.Colors.Components.background
         contentView.insertSubview(backgroundImageView, belowSubview: beerImageView)
         backgroundImageView.snp.makeConstraints { (make) in
             make.bottom.right.equalTo(beerImageView)
@@ -185,29 +180,14 @@ extension BeerDetailsView {
         }
     }
     
-    private func setUpBrewageHeaderLabel() {
-        brewageHeaderLabel.text = R.string.localizable.beerDetailsBrewageHeader()
-        contentView.addSubview(brewageHeaderLabel)
-        brewageHeaderLabel.snp.makeConstraints { (make) in
+    private func setUpRecipeButton() {
+        recipeButton.setTitle(R.string.localizable.beerDetailsRecipeButton(), for: .normal)
+        contentView.addSubview(recipeButton)
+        recipeButton.snp.makeConstraints { (make) in
             make.left.right.equalTo(descriptionHeaderLabel)
             make.top.greaterThanOrEqualTo(descriptionLabel.snp.bottom).offset(verticalSpacing * 1.5)
-        }
-    }
-    
-    private func setUpBrewageTipsLabel() {
-        contentView.addSubview(brewageTipsLabel)
-        brewageTipsLabel.snp.makeConstraints { (make) in
-            make.left.right.equalTo(brewageHeaderLabel)
-            make.top.equalTo(brewageHeaderLabel.snp.bottom).offset(verticalSpacing * 0.6)
-        }
-    }
-    
-    private func setUpContributorLabel() {
-        contentView.addSubview(contributorLabel)
-        contributorLabel.snp.makeConstraints { (make) in
-            make.left.right.equalTo(brewageTipsLabel)
-            make.top.equalTo(brewageTipsLabel.snp.bottom).offset(verticalSpacing * 0.2)
             make.bottom.equalToSuperview().inset(verticalSpacing)
+            make.height.equalTo(50)
         }
     }
 }

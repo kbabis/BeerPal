@@ -28,6 +28,8 @@
 "beer.details.property.name.bitterness" = "bitterness";
 "beer.details.description.header" = "Characteristics";
 "beer.details.brewage.header" = "Brewage";
+"beer.details.recipe.button" = "Open recipe";
+
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
 
