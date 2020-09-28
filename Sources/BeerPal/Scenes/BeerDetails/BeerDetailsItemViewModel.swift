@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import class UIKit.UIColor
 
 struct BeerDetailsItemViewModel {
     private let beer: Beer
@@ -16,7 +17,7 @@ struct BeerDetailsItemViewModel {
     var abv: String { beer.abv.stringValue.replacingOccurrences(of: ".", with: ",") }
     var gravity: String { beer.targetFg.stringValue }
     var bitterness: String? { beer.ibu?.intValue.stringValue }
-    var ebc: String? { beer.ebc?.intValue.stringValue }
+    var colorInfo: ColorInfo? { makeColorInfo(for: beer) }
     var description: String { beer.description }
     var attenuationLevel: String { beer.attenuationLevel.stringValue + "%" }
     var contributor: String { "~ " + beer.contributedBy }
@@ -81,6 +82,24 @@ struct BeerDetailsItemViewModel {
         return steps
     }
     
+    private func makeColorInfo(for beer: Beer) -> ColorInfo? {
+        let helper = BeerColorHelper()
+        
+        if let ebc = beer.ebc, let color = helper.makeEBCColor(value: ebc) {
+            return ColorInfo(
+                type: .ebc, value:
+                ebc.intValue.stringValue,
+                color: color)
+        } else if let srm = beer.srm, let color = helper.makeSRMColor(value: srm) {
+            return ColorInfo(
+                type: .srm,
+                value: srm.intValue.stringValue,
+                color: color)
+        } else {
+            return nil
+        }
+    }
+    
     init(from beer: Beer) {
         self.beer = beer
     }
@@ -88,6 +107,16 @@ struct BeerDetailsItemViewModel {
 
 extension BeerDetailsItemViewModel {
     typealias BrewageMethodStep = String
+    
+    struct ColorInfo {
+        let type: ScaleType
+        let value: String
+        let color: UIColor
+        
+        enum ScaleType: String {
+            case ebc, srm
+        }
+    }
 }
 
 // avoid unnecessary guards and default values setting

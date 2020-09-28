@@ -43,9 +43,15 @@ final class BeerDetailsView: UIView {
         alcoholByVolumeView.value = beer.abv
         gravityView.value = beer.gravity
         bitternessView.value = beer.bitterness
-        colorView.value = beer.ebc
-        //colorView.image = .image(from: color(for: beer.ebc))
         descriptionLabel.text = beer.description
+        
+        if let colorInfo = beer.colorInfo {
+            colorView.name = colorInfo.type.rawValue
+            colorView.value = colorInfo.value
+            colorView.image = .make(from: colorInfo.color)
+        } else {
+            colorView.isHidden = true
+        }
     }
 }
 
