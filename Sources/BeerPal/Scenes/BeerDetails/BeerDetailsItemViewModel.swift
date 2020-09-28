@@ -12,21 +12,21 @@ struct BeerDetailsItemViewModel {
     private let beer: Beer
     
     var name: String { beer.name }
-    var tagline: String { beer.tagline }
-    var abv: String { beer.abv.stringValue }
-    var gravity: String { String(beer.targetFg) }
-    var bitterness: String? { beer.ibu?.stringValue }
-    var ebc: String? { beer.ebc?.stringValue }
+    var tagline: String { beer.tagline.replacingOccurrences(of: ".", with: "") }
+    var abv: String { beer.abv.stringValue.replacingOccurrences(of: ".", with: ",") }
+    var gravity: String { beer.targetFg.stringValue }
+    var bitterness: String? { beer.ibu?.intValue.stringValue }
+    var ebc: String? { beer.ebc?.intValue.stringValue }
     var description: String { beer.description }
     var attenuationLevel: String { beer.attenuationLevel.stringValue + "%" }
     var contributor: String { beer.contributedBy }
     var tips: String { beer.brewersTips }
     var method: [BrewageMethodStep] { makeMethodSteps(from: beer.method) }
-    var ingredientsSections: [Section<String>] { makeSections(for: beer.ingredients) }
+    var ingredientsSections: [Section<String>] { makeSections(of: beer.ingredients) }
     var foodPairing: [String] { beer.foodPairing }
-    var imageURL: URL? { beer.imageUrl?.url }
+    var imageURL: String? { beer.imageUrl }
     
-    private func makeSections(for ingredients: Beer.Ingredients) -> [Section<String>] {
+    private func makeSections(of ingredients: Beer.Ingredients) -> [Section<String>] {
         let maltItems = ingredients.malt.map {
             String(format: "%@ %@ %@",
                    $0.amount.description,
@@ -91,24 +91,6 @@ extension BeerDetailsItemViewModel {
 }
 
 // avoid unnecessary guards and default values setting
-private extension Double {
-    var stringValue: String {
-        return String(self)
-    }
-}
-
-private extension String {
-    var url: URL? {
-        return URL(string: self)
-    }
-}
-
-private extension Beer.Measure {
-    var description: String {
-        return String(format: "%.1d %@", value, unit)
-    }
-}
-
 private extension Beer.Attribute {
     var description: String {
         switch self {
@@ -121,6 +103,28 @@ private extension Beer.Attribute {
         case .aromaBitter:
             return R.string.localizable.beerDetailsAttributeAromaBitterness()
         }
+    }
+}
+
+private extension Beer.Measure {
+    var description: String {
+        return String(format: "%.1d %@", value, unit)
+    }
+}
+
+private extension Double {
+    var stringValue: String {
+        return String(self)
+    }
+    
+    var intValue: Int {
+        return Int(self)
+    }
+}
+
+private extension Int {
+    var stringValue: String {
+        return String(self)
     }
 }
 
