@@ -14,7 +14,7 @@ struct Beer: Codable {
     let tagline: String
     let firstBrewed: String
     let description: String
-    let imageUrl: String
+    let imageUrl: String?
     let abv: Double
     let ibu: Double?
     let targetFg: Int
@@ -39,9 +39,9 @@ struct Beer: Codable {
 
     struct Hop: Codable {
         let name: String
+        let add: String
         let amount: Measure
-        let add: HopAdditionMoment
-        let attribute: String
+        let attribute: Attribute
     }
 
     struct Malt: Codable {
@@ -69,11 +69,15 @@ struct Beer: Codable {
         let unit: String
     }
     
-    enum HopAdditionMoment: String, Codable {
-        case dryHop = "dry hop"
-        case end = "end"
-        case middle = "middle"
-        case start = "start"
+    enum Attribute: String, Codable {
+        case aroma = "aroma"
+        case aromaAlternative = "Aroma"
+        case aromaBitter = "aroma / bitter"
+        case bitter = "bitter"
+        case bitterAlternative = "Bitter"
+        case bittering = "Bittering"
+        case flavour = "flavour"
+        case flavourAlternative = "Flavour"
     }
 }
 

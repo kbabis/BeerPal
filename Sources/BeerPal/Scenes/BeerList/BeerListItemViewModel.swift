@@ -14,7 +14,7 @@ final class BeerListItemViewModel {
     var id: Int { beer.id }
     var name: String { beer.name }
     var description: String { beer.tagline }
-    var imageURLString: String { beer.imageUrl }
+    var imageURLString: String? { beer.imageUrl }
     var firstBrewedYear: String { beer.firstBrewed }
     var tags: [Tag] { makeTags(for: beer) }
     

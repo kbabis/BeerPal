@@ -17,6 +17,8 @@ extension Theme {
             case medium = 16.0
             case large = 18.0
             case xLarge = 20.0
+            case xxxLarge = 28.0
+            case xxxxLarge = 34.0
         }
         
         static func getFont(ofSize size: TextSize, weight: UIFont.Weight) -> UIFont {

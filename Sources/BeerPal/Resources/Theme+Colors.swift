@@ -12,11 +12,11 @@ struct Theme {
     enum Colors {
         enum Background {
             static var primary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .white)
+                return .getProperColor(lightModeColor: .white, darkModeColor: .black)
             }
             
-            static var secondary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .black)
+            static var inverted: UIColor {
+                return .getProperColor(lightModeColor: .black, darkModeColor: .white)
             }
             
             static var container: UIColor {
@@ -26,11 +26,11 @@ struct Theme {
         
         enum Components {
             static var background: UIColor {
-                return .systemYellow
+                return .systemOrange
             }
             
             static var foreground: UIColor {
-                return .brown
+                return .black
             }
         }
         
@@ -62,7 +62,7 @@ struct Theme {
         
         enum Texts {
             static var primary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .white)
+                return .getProperColor(lightModeColor: .white, darkModeColor: .white)
             }
             
             static var secondary: UIColor {

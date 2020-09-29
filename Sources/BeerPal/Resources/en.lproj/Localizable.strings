@@ -6,17 +6,29 @@
   Copyright © 2020 Krzysztof Babis. All rights reserved.
 */
 
-// MARK: - State
-
-"state.base.reload.button" = "Try again";
-"state.loading.message" = "Loading...";
-"state.empty.default.title" = "Nothing here";
-"state.empty.default.message" = "Reload with the button below or come back in a few minutes";
-"state.error.default.title" = "Oops, your connection seems off...";
-"state.error.default.message" = "Keep calm, grab a bottle and tap below button to try again";
-
 // MARK: - Beers
 "beer.list.title" = "Beers";
+
+// MARK: - Beer details
+"beer.details.ingredients.malt" = "Malt";
+"beer.details.ingredients.hops" = "Hops";
+"beer.details.ingredients.yeast" = "Yeast";
+"beer.details.method.ferment" = "Ferment in";
+"beer.details.method.twist" = "Twist";
+"beer.details.hop.addition.start" = "at the beginning";
+"beer.details.hop.addition.middle" = "in the middle";
+"beer.details.hop.addition.end" = "at the end";
+"beer.details.hop.addition.dry.hop" = "dry-hopping";
+"beer.details.attribute.aroma" = "for the aroma";
+"beer.details.attribute.bitterness" = "for bitterness";
+"beer.details.attribute.flavour" = "for flavour";
+"beer.details.attribute.aroma.bitterness" = "for aroma and bitterness";
+"beer.details.property.name.abv" = "abv";
+"beer.details.property.name.gravity" = "gravity";
+"beer.details.property.name.bitterness" = "bitterness";
+"beer.details.description.header" = "Characteristics";
+"beer.details.brewage.header" = "Brewage";
+"beer.details.recipe.button" = "Open recipe";
 
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
@@ -24,6 +36,10 @@
 "brewery.list.item.tag.inBusiness" = "Active";
 "brewery.list.item.tag.organic" = "Organic";
 "brewery.list.item.tag.verified" = "Verified";
+
+// MARK: - Common
+"common.of" = "of";
+"common.for" = "for";
 
 // MARK: - Events
 "event.list.title" = "Events";
@@ -43,3 +59,11 @@
 "tabs.events" = "Events";
 "tabs.settings" = "Settings";
 
+// MARK: - State
+
+"state.base.reload.button" = "Try again";
+"state.loading.message" = "Loading...";
+"state.empty.default.title" = "Nothing here";
+"state.empty.default.message" = "Reload with the button below or come back in a few minutes";
+"state.error.default.title" = "Oops, your connection seems off...";
+"state.error.default.message" = "Keep calm, grab a bottle and tap below button to try again";
