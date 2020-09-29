@@ -12,6 +12,7 @@ extension API {
     static func breweryList() -> Endpoint<BreweryListResponseModel> {
         let url = URLBuilder()
         .set(path: "breweries")
+        .addQueryItem(name: "hasImages", value: "Y")
         .build()!
         
         return Endpoint(method: .get, url: url)

@@ -25,7 +25,7 @@ struct Theme {
         }
         
         enum Components {
-            static var background: UIColor {
+            static var primary: UIColor {
                 return .systemOrange
             }
             

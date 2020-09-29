@@ -13,6 +13,6 @@ final class BeerDetailsContributorLabel: ExtendableLabel {
         super.setUp()
         textAlignment = .right
         font = .italicSystemFont(ofSize: 15)
-        textColor = Theme.Colors.Components.background
+        textColor = Theme.Colors.Components.primary
     }
 }

@@ -42,6 +42,7 @@ final class TabsCoordinator: NavigationCoordinator {
     
     private func showTabs() {
         tabsController = UITabBarController()
+        tabsController?.tabBar.tintColor = Theme.Colors.Components.primary
         tabsController?.viewControllers = childCoordinators.sorted(by: { $0.0.rawValue < $1.0.rawValue }).map { $0.value.navigationController }
         navigationController.isNavigationBarHidden = true
         navigationController.setViewControllers([tabsController!], animated: false)
