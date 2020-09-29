@@ -26,6 +26,10 @@ final class BeerPropertyView: UIView {
         didSet { imageView.image = image?.withRenderingMode(.alwaysTemplate) }
     }
     
+    var imageColor: UIColor? {
+        didSet { imageView.tintColor = imageColor }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -78,7 +82,7 @@ extension BeerPropertyView {
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(spacerView.snp.right)
             make.top.equalToSuperview()
-            make.bottom.equalTo(nameLabel.snp.top).offset(-5).priority(.medium)
+            make.bottom.equalTo(nameLabel.snp.top).priority(.medium)
         }
     }
 }

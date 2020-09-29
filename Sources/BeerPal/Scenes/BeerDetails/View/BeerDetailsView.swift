@@ -48,7 +48,7 @@ final class BeerDetailsView: UIView {
         if let colorInfo = beer.colorInfo {
             colorView.name = colorInfo.type.rawValue
             colorView.value = colorInfo.value
-            colorView.image = .make(from: colorInfo.color)
+            colorView.imageColor = colorInfo.color
         } else {
             colorView.isHidden = true
         }
@@ -158,8 +158,7 @@ extension BeerDetailsView {
     }
     
     private func setUpColorView() {
-        colorView.image = R.image.beerDetailsHop()
-        colorView.name = R.string.localizable.beerDetailsPropertyNameBitterness()
+        colorView.image = R.image.beerDetailsColorCircle()
         contentView.addSubview(colorView)
         colorView.snp.makeConstraints { (make) in
             make.left.right.equalTo(bitternessView)

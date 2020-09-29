@@ -12,11 +12,11 @@ struct Theme {
     enum Colors {
         enum Background {
             static var primary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .black)
+                return .getProperColor(lightModeColor: .white, darkModeColor: .black)
             }
             
-            static var secondary: UIColor {
-                return .getProperColor(lightModeColor: .black, darkModeColor: .black)
+            static var inverted: UIColor {
+                return .getProperColor(lightModeColor: .black, darkModeColor: .white)
             }
             
             static var container: UIColor {
