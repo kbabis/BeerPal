@@ -100,7 +100,7 @@ extension BeerDetailsView {
     
     private func setUpBackgroundImageView() {
         backgroundImageView.image = R.image.backgroundCircle()?.withRenderingMode(.alwaysTemplate)
-        backgroundImageView.tintColor = Theme.Colors.Components.background
+        backgroundImageView.tintColor = Theme.Colors.Components.primary
         contentView.insertSubview(backgroundImageView, belowSubview: beerImageView)
         backgroundImageView.snp.makeConstraints { (make) in
             make.bottom.right.equalTo(beerImageView)

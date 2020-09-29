@@ -25,7 +25,7 @@ class BaseButton: UIButton {
     }
     
     func setUp() {
-        backgroundColor = Theme.Colors.Components.background
+        backgroundColor = Theme.Colors.Components.primary
         setTitleColor(Theme.Colors.Components.foreground, for: .normal)
         titleLabel?.font = Theme.Fonts.getFont(ofSize: .medium, weight: .semibold)
     }
