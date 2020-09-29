@@ -20,7 +20,7 @@ final class BaseCollectionView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.layoutConfig = LayoutConfig(height: 250)
+        self.layoutConfig = LayoutConfig(widthHeightRatio: 29/36)
         super.init(coder: aDecoder)
         setUp()
     }
@@ -48,10 +48,13 @@ final class BaseCollectionView: UIView {
 extension BaseCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfItems = CGFloat(layoutConfig.numberOfItems)
+        guard numberOfItems > 0 else { return .zero }
+        
         let availableWidth = collectionView.bounds.width - (numberOfItems - 1) * layoutConfig.interItemSpacing - layoutConfig.insets.left - layoutConfig.insets.right
         let itemWidth = abs(availableWidth) / numberOfItems
+        let itemHeight = itemWidth / layoutConfig.widthHeightRatio
         
-        return .init(width: itemWidth, height: layoutConfig.height)
+        return .init(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -71,7 +74,7 @@ extension BaseCollectionView {
     struct LayoutConfig {
         let interItemSpacing: CGFloat = 25
         let insets: UIEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-        let numberOfItems: Int = 2
-        let height: CGFloat
+        let numberOfItems: UInt = 2
+        let widthHeightRatio: CGFloat
     }
 }

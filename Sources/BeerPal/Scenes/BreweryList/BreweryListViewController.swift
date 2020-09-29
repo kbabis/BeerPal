@@ -17,7 +17,7 @@ final class BreweryListViewController: BaseTableViewController {
     }
     
     override func loadView() {
-        breweryCollectionView = BaseCollectionView(layoutConfig: .init(height: 180))
+        breweryCollectionView = BaseCollectionView(layoutConfig: .init(widthHeightRatio: 29/36))
         view = breweryCollectionView
     }
     
