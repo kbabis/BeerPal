@@ -13,14 +13,24 @@ final class BreweryDetailsItemViewModel {
     
     var name: String { brewery.name }
     var imageURLString: String? { brewery.images?.large }
-    var inBusiness: String? { brewery.isInBusiness.textIfTrue("💰 Still in business") }
-    var verified: String? { brewery.isVerified.textIfTrue("✅ Verified") }
-    var organic: String? { brewery.isOrganic.textIfTrue("🌿 Organic") }
+    var type: String? { brewery.locations.first?.locationTypeDisplay.withPrefix("🏪 ") }
+    var inBusiness: String? { brewery.isInBusiness.textIfTrue("💰 " + R.string.localizable.breweryDetailsPropertyBusiness()) }
+    var verified: String? { brewery.isVerified.textIfTrue("✅ " + R.string.localizable.breweryDetailsPropertyVerified()) }
+    var organic: String? { brewery.isOrganic.textIfTrue("🌿 " + R.string.localizable.breweryDetailsPropertyOrganic()) }
     var description: String? { brewery.description }
+    var address: String? { makeFullAddress(for: brewery)?.withPrefix("🏠 ") }
+    var phoneNumber: String? { brewery.locations.first?.phone?.withPrefix("☎️ ") }
     var websiteURL: URL? { brewery.website?.urlValue }
     
     init(from brewery: Brewery) {
         self.brewery = brewery
+    }
+    
+    private func makeFullAddress(for brewery: Brewery) -> String? {
+        guard let location = brewery.locations.first else { return nil }
+        
+        return [location.streetAddress, location.postalCode, location.locality, location.region]
+            .reduce("", { $0 == "" ? $1 : $0 + ", " + $1 })
     }
 }
 
@@ -33,5 +43,9 @@ private extension Bool {
 private extension String {
     var urlValue: URL? {
         return URL(string: self)
+    }
+    
+    func withPrefix(_ prefix: String) -> String {
+        return prefix + self
     }
 }

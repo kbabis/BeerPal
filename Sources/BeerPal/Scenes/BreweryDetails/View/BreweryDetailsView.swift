@@ -10,16 +10,19 @@ import UIKit
 
 final class BreweryDetailsView: UIView {
     private let horizontalSpacing: CGFloat = 30.0
-    private let verticalSpacing: CGFloat = 20.0
+    private let verticalSpacing: CGFloat = 24.0
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let breweryImageView = UIImageView()
     private let nameLabel = TitleLabel()
     private let propertiesStackView = UIStackView()
+    private let typePropertyLabel = BreweryPropertyLabel()
     private let inBusinessPropertyLabel = BreweryPropertyLabel()
     private let verifiedPropertyLabel = BreweryPropertyLabel()
     private let organicPropertyLabel = BreweryPropertyLabel()
+    private let addressPropertyLabel = BreweryPropertyLabel()
+    private let phoneNumberPropertyLabel = BreweryPropertyLabel()
     private let descriptionHeaderLabel = HeaderLabel()
     private let descriptionLabel = BeerDetailsDescriptionLabel()
     
@@ -35,20 +38,28 @@ final class BreweryDetailsView: UIView {
     
     private func fill(with brewery: BreweryDetailsItemViewModel) {
         nameLabel.text = brewery.name
+        setProperty(brewery.type, on: typePropertyLabel)
         setProperty(brewery.inBusiness, on: inBusinessPropertyLabel)
         setProperty(brewery.verified, on: verifiedPropertyLabel)
         setProperty(brewery.organic, on: organicPropertyLabel)
+        setProperty(brewery.address, on: addressPropertyLabel)
+        setProperty(brewery.phoneNumber, on: phoneNumberPropertyLabel)
         descriptionLabel.text = brewery.description
+        descriptionHeaderLabel.isHidden = !(brewery.description?.isEmpty == false)
         breweryImageView.loadImage(from: brewery.imageURLString)
         
         if let url = brewery.websiteURL {
             if #available(iOS 13.0, *) {
+                let spacerView = UIView()
+                propertiesStackView.addArrangedSubview(spacerView)
+                spacerView.snp.makeConstraints { $0.height.equalTo(1) }
+                
                 let websiteRichLinkView = RichLinkView()
                 websiteRichLinkView.loadURL(url)
                 propertiesStackView.addArrangedSubview(websiteRichLinkView)
             } else {
                 let websiteLabel = BreweryPropertyLabel()
-                websiteLabel.text = url.absoluteString
+                websiteLabel.text = "🌎 " + url.absoluteString
                 propertiesStackView.addArrangedSubview(websiteLabel)
             }
         }
@@ -68,9 +79,7 @@ extension BreweryDetailsView {
         setUpBreweryImageView()
         setUpNameLabel()
         setUpPropertiesStackView()
-        setUpInBusinessPropertyLabel()
-        setUpVerifiedPropertyLabel()
-        setUpOrganicPropertyLabel()
+        setUpPropertyLabels()
         setUpDescriptionHeaderLabel()
         setUpDescriptionLabel()
     }
@@ -120,16 +129,10 @@ extension BreweryDetailsView {
         }
     }
     
-    private func setUpInBusinessPropertyLabel() {
-        propertiesStackView.addArrangedSubview(inBusinessPropertyLabel)
-    }
-    
-    private func setUpVerifiedPropertyLabel() {
-        propertiesStackView.addArrangedSubview(verifiedPropertyLabel)
-    }
-    
-    private func setUpOrganicPropertyLabel() {
-        propertiesStackView.addArrangedSubview(organicPropertyLabel)
+    private func setUpPropertyLabels() {
+        [typePropertyLabel, inBusinessPropertyLabel, verifiedPropertyLabel, organicPropertyLabel, addressPropertyLabel, phoneNumberPropertyLabel].forEach { (propertyLabel) in
+            propertiesStackView.addArrangedSubview(propertyLabel)
+        }
     }
     
     private func setUpDescriptionHeaderLabel() {
@@ -137,7 +140,7 @@ extension BreweryDetailsView {
         contentView.addSubview(descriptionHeaderLabel)
         descriptionHeaderLabel.snp.makeConstraints { (make) in
             make.left.equalTo(nameLabel)
-            make.top.equalTo(propertiesStackView.snp.bottom).offset(verticalSpacing)
+            make.top.equalTo(propertiesStackView.snp.bottom).offset(verticalSpacing * 1.5)
             make.right.equalToSuperview().inset(horizontalSpacing)
         }
     }
