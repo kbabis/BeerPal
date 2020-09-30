@@ -94,16 +94,19 @@ extension BreweryDetailsView {
     private func setUpContentView() {
         scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
-            make.left.top.right.bottom.width.equalToSuperview()
+            make.top.equalToSuperview().offset(UIScreen.main.bounds.width * 0.6)
+            make.left.right.bottom.width.equalToSuperview()
         }
     }
     
     private func setUpBreweryImageView() {
         breweryImageView.contentMode = .scaleAspectFill
-        contentView.addSubview(breweryImageView)
+        breweryImageView.clipsToBounds = true
+        scrollView.insertSubview(breweryImageView, belowSubview: contentView)
+        
         breweryImageView.snp.makeConstraints { (make) in
-            make.left.top.right.equalToSuperview()
-            make.height.equalTo(breweryImageView.snp.width).multipliedBy(0.6)
+            make.left.top.right.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(contentView.snp.top).priority(.high)
         }
     }
     
@@ -112,7 +115,7 @@ extension BreweryDetailsView {
             
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(horizontalSpacing)
-            make.top.equalTo(breweryImageView.snp.bottom).offset(verticalSpacing)
+            make.top.equalToSuperview().offset(verticalSpacing)
             make.right.equalToSuperview().inset(horizontalSpacing)
         }
     }

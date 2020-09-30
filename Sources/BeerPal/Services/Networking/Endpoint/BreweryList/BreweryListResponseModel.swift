@@ -31,6 +31,7 @@ struct Brewery: Codable {
     let statusDisplay: String
     let createDate: Date
     let updateDate: Date
+    let locations: [Location]
     let mailingListUrl: String?
     @DecodableBool var isOrganic: Bool
     @DecodableBool var isMassOwned: Bool
@@ -59,11 +60,11 @@ struct Brewery: Codable {
         let extendedAddress: String?
         let phone: String?
         let website: String?
-        let latitude: String
+        let latitude: Double
         let longitude: Double
         let locationType: String
         let locationTypeDisplay: String
-        let countryISOCode: String
+        let countryIsoCode: String
         let yearOpened: String?
         let status: Status
         let statusDisplay: String
@@ -72,7 +73,7 @@ struct Brewery: Codable {
         let hoursOfOperationExplicit: OpenHoursWeek?
         let hoursOfOperationExplicitString: String?
         let hoursOfOperationNotes: String?
-        let timezoneID: String?
+        let timezoneId: String?
         @DecodableBool var isPrimary: Bool
         @DecodableBool var inPlanning: Bool
         @DecodableBool var isClosed: Bool
