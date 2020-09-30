@@ -44,6 +44,56 @@ struct Brewery: Codable {
     
     enum Status: String, Codable {
         case unverified = "new_unverified"
-        case verified = "verified"
+        case verified
+        case deleted
+    }
+    
+    struct Location: Codable {
+        let id: String
+        let name: String
+        let streetAddress: String
+        let locality: String
+        let region: String
+        let postalCode: String
+        let country: Country
+        let extendedAddress: String?
+        let phone: String?
+        let website: String?
+        let latitude: String
+        let longitude: Double
+        let locationType: String
+        let locationTypeDisplay: String
+        let countryISOCode: String
+        let yearOpened: String?
+        let status: Status
+        let statusDisplay: String
+        let createDate: Date
+        let updateDate: Date
+        let hoursOfOperationExplicit: OpenHoursWeek?
+        let hoursOfOperationExplicitString: String?
+        let hoursOfOperationNotes: String?
+        let timezoneID: String?
+        @DecodableBool var isPrimary: Bool
+        @DecodableBool var inPlanning: Bool
+        @DecodableBool var isClosed: Bool
+        @DecodableBool var openToPublic: Bool
+        
+        struct Country: Codable {
+            let isoCode: String
+            let name: String
+            let displayName: String
+            let isoThree: String
+            let numberCode: Int
+            let createDate: Date
+        }
+        
+        struct OpenHoursWeek: Codable {
+            let mon, tue, wed, thu, fri, sat, sun: [OpenHours]?
+        }
+
+        struct OpenHours: Codable {
+            let startTime: String
+            let endTime: String
+        }
     }
 }
