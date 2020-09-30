@@ -14,6 +14,7 @@ final class BreweryListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     private let repository: BreweryListRepository
     private let stateManager: DataStateManager
+    weak var delegate: BreweryListDelegate?
     
     let input: BreweryListViewModel.Input
     let output: BreweryListViewModel.Output
@@ -69,6 +70,14 @@ final class BreweryListViewModel: ViewModelType {
             endRefreshing: endRefreshing,
             items: response.elements.asDriver(onErrorJustReturn: [])
         )
+        
+        setUp()
+    }
+    
+    private func setUp() {
+        input.selectedModel.subscribe(onNext: { [weak self] (item) in
+            self?.delegate?.didSelect(item)
+        }).disposed(by: disposeBag)
     }
 }
 
