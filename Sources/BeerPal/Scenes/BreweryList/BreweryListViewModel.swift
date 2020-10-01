@@ -7,8 +7,8 @@
 //
 
 import RxSwift
+import RxRelay
 import struct RxCocoa.Driver
-import class RxRelay.PublishRelay
 
 final class BreweryListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
@@ -21,6 +21,7 @@ final class BreweryListViewModel: ViewModelType {
     
     struct Input {
         let fetch = PublishRelay<Void>()
+        let search = PublishRelay<String>()
         let selectedModel = PublishRelay<Brewery>()
     }
     
@@ -54,21 +55,44 @@ final class BreweryListViewModel: ViewModelType {
             return Disposables.create()
         }
         
+        let outputItems = BehaviorRelay<[Brewery]>(value: [])
+        let fetchedItemsRelay = BehaviorRelay<[Brewery]>(value: [])
+        fetchedItemsRelay.bind(to: outputItems).disposed(by: disposeBag)
+        
         let response = input.fetch
             .startWith(())
             .flatMapLatest { executeFetchRequest.materialize() }
             .share()
         
+        response
+            .elements
+            .bind(to: fetchedItemsRelay)
+            .disposed(by: disposeBag)
+        
         let endRefreshing = response
             .flatMapLatest { _ in Observable.just(()) }
             .asDriver(onErrorJustReturn: ())
+    
+        let search = input.search
+                .skip(1)
+                .distinctUntilChanged()
+                .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+        
+        search
+            .withLatestFrom(fetchedItemsRelay) { ($0, $1)  }
+            .map { (phrase, breweries) -> [Brewery] in
+                phrase.isEmpty
+                    ? breweries
+                    : breweries.filter { $0.name.contains(phrase) }
+            }.bind(to: outputItems)
+            .disposed(by: disposeBag)
         
         self.stateManager = stateManager
         self.repository = repository
         self.output = Output(
             state: stateManager.currentState,
             endRefreshing: endRefreshing,
-            items: response.elements.asDriver(onErrorJustReturn: [])
+            items: outputItems.asDriver()
         )
         
         setUp()

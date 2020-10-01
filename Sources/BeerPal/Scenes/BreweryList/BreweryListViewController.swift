@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class BreweryListViewController: BaseTableViewController {
+final class BreweryListViewController: BaseViewController {
     private var breweryCollectionView: BaseCollectionView!
     private let viewModel: BreweryListViewModel
     override var hasContent: Bool {
@@ -33,6 +33,7 @@ final class BreweryListViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.output.title
+        setUpSearchController()
         breweryCollectionView.collectionView.register(
             BreweryItemCollectionViewCell.self,
             forCellWithReuseIdentifier: BreweryItemCollectionViewCell.reuseIdentifier)
@@ -59,9 +60,22 @@ final class BreweryListViewController: BaseTableViewController {
             .bind(to: viewModel.input.selectedModel)
             .disposed(by: disposeBag)
         
+        navigationItem.searchController?.searchBar
+            .rx.text
+            .orEmpty
+            .bind(to: viewModel.input.search)
+            .disposed(by: disposeBag)
+        
         breweryCollectionView.refreshControl
             .rx.controlEvent(.valueChanged)
             .bind(to: viewModel.input.fetch)
             .disposed(by: disposeBag)
+    }
+    
+    private func setUpSearchController() {
+        let searchController = UISearchController()
+        searchController.searchBar.tintColor = Theme.Colors.Components.primary
+        searchController.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
 }
