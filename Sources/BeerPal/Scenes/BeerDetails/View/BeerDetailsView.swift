@@ -14,7 +14,7 @@ final class BeerDetailsView: UIView {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    private let nameLabel = BeerDetailsTitleLabel()
+    private let nameLabel = TitleLabel()
     private let taglineLabel = BeerDetailsSubtitleLabel()
     private let backgroundImageView = UIImageView()
     private let beerImageView = UIImageView()

@@ -30,6 +30,11 @@
 "beer.details.brewage.header" = "Brewage";
 "beer.details.recipe.button" = "Open recipe";
 
+// MARK: - BreweryDetails
+"brewery.details.property.business" = "Still in business";
+"brewery.details.property.verified" = "Verified";
+"brewery.details.property.organic" = "Organic";
+
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
 

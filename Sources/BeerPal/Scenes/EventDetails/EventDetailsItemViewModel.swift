@@ -21,7 +21,7 @@ struct EventDetailsItemViewModel {
     var priceFormatted: String? { event.price }
     var phoneNumber: String? { event.phone}
     var description: String? { event.description }
-    var websiteURL: URL? { makeURL(for: event.website) }
+    var websiteURL: URL? { event.website?.urlValue }
     
     init(from event: Event) {
         self.event = event
@@ -50,10 +50,10 @@ struct EventDetailsItemViewModel {
         
         return dateInfo
     }
-    
-    private func makeURL(for urlString: String?) -> URL? {
-        guard let urlString = urlString else { return nil }
-        
-        return URL(string: urlString)
+}
+
+private extension String {
+    var urlValue: URL? {
+        return URL(string: self)
     }
 }

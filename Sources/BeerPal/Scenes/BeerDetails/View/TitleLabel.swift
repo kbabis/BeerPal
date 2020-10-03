@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class BeerDetailsTitleLabel: ExtendableLabel {
+final class TitleLabel: ExtendableLabel {
     override func setUp() {
         super.setUp()
         font = Theme.Fonts.getFont(ofSize: .xxxLarge, weight: .heavy)

@@ -35,7 +35,7 @@ final class BreweryItemCollectionViewCell: UICollectionViewCell {
     private func refresh() {
         nameLabel.text = item?.name
         descriptionLabel.text = item?.description
-        logoImageView.loadImage(from: item?.images?.medium)
+        logoImageView.loadImage(from: item?.images?.large)
     }
 }
 

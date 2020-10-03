@@ -13,6 +13,7 @@ extension API {
         let url = URLBuilder()
         .set(path: "breweries")
         .addQueryItem(name: "hasImages", value: "Y")
+        .addQueryItem(name: "withLocations", value: "Y")
         .build()!
         
         return Endpoint(method: .get, url: url)
