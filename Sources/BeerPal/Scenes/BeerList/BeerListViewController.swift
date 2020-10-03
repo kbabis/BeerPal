@@ -11,9 +11,6 @@ import RxSwift
 final class BeerListViewController: BaseTableViewController {
     private var beerListView: ListView!
     private let viewModel: BeerListViewModel
-    override var hasContent: Bool {
-        return beerListView.tableView.numberOfRows(inSection: 0) > 0
-    }
     
     override func loadView() {
         beerListView = ListView()
@@ -45,7 +42,19 @@ final class BeerListViewController: BaseTableViewController {
             .drive(tableView.rx.items(cellIdentifier: BeerListItemTableViewCell.reuseIdentifier, cellType: BeerListItemTableViewCell.self)) { (_, beer, cell) in
                 cell.item = beer
             }.disposed(by: disposeBag)
-                
+        
+        viewModel.output.state
+            .map { $0.shouldLoadNext ? 1 : 0 }
+            .drive(loadingStateView.rx.alpha)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.state
+            .map { $0.shouldLoadNext }
+            .filter { !$0 }
+            .delay(.milliseconds(300))
+            .drive(beerListView.refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+
         tableView
             .rx.modelSelected(BeerListItemViewModel.self)
             .bind(to: viewModel.input.selectedModel)
@@ -75,5 +84,7 @@ final class BeerListViewController: BaseTableViewController {
             .map { BeerListEvent.reload }
             .bind(to: viewModel.input.events)
             .disposed(by: disposeBag)
+        
+        setDataReloader(viewModel)
     }
 }

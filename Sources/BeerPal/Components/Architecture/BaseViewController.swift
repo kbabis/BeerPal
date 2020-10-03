@@ -13,9 +13,9 @@ import RxSwift
 class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
     
-    private let emptyStateView = EmptyStateView()
-    private let errorStateView = ErrorStateView()
-    private let loadingStateView = LoadingStateView()
+    let emptyStateView = EmptyStateView()
+    let errorStateView = ErrorStateView()
+    let loadingStateView = LoadingStateView()
     var hasContent: Bool {
         return false
     }
@@ -28,9 +28,12 @@ class BaseViewController: UIViewController {
     
     func bindState(of manager: StateManaging, dataReloader: DataReloading?) {
         manager.currentState.drive(rx.viewState).disposed(by: disposeBag)
-        
-        emptyStateView.reloadingDelegate = dataReloader
-        errorStateView.reloadingDelegate = dataReloader
+        setDataReloader(dataReloader)
+    }
+    
+    func setDataReloader(_ reloader: DataReloading?) {
+        emptyStateView.reloadingDelegate = reloader
+        errorStateView.reloadingDelegate = reloader
     }
 }
 

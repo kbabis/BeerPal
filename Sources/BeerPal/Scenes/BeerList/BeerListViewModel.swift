@@ -43,8 +43,8 @@ final class BeerListViewModel: ViewModelType {
             request: { $0.nextPageData },
             effects: { (queryItems) in
                 Self.executeFetchRequest(query: queryItems.searchPhrase, on: queryItems.pageIndex, using: repository)
-                    .map { .handleLoaded(items: $0) }
-                    .asSignal(onErrorJustReturn: .error)
+                    .asSignal(onErrorJustReturn: .failure(CustomError.unknown))
+                    .map { BeerListEvent.handleResponse($0) }
             }
         )
         
@@ -64,16 +64,11 @@ final class BeerListViewModel: ViewModelType {
         }).disposed(by: disposeBag)
     }
     
-    private static func executeFetchRequest(query: String?, on page: Int?, using repository: BeerListRepository) -> Observable<[BeerListItemViewModel]> {
+    private static func executeFetchRequest(query: String?, on page: Int?, using repository: BeerListRepository) -> Observable<Result<[Beer], Error>> {
         return Observable.create { (observer) -> Disposable in
             repository.fetchBeers(name: query, page: page, then: { (result) in
-                switch result {
-                case .success(let beers):
-                    observer.onNext(beers.map(BeerListItemViewModel.init))
-                    observer.onCompleted()
-                case .failure(let error):
-                    observer.onError(error)
-                }
+                observer.onNext(result)
+                observer.onCompleted()
             })
             
             return Disposables.create()
@@ -81,6 +76,19 @@ final class BeerListViewModel: ViewModelType {
     }
 }
 
+extension BeerListViewModel: DataReloading {
+    func reloadData() {
+        input
+            .events
+            .accept(.reload)
+    }
+}
+
 extension BeerListViewModel {
     typealias Dependencies = HasNetworking
+}
+
+// Temporary solution - errors will be handled properly in the next phase
+enum CustomError: Error {
+    case unknown
 }

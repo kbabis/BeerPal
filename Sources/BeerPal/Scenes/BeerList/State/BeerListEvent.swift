@@ -12,6 +12,5 @@ enum BeerListEvent {
     case search(phrase: String)
     case reload
     case loadNextPage
-    case handleLoaded(items: [BeerListItemViewModel])
-    case error
+    case handleResponse(Result<[Beer], Error>)
 }

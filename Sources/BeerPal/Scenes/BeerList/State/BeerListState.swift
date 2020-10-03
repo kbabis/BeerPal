@@ -9,10 +9,11 @@
 import RxCocoa
 
 struct BeerListState {
-    var items: [BeerListItemViewModel]
-    var nextPage: Int
+    private var nextPage: Int
+    private var phraseToSearch: String?
     var shouldLoadNext: Bool
-    var phraseToSearch: String?
+    var items: [BeerListItemViewModel]
+    var error: Error?
 
     init() {
         self.items = []
@@ -43,12 +44,14 @@ extension BeerListState {
         switch event {
         case .loadNextPage:
             newState.shouldLoadNext = true
-        case .error:
+        case .handleResponse(.failure(let error)):
             newState.shouldLoadNext = false
-        case .handleLoaded(let beers):
+            newState.error = error
+        case .handleResponse(.success(let beers)):
             newState.shouldLoadNext = false
+            newState.error = nil
             newState.nextPage += 1
-            newState.items += beers
+            newState.items += beers.map(BeerListItemViewModel.init)
         case .reload:
             newState = BeerListState()
         case .search(let phrase):
