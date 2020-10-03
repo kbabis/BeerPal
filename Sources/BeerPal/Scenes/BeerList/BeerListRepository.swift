@@ -22,7 +22,7 @@ final class BeerListRepository {
         self.cache = cache
     }
     
-    func fetchBeers(name: String? = nil, page: Int = 1, then handler: @escaping CompletionBlock) {
+    func fetchBeers(name: String?, page: Int?, then handler: @escaping CompletionBlock) {
         let endpoint = API.beerList(name: name, at: page)
         let cacheKey = endpoint.url.absoluteString
         
