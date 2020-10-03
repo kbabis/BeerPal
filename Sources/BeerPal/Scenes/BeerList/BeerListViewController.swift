@@ -42,11 +42,11 @@ final class BeerListViewController: BaseTableViewController {
             .drive(tableView.rx.items(cellIdentifier: BeerListItemTableViewCell.reuseIdentifier, cellType: BeerListItemTableViewCell.self)) { (_, beer, cell) in
                 cell.item = beer
             }.disposed(by: disposeBag)
-        
+
         viewModel.output.state
-            .map { $0.shouldLoadNext ? 1 : 0 }
-            .drive(loadingStateView.rx.alpha)
-            .disposed(by: disposeBag)
+            .drive { [weak self] (state) in
+                self?.handleUpdate(of: state)
+            }.disposed(by: disposeBag)
         
         viewModel.output.state
             .map { $0.shouldLoadNext }
@@ -86,5 +86,15 @@ final class BeerListViewController: BaseTableViewController {
             .disposed(by: disposeBag)
         
         setDataReloader(viewModel)
+    }
+    
+    private func handleUpdate(of state: BeerListState) {
+        loadingStateView.alpha = (state.shouldLoadNext && state.items.isEmpty) ? 1 : 0
+        
+        if let error = state.error {
+            showError(error.localizedDescription, isDataOriented: !state.items.isEmpty)
+        } else {
+            errorStateView.alpha = 0
+        }
     }
 }

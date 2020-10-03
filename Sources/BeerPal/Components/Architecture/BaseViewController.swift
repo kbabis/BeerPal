@@ -54,7 +54,7 @@ extension BaseViewController: StateRendering {
         }
     }
     
-    private func showError(_ message: String, isDataOriented: Bool) {
+    func showError(_ message: String, isDataOriented: Bool) {
         if isDataOriented {
             showPopUp(message)
         } else {
