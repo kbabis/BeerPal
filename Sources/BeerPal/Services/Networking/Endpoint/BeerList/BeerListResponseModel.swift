@@ -17,12 +17,12 @@ struct Beer: Codable {
     let imageUrl: String?
     let abv: Double
     let ibu: Double?
-    let targetFg: Int
-    let targetOg: Double
+    let targetFg: Int?
+    let targetOg: Double?
     let ebc: Double?
     let srm: Double?
     let ph: Double?
-    let attenuationLevel: Double
+    let attenuationLevel: Double?
     let volume: Measure
     let boilVolume: Measure
     let method: Method
@@ -34,7 +34,7 @@ struct Beer: Codable {
     struct Ingredients: Codable {
         let malt: [Malt]
         let hops: [Hop]
-        let yeast: String
+        let yeast: String?
     }
 
     struct Hop: Codable {
@@ -65,19 +65,27 @@ struct Beer: Codable {
     }
     
     struct Measure: Codable {
-        let value: Double
+        let value: Double?
         let unit: String
     }
     
     enum Attribute: String, Codable {
-        case aroma = "aroma"
+        case aroma
         case aromaAlternative = "Aroma"
         case aromaBitter = "aroma / bitter"
-        case bitter = "bitter"
+        case bitter
         case bitterAlternative = "Bitter"
         case bittering = "Bittering"
-        case flavour = "flavour"
+        case flavour
         case flavourAlternative = "Flavour"
+        case twist
+        case other
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let rawAttribute = try container.decode(String.self)
+            self = Attribute(rawValue: rawAttribute) ?? .other
+        }
     }
 }
 
