@@ -33,7 +33,7 @@ final class BreweryListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.output.title
-        addSearchBar()
+        addSearchBar(placeholder: R.string.localizable.breweryListSearchBar())
         breweryCollectionView.collectionView.register(
             BreweryItemCollectionViewCell.self,
             forCellWithReuseIdentifier: BreweryItemCollectionViewCell.reuseIdentifier)

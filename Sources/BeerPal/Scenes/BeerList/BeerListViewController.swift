@@ -29,7 +29,7 @@ final class BeerListViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.output.title
-        addSearchBar()
+        addSearchBar(placeholder: R.string.localizable.beerListSearchBar())
         configureTableView(beerListView.tableView, cellType: BeerListItemTableViewCell.self, estimatedRowHeight: 110)
         makeBindings()
     }
