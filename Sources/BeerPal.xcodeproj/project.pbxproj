@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2744D2B9A22E8E6E98632BCC /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AB81660D0B1D5C02DB9719 /* Pods_BeerPal_BeerPalUITests.framework */; };
-		58141F4BFDB91CE4B0EEE542 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CE3F3D1E64CD62976FB8A7 /* Pods_BeerPal_BeerPalTests.framework */; };
-		A44BEFE1628E1AC94334CC30 /* Pods_BeerPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4B5CF07F6745E9D042F41D /* Pods_BeerPal.framework */; };
+		8888E417442BA5B2DE3E5221 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E043D61FCFB83419E101482F /* Pods_BeerPal_BeerPalTests.framework */; };
+		C34B9D04A4E43C68DD8E74B4 /* Pods_BeerPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A26182A9E5751D28FA660A0 /* Pods_BeerPal.framework */; };
 		E600869F24FC224C005173DC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600869E24FC224C005173DC /* AppCoordinator.swift */; };
 		E60086A124FC233D005173DC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60086A024FC233D005173DC /* AppDependencies.swift */; };
 		E609A77824F8731B00636D58 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609A77724F8731B00636D58 /* Endpoint.swift */; };
@@ -144,6 +143,7 @@
 		E6EF14CE2506E61000560839 /* MockStateRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF14CD2506E61000560839 /* MockStateRenderer.swift */; };
 		E6EF14D02506E81000560839 /* DataStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF14CF2506E81000560839 /* DataStateManagerTests.swift */; };
 		E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */; };
+		ED3965246166DC3E714B9B8F /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AA83FF623DEC2AFD35910F /* Pods_BeerPal_BeerPalUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,15 +164,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0212D64079673103A933883E /* Pods-BeerPal-BeerPalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		08AB81660D0B1D5C02DB9719 /* Pods_BeerPal_BeerPalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49B2B38B11BEF039D990AA2A /* Pods-BeerPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.debug.xcconfig"; sourceTree = "<group>"; };
-		4F4B5CF07F6745E9D042F41D /* Pods_BeerPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C47836529FE305A20D4BCD /* Pods-BeerPal-BeerPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.release.xcconfig"; sourceTree = "<group>"; };
-		6C072A7784E5C290E5FCD867 /* Pods-BeerPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.release.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.release.xcconfig"; sourceTree = "<group>"; };
-		B2CE3F3D1E64CD62976FB8A7 /* Pods_BeerPal_BeerPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB1BF97C7D944E7AB6A93C66 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C58CAE3726C12B47081798F6 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		03A7C466C71EE14AE74DDA19 /* Pods-BeerPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.debug.xcconfig"; sourceTree = "<group>"; };
+		22EFEF65C6DF64CB4E133AF3 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2A26182A9E5751D28FA660A0 /* Pods_BeerPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C146ED78D40838A2F32329 /* Pods-BeerPal-BeerPalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalUITests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78D3B03562C3BB02A764C6B8 /* Pods-BeerPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal.release.xcconfig"; path = "Target Support Files/Pods-BeerPal/Pods-BeerPal.release.xcconfig"; sourceTree = "<group>"; };
+		90AA83FF623DEC2AFD35910F /* Pods_BeerPal_BeerPalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D571B6FAFC7CD83B881E5BB4 /* Pods-BeerPal-BeerPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.release.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.release.xcconfig"; sourceTree = "<group>"; };
+		E043D61FCFB83419E101482F /* Pods_BeerPal_BeerPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPal_BeerPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E600869E24FC224C005173DC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E60086A024FC233D005173DC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		E609A77724F8731B00636D58 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -313,6 +312,7 @@
 		E6EF14CD2506E61000560839 /* MockStateRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStateRenderer.swift; sourceTree = "<group>"; };
 		E6EF14CF2506E81000560839 /* DataStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStateManagerTests.swift; sourceTree = "<group>"; };
 		E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		EC36413464AB1FAC7B10AADB /* Pods-BeerPal-BeerPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,7 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A44BEFE1628E1AC94334CC30 /* Pods_BeerPal.framework in Frameworks */,
+				C34B9D04A4E43C68DD8E74B4 /* Pods_BeerPal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58141F4BFDB91CE4B0EEE542 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */,
+				8888E417442BA5B2DE3E5221 /* Pods_BeerPal_BeerPalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,19 +336,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2744D2B9A22E8E6E98632BCC /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */,
+				ED3965246166DC3E714B9B8F /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A519FAFFFAABE60224ABD2E /* Frameworks */ = {
+		6C083CDBA7F88678B89DF1DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F4B5CF07F6745E9D042F41D /* Pods_BeerPal.framework */,
-				B2CE3F3D1E64CD62976FB8A7 /* Pods_BeerPal_BeerPalTests.framework */,
-				08AB81660D0B1D5C02DB9719 /* Pods_BeerPal_BeerPalUITests.framework */,
+				2A26182A9E5751D28FA660A0 /* Pods_BeerPal.framework */,
+				E043D61FCFB83419E101482F /* Pods_BeerPal_BeerPalTests.framework */,
+				90AA83FF623DEC2AFD35910F /* Pods_BeerPal_BeerPalUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -356,12 +356,12 @@
 		CF05180C33B93671A7B8B785 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49B2B38B11BEF039D990AA2A /* Pods-BeerPal.debug.xcconfig */,
-				6C072A7784E5C290E5FCD867 /* Pods-BeerPal.release.xcconfig */,
-				C58CAE3726C12B47081798F6 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */,
-				56C47836529FE305A20D4BCD /* Pods-BeerPal-BeerPalTests.release.xcconfig */,
-				BB1BF97C7D944E7AB6A93C66 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */,
-				0212D64079673103A933883E /* Pods-BeerPal-BeerPalUITests.release.xcconfig */,
+				03A7C466C71EE14AE74DDA19 /* Pods-BeerPal.debug.xcconfig */,
+				78D3B03562C3BB02A764C6B8 /* Pods-BeerPal.release.xcconfig */,
+				EC36413464AB1FAC7B10AADB /* Pods-BeerPal-BeerPalTests.debug.xcconfig */,
+				D571B6FAFC7CD83B881E5BB4 /* Pods-BeerPal-BeerPalTests.release.xcconfig */,
+				22EFEF65C6DF64CB4E133AF3 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */,
+				68C146ED78D40838A2F32329 /* Pods-BeerPal-BeerPalUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 				E6A05F6224F47F29004CF43B /* BeerPalUITests */,
 				E6A05F3F24F47F27004CF43B /* Products */,
 				CF05180C33B93671A7B8B785 /* Pods */,
-				2A519FAFFFAABE60224ABD2E /* Frameworks */,
+				6C083CDBA7F88678B89DF1DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -930,13 +930,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6A05F6824F47F29004CF43B /* Build configuration list for PBXNativeTarget "BeerPal" */;
 			buildPhases = (
-				72A8724DD921B6C8B47DC1CD /* [CP] Check Pods Manifest.lock */,
+				2AEA0DF6694550D8B0471D90 /* [CP] Check Pods Manifest.lock */,
 				E6B0193624F5CC300074291A /* Run R.swift */,
 				E6A05F3A24F47F27004CF43B /* Sources */,
 				E6A05F3B24F47F27004CF43B /* Frameworks */,
 				E6A05F3C24F47F27004CF43B /* Resources */,
 				E6B0193524F5CC0B0074291A /* Run Swiftlint */,
-				8AD1E4A45EAC05BDCE2A8030 /* [CP] Embed Pods Frameworks */,
+				6594302D9A234BD574E8A3AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -951,11 +951,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6A05F6B24F47F29004CF43B /* Build configuration list for PBXNativeTarget "BeerPalTests" */;
 			buildPhases = (
-				B3069D56C85B9CD54DD50723 /* [CP] Check Pods Manifest.lock */,
+				1726280B265C9241570EB497 /* [CP] Check Pods Manifest.lock */,
 				E6A05F5024F47F29004CF43B /* Sources */,
 				E6A05F5124F47F29004CF43B /* Frameworks */,
 				E6A05F5224F47F29004CF43B /* Resources */,
-				18F8538C5DCC7C113E299C85 /* [CP] Embed Pods Frameworks */,
+				20FDFCEC2BFDFFEC0465AB7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -971,11 +971,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6A05F6E24F47F29004CF43B /* Build configuration list for PBXNativeTarget "BeerPalUITests" */;
 			buildPhases = (
-				B94424923BFC361D3430FF91 /* [CP] Check Pods Manifest.lock */,
+				B1B4BC2449D3619F3DCBB43C /* [CP] Check Pods Manifest.lock */,
 				E6A05F5B24F47F29004CF43B /* Sources */,
 				E6A05F5C24F47F29004CF43B /* Frameworks */,
 				E6A05F5D24F47F29004CF43B /* Resources */,
-				D57F7538A8A6AFA08ABEB9C2 /* [CP] Embed Pods Frameworks */,
+				E6FB9233F7141F563A50BE16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1059,63 +1059,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18F8538C5DCC7C113E299C85 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72A8724DD921B6C8B47DC1CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BeerPal-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AD1E4A45EAC05BDCE2A8030 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3069D56C85B9CD54DD50723 /* [CP] Check Pods Manifest.lock */ = {
+		1726280B265C9241570EB497 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1137,7 +1081,63 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B94424923BFC361D3430FF91 /* [CP] Check Pods Manifest.lock */ = {
+		20FDFCEC2BFDFFEC0465AB7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AEA0DF6694550D8B0471D90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeerPal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6594302D9A234BD574E8A3AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal/Pods-BeerPal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B4BC2449D3619F3DCBB43C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1157,23 +1157,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D57F7538A8A6AFA08ABEB9C2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6B0193524F5CC0B0074291A /* Run Swiftlint */ = {
@@ -1208,11 +1191,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		E6FB9233F7141F563A50BE16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeerPal-BeerPalUITests/Pods-BeerPal-BeerPalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1519,7 +1519,7 @@
 		};
 		E6A05F6924F47F29004CF43B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49B2B38B11BEF039D990AA2A /* Pods-BeerPal.debug.xcconfig */;
+			baseConfigurationReference = 03A7C466C71EE14AE74DDA19 /* Pods-BeerPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1539,7 +1539,7 @@
 		};
 		E6A05F6A24F47F29004CF43B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C072A7784E5C290E5FCD867 /* Pods-BeerPal.release.xcconfig */;
+			baseConfigurationReference = 78D3B03562C3BB02A764C6B8 /* Pods-BeerPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1559,7 +1559,7 @@
 		};
 		E6A05F6C24F47F29004CF43B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C58CAE3726C12B47081798F6 /* Pods-BeerPal-BeerPalTests.debug.xcconfig */;
+			baseConfigurationReference = EC36413464AB1FAC7B10AADB /* Pods-BeerPal-BeerPalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1581,7 +1581,7 @@
 		};
 		E6A05F6D24F47F29004CF43B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56C47836529FE305A20D4BCD /* Pods-BeerPal-BeerPalTests.release.xcconfig */;
+			baseConfigurationReference = D571B6FAFC7CD83B881E5BB4 /* Pods-BeerPal-BeerPalTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1603,7 +1603,7 @@
 		};
 		E6A05F6F24F47F29004CF43B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB1BF97C7D944E7AB6A93C66 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */;
+			baseConfigurationReference = 22EFEF65C6DF64CB4E133AF3 /* Pods-BeerPal-BeerPalUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX9U4PU7DG;
@@ -1623,7 +1623,7 @@
 		};
 		E6A05F7024F47F29004CF43B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0212D64079673103A933883E /* Pods-BeerPal-BeerPalUITests.release.xcconfig */;
+			baseConfigurationReference = 68C146ED78D40838A2F32329 /* Pods-BeerPal-BeerPalUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX9U4PU7DG;

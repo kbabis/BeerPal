@@ -14,7 +14,7 @@ target 'BeerPal' do
    pod 'SnapKit', '~> 5.0.0'
    pod 'RxSwift', '5.0'
    pod 'RxCocoa', '5.0'
-   pod 'RxFeedback'
+   pod 'RxFeedback', '3.0.0'
    pod 'Nuke', '9.1.2'
 
   target 'BeerPalTests' do
