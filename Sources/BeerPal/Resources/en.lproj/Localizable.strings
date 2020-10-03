@@ -6,8 +6,9 @@
   Copyright © 2020 Krzysztof Babis. All rights reserved.
 */
 
-// MARK: - Beers
+// MARK: - BeerList
 "beer.list.title" = "Beers";
+"beer.list.search.bar" = "Which one would you like to brew?";
 
 // MARK: - Beer details
 "beer.details.ingredients.malt" = "Malt";
@@ -37,7 +38,7 @@
 
 // MARK: - BreweryList
 "brewery.list.title" = "Breweries";
-
+"brewery.list.search.bar" = "Type part of the name or description";
 "brewery.list.item.tag.inBusiness" = "Active";
 "brewery.list.item.tag.organic" = "Organic";
 "brewery.list.item.tag.verified" = "Verified";

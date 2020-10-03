@@ -33,7 +33,7 @@ final class BreweryListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.output.title
-        setUpSearchController()
+        addSearchBar(placeholder: R.string.localizable.breweryListSearchBar())
         breweryCollectionView.collectionView.register(
             BreweryItemCollectionViewCell.self,
             forCellWithReuseIdentifier: BreweryItemCollectionViewCell.reuseIdentifier)
@@ -70,12 +70,5 @@ final class BreweryListViewController: BaseViewController {
             .rx.controlEvent(.valueChanged)
             .bind(to: viewModel.input.fetch)
             .disposed(by: disposeBag)
-    }
-    
-    private func setUpSearchController() {
-        let searchController = UISearchController()
-        searchController.searchBar.tintColor = Theme.Colors.Components.primary
-        searchController.dimsBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
     }
 }

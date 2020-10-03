@@ -159,6 +159,8 @@ extension BeerDetailsView {
     
     private func setUpColorView() {
         colorView.image = R.image.beerDetailsColorCircle()
+        colorView.isImageViewCircular = true
+        colorView.setImageViewBorder(width: 2)
         contentView.addSubview(colorView)
         colorView.snp.makeConstraints { (make) in
             make.left.right.equalTo(bitternessView)

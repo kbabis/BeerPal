@@ -15,11 +15,10 @@ struct BeerDetailsItemViewModel {
     var name: String { beer.name }
     var tagline: String { beer.tagline.replacingOccurrences(of: ".", with: "") }
     var abv: String { beer.abv.stringValue.replacingOccurrences(of: ".", with: ",") }
-    var gravity: String { beer.targetFg.stringValue }
+    var gravity: String { beer.targetFg?.stringValue ?? "?" }
     var bitterness: String? { beer.ibu?.intValue.stringValue }
     var colorInfo: ColorInfo? { makeColorInfo(for: beer) }
     var description: String { beer.description }
-    var attenuationLevel: String { beer.attenuationLevel.stringValue + "%" }
     var contributor: String { "~ " + beer.contributedBy }
     var tips: String { beer.brewersTips }
     var method: [BrewageMethodStep] { makeMethodSteps(from: beer.method) }
@@ -28,6 +27,8 @@ struct BeerDetailsItemViewModel {
     var imageURL: String? { beer.imageUrl }
     
     private func makeSections(of ingredients: Beer.Ingredients) -> [Section<String>] {
+        var sections = [Section<String>]()
+        
         let maltItems = ingredients.malt.map {
             String(format: "%@ %@ %@",
                    $0.amount.description,
@@ -51,11 +52,17 @@ struct BeerDetailsItemViewModel {
             name: R.string.localizable.beerDetailsIngredientsHops(),
             items: hopItems)
         
-        let yeastSection = Section<String>(
-            name: R.string.localizable.beerDetailsIngredientsYeast(),
-            items: [ingredients.yeast])
+        sections.append(contentsOf: [maltSection, hopSection])
         
-        return [maltSection, hopSection, yeastSection]
+        if let yeast = ingredients.yeast {
+            let yeastSection = Section<String>(
+                name: R.string.localizable.beerDetailsIngredientsYeast(),
+                items: [yeast])
+    
+            sections.append(yeastSection)
+        }
+        
+        return sections
     }
     
     private func makeMethodSteps(from method: Beer.Method) -> [BrewageMethodStep] {
@@ -131,13 +138,21 @@ private extension Beer.Attribute {
             return R.string.localizable.beerDetailsAttributeFlavour()
         case .aromaBitter:
             return R.string.localizable.beerDetailsAttributeAromaBitterness()
+        case .twist:
+            return rawValue
+        case .other:
+            return ""
         }
     }
 }
 
 private extension Beer.Measure {
     var description: String {
-        return String(format: "%.1d %@", value, unit)
+        if let value = value {
+            return String(format: "%.1d %@", value, unit)
+        } else {
+            return ""
+        }
     }
 }
 
@@ -156,5 +171,3 @@ private extension Int {
         return String(self)
     }
 }
-
-

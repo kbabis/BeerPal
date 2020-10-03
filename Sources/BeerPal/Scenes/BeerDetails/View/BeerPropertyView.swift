@@ -13,6 +13,7 @@ final class BeerPropertyView: UIView {
     private let spacerView = UIView()
     private let nameLabel = BeerPropertyNameLabel()
     private let valueLabel = BeerPropertyValueLabel()
+    var isImageViewCircular = false
     
     var name: String? {
         didSet { nameLabel.text = name }
@@ -38,6 +39,18 @@ final class BeerPropertyView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if isImageViewCircular {
+            imageView.layer.cornerRadius = imageView.frame.width * 0.5
+        }
+    }
+    
+    func setImageViewBorder(width: CGFloat, color: UIColor = Theme.Colors.Background.inverted) {
+        imageView.layer.borderWidth = width
+        imageView.layer.borderColor = color.cgColor
     }
 }
 

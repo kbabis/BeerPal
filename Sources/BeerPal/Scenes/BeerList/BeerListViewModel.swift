@@ -6,84 +6,54 @@
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
+import RxCocoa
 import RxSwift
-import struct RxCocoa.Driver
-import class RxRelay.PublishRelay
+import RxFeedback
 
 final class BeerListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
+    private let stateRelay = BehaviorRelay<BeerListState>(value: .init())
     private let repository: BeerListRepository
-    private let stateManager: DataStateManager
     weak var delegate: BeerListDelegate?
     
     let input: BeerListViewModel.Input
     let output: BeerListViewModel.Output
     
     struct Input {
-        let loadNextPage = PublishSubject<Void>()
-        let searchText = PublishSubject<String>()
+        let events: PublishRelay<BeerListEvent> = PublishRelay()
         let selectedModel = PublishRelay<BeerListItemViewModel>()
     }
     
     struct Output {
         let title = R.string.localizable.beerListTitle()
-        var state: Driver<DataState>
-        var endRefreshing: Driver<Void>
-        var items: Driver<[BeerListItemViewModel]>
+        var state: Driver<BeerListState>
     }
     
     init(dependencies: Dependencies) {
-        let stateManager = DataStateManager()
         let repository = BeerListRepository(networkingService: dependencies.networkingService)
-        let input = Input()
-
-        let response = input.searchText
-            .filter { !$0.isEmpty }
-            .distinctUntilChanged()
-            .flatMapLatest { searchText in
-                return input.loadNextPage.asObservable()
-                    .startWith(())
-                    .scan(0) { (pageNumber, _) -> UInt in
-                        pageNumber + 1
-                    }
-                    .map { pageNumber in
-                        (searchText, pageNumber)
-                    }
-            }
-        .flatMapLatest { (searchText, page) -> Observable<[BeerListItemViewModel]> in
-            return Observable.create { (observer) -> Disposable in
-                stateManager.update(.loading)
-                
-                repository.fetchBeers(name: searchText, page: Int(page), then: { (result) in
-                    switch result {
-                    case .success(let beers):
-                        stateManager.update(beers.isEmpty ? .empty("") : .loaded)
-                        let items = beers.map { BeerListItemViewModel(with: $0) }
-                        observer.onNext(items)
-                        observer.onCompleted()
-                    case .failure(let error):
-                        stateManager.update(.error(error.localizedDescription))
-                        observer.onError(error)
-                    }
-                })
-                
-                return Disposables.create()
-            }
-        }.materialize()
-        .share()
-        
-        let endRefreshing = response
-            .flatMapLatest { _ in Observable.just(()) }
-            .asDriver(onErrorJustReturn: ())
-        
-        self.stateManager = stateManager
         self.repository = repository
-        self.input = input
-        self.output = Output(
-            state: stateManager.currentState,
-            endRefreshing: endRefreshing,
-            items: response.elements.asDriver(onErrorJustReturn: [])
+        self.input = Input()
+        self.output = Output(state: stateRelay.asDriver())
+        
+        let inputFeedback: BeerListState.Feedback = bind(self) { viewModel, _ in
+            return Bindings(subscriptions: [], events: [viewModel.input.events.asSignal()])
+        }
+        
+        let nextPageFeedback: BeerListState.Feedback = react(
+            request: { $0.nextPageData },
+            effects: { (queryItems) in
+                Self.executeFetchRequest(query: queryItems.searchPhrase, on: queryItems.pageIndex, using: repository)
+                    .asSignal(onErrorJustReturn: .failure(CustomError.unknown))
+                    .map { BeerListEvent.handleResponse($0) }
+            }
         )
+        
+        Driver.system(
+            initialState: BeerListState(),
+            reduce: BeerListState.reduce,
+            feedback: inputFeedback, nextPageFeedback
+        ).drive(stateRelay)
+        .disposed(by: disposeBag)
         
         setUp()
     }
@@ -93,18 +63,32 @@ final class BeerListViewModel: ViewModelType {
             self?.delegate?.didSelect(item.beer)
         }).disposed(by: disposeBag)
     }
+    
+    private static func executeFetchRequest(query: String?, on page: Int?, using repository: BeerListRepository) -> Observable<Result<[Beer], Error>> {
+        return Observable.create { (observer) -> Disposable in
+            repository.fetchBeers(name: query, page: page, then: { (result) in
+                observer.onNext(result)
+                observer.onCompleted()
+            })
+            
+            return Disposables.create()
+        }
+    }
 }
 
-extension BeerListViewModel: StateManaging, DataReloading {
-    var currentState: Driver<DataState> {
-        return output.state
-    }
-    
+extension BeerListViewModel: DataReloading {
     func reloadData() {
-        input.searchText.onNext("punk")
+        input
+            .events
+            .accept(.reload)
     }
 }
 
 extension BeerListViewModel {
     typealias Dependencies = HasNetworking
+}
+
+// Temporary solution - errors will be handled properly in the next phase
+enum CustomError: Error {
+    case unknown
 }
