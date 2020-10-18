@@ -22,6 +22,7 @@ final class EventListViewModel: ViewModelType {
     
     struct Input {
         let fetch = PublishRelay<Void>()
+        let search = PublishRelay<String>()
         let selectedModel = PublishRelay<EventListItemViewModel>()
     }
     
@@ -37,27 +38,9 @@ final class EventListViewModel: ViewModelType {
         let repository = EventListRepository(networkingService: dependencies.networkingService)
         self.input = Input()
         
-        let executeFetchRequest: Observable<[EventListItemViewModel]> = Observable.create { (observer) -> Disposable in
-            stateManager.update(.loading)
-            
-            repository.fetchEventList { (result) in
-                switch result {
-                case .success(let response):
-                    stateManager.update(response.events.isEmpty ? .empty("") : .loaded)
-                    observer.onNext(response.events.map { EventListItemViewModel(with: $0) })
-                    observer.onCompleted()
-                case .failure(let error):
-                    stateManager.update(.error(error.localizedDescription))
-                    observer.onError(error)
-                }
-            }
-            
-            return Disposables.create()
-        }
-        
         let response = input.fetch
             .startWith(())
-            .flatMapLatest { executeFetchRequest.materialize() }
+            .flatMapLatest { Self.executeFetchRequest(query: "", using: repository, stateHandler: stateManager).materialize() }
             .share()
         
         let endRefreshing = response
@@ -79,6 +62,26 @@ final class EventListViewModel: ViewModelType {
         input.selectedModel.subscribe(onNext: { [weak self] (item) in
             self?.delegate?.didSelect(item.event)
         }).disposed(by: disposeBag)
+    }
+    
+    private static func executeFetchRequest(query: String, on page: Int? = nil, using repository: EventListRepository, stateHandler: DataStateManager) -> Observable<[EventListItemViewModel]> {
+        return Observable.create { (observer) -> Disposable in
+            stateHandler.update(.loading)
+            
+            repository.fetchEventList { (result) in
+                switch result {
+                case .success(let response):
+                    stateHandler.update(response.events.isEmpty ? .empty("") : .loaded)
+                    observer.onNext(response.events.map { EventListItemViewModel(with: $0) })
+                    observer.onCompleted()
+                case .failure(let error):
+                    stateHandler.update(.error(error.localizedDescription))
+                    observer.onError(error)
+                }
+            }
+            
+            return Disposables.create()
+        }
     }
 }
 
