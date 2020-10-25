@@ -36,10 +36,7 @@ final class BeerRecipeViewModel: ViewModelType {
     
     private static func makeRecipeSections(for beer: Beer) -> [BeerRecipeSection] {
         return [
-            BeerRecipeSection(
-                header: "🌿 Ingredients",
-                items: makeSections(of: beer.ingredients).flatMap { $0.items }.map { BeerRecipeItem.ingredient(name: "‣ " + $0) }
-            ),
+            makeIngredientsSection(of: beer.ingredients),
             makeMethodSection(from: beer.method),
             BeerRecipeSection(
                 header: "💡 Tips",
@@ -79,10 +76,7 @@ final class BeerRecipeViewModel: ViewModelType {
         )
     }
     
-    #warning("TODO: Make one ingredients section instead of multiple sections")
-    private static func makeSections(of ingredients: Beer.Ingredients) -> [Section<String>] {
-        var sections = [Section<String>]()
-    
+    private static func makeIngredientsSection(of ingredients: Beer.Ingredients) -> BeerRecipeSection {
         let maltItems = ingredients.malt.map {
             String(format: "%@ %@ %@",
                     $0.amount.description,
@@ -90,39 +84,30 @@ final class BeerRecipeViewModel: ViewModelType {
                     $0.name)
         }
     
-            let maltSection = Section<String>(
-                name: R.string.localizable.beerDetailsIngredientsMalt(),
-                items: maltItems)
+        let hopItems = ingredients.hops.map {
+            String(format: "%@ of %@ %@ (%@)",
+                    $0.amount.description,
+                    $0.name,
+                    $0.attribute.description,
+                    $0.add)
+        }
+        
+        var items = maltItems + hopItems
     
-            let hopItems = ingredients.hops.map {
-                String(format: "%@ of %@ %@ (%@)",
-                       $0.amount.description,
-                       $0.name,
-                       $0.attribute.description,
-                       $0.add)
-            }
-    
-            let hopSection = Section<String>(
-                name: R.string.localizable.beerDetailsIngredientsHops(),
-                items: hopItems)
-    
-            sections.append(contentsOf: [maltSection, hopSection])
-    
-            if let yeast = ingredients.yeast {
-                let yeastSection = Section<String>(
-                    name: R.string.localizable.beerDetailsIngredientsYeast(),
-                    items: [yeast])
-    
-                sections.append(yeastSection)
-            }
-    
-            return sections
+        if let yeast = ingredients.yeast {
+            items.append(yeast)
+        }
+        
+        return BeerRecipeSection(
+            header: "🌿 Ingredients",
+            items: items.map { BeerRecipeItem.ingredient(name: "‣ " + $0) }
+        )
     }
 }
 
 extension BeerRecipeViewModel {
     typealias BrewageMethodStep = String
-    typealias Dependencies = HasNetworking ; #warning("TODO: HasStorage")
+    typealias Dependencies = HasStorage
 }
 
 private extension Beer.Measure {
@@ -134,7 +119,6 @@ private extension Beer.Measure {
         }
     }
 }
-
 
 // avoid unnecessary guards and default values setting
 private extension Beer.Attribute {
