@@ -12,7 +12,7 @@ target 'BeerPal' do
    pod 'SwiftLint', '0.39.1'
    pod 'R.swift', '5.2.2'
    pod 'SnapKit', '~> 5.0.0'
-   pod 'RxSwift', '5.0'
+   pod 'RxSwift', '5.1.0'
    pod 'RxCocoa', '5.0'
    pod 'RxDataSources', '4.0.1'
    pod 'RxFeedback', '3.0.0'

@@ -12,7 +12,7 @@ extension UIViewController {
     func addSearchBar(placeholder: String? = nil) {
         let searchController = UISearchController()
         searchController.searchBar.tintColor = Theme.Colors.Components.primary
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         
         if let placeholder = placeholder {
