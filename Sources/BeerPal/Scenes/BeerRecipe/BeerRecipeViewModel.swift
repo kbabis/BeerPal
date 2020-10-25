@@ -29,7 +29,7 @@ final class BeerRecipeViewModel: ViewModelType {
         
         self.input = Input()
         self.output = Output(
-            title: "How to make it?",
+            title: R.string.localizable.beerRecipeTitle(),
             sections: sections
         )
     }
@@ -39,11 +39,11 @@ final class BeerRecipeViewModel: ViewModelType {
             makeIngredientsSection(of: beer.ingredients),
             makeMethodSection(from: beer.method),
             BeerRecipeSection(
-                header: "💡 Tips",
+                header: R.string.localizable.beerRecipeSectionTips(),
                 items: [BeerRecipeItem.tip(content: beer.brewersTips, contributor: beer.contributedBy)]
             ),
             BeerRecipeSection(
-                header: "🍽️ Pairing foods",
+                header: R.string.localizable.beerRecipeSectionPairingFoods(),
                 items: beer.foodPairing.map { BeerRecipeItem.ingredient(name: "‣ " + $0) }
             )
         ]
@@ -53,7 +53,7 @@ final class BeerRecipeViewModel: ViewModelType {
         var steps: [String] = []
         
         for mash in method.mashTemp {
-            var mashStep = "Mash in " + mash.temp.description
+            var mashStep = R.string.localizable.beerRecipeMethodStepMash() + " " + mash.temp.description
             
             if let duration = mash.duration {
                 mashStep.append(String(format: " for %d min", duration))
@@ -71,7 +71,7 @@ final class BeerRecipeViewModel: ViewModelType {
         }
         
         return BeerRecipeSection(
-            header: "🍺 Method",
+            header: R.string.localizable.beerRecipeSectionMethod(),
             items: steps.enumerated().map { BeerRecipeItem.method(name: $0.element, index: $0.offset + 1) }
         )
     }
@@ -99,7 +99,7 @@ final class BeerRecipeViewModel: ViewModelType {
         }
         
         return BeerRecipeSection(
-            header: "🌿 Ingredients",
+            header: R.string.localizable.beerRecipeSectionIngredients(),
             items: items.map { BeerRecipeItem.ingredient(name: "‣ " + $0) }
         )
     }

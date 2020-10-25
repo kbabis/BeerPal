@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BeersDependencies: HasNetworking {
+struct BeersDependencies: HasNetworking, HasStorage {
     let networkingService: Networking
     
     init(from dependencies: HasNetworking) {
