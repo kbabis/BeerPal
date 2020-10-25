@@ -31,7 +31,8 @@ extension BeersCoordinator {
     }
     
     private func showDetails(of beer: Beer) {
-        let viewModel = BeerDetailsItemViewModel(from: beer)
+        let viewModel = BeerDetailsViewModel(from: beer)
+        viewModel.delegate = self
         let viewController = BeerDetailsViewController(viewModel: viewModel)
         navigationController.show(viewController, sender: self)
     }
@@ -40,6 +41,14 @@ extension BeersCoordinator {
 extension BeersCoordinator: BeerListDelegate {
     func didSelect(_ beer: Beer) {
         showDetails(of: beer)
+    }
+}
+
+extension BeersCoordinator: BeerDetailsDelegate {
+    func showRecipe(of beer: Beer) {
+        let viewModel = BeerRecipeViewModel(from: beer, dependencies: dependencies)
+        let viewController = BeerRecipeViewController(viewModel: viewModel)
+        navigationController.show(viewController, sender: self)
     }
 }
 
