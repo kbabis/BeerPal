@@ -8,7 +8,7 @@
 import UIKit
 
 final class BreweryItemCollectionViewCell: UICollectionViewCell {
-    private let horizontalSpacing: CGFloat = 5
+    private let horizontalSpacing: CGFloat = 10
     private let verticalSpacing: CGFloat = 10
     
     private let logoImageView = UIImageView()
@@ -89,7 +89,7 @@ extension BreweryItemCollectionViewCell {
         
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(horizontalSpacing)
-            make.top.equalToSuperview().offset(verticalSpacing * 0.5)
+            make.top.equalToSuperview().offset(verticalSpacing)
             make.right.equalTo(arrowIndicatorImageView.snp.left)
         }
     }
