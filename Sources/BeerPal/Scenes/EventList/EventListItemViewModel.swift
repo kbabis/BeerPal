@@ -16,18 +16,9 @@ final class EventListItemViewModel {
     var imageURLString: String { event.images.medium }
     var date: String { event.startDate?.presentableFormat ?? "" }
     var address: String { String(format: "%@, %@", (event.locality ?? event.region), event.country.displayName) }
-    var tags: [Tag] {
-        return [
-            (name: event.type.displayedName, color: .systemBlue),
-            (name: event.statusDisplay, color: .systemGreen)
-        ]
-    }
+    var type: String { event.type.displayedName }
     
     init(with event: Event) {
         self.event = event
     }
-}
-
-extension EventListItemViewModel {
-    typealias Tag = (name: String, color: UIColor)
 }

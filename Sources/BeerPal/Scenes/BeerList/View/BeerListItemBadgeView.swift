@@ -65,7 +65,7 @@ private class BadgeNameLabel: BaseLabel {
     override func setUp() {
         super.setUp()
         textAlignment = .center
-        textColor = .black
+        textColor = Theme.Colors.Components.foreground
         font = Theme.Fonts.getFont(ofSize: .xxSmall, weight: .bold)
     }
 }

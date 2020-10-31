@@ -17,7 +17,7 @@ final class EventListItemTableViewCell: UITableViewCell {
     private var logoImageView = UIImageView()
     private var nameLabel = BaseCellTitleLabel()
     private var addressLabel = BaseCellSubtitleLabel()
-    private var tagsStackView = UIStackView()
+    private var typeLabel = TypeLabel()
     
     var item: EventListItemViewModel? {
         didSet { refresh() }
@@ -38,22 +38,9 @@ final class EventListItemTableViewCell: UITableViewCell {
         dateLabel.text = event.date
         nameLabel.text = event.name
         addressLabel.text = event.address
-        setTags(event.tags)
+        typeLabel.text = event.type
+
         logoImageView.loadCircularImage(from: event.imageURLString)
-    }
-    
-    private func setTags(_ tags: [EventListItemViewModel.Tag]) {
-        tagsStackView.removeAllArrangedSubviews()
-    
-        tags.forEach { (title, color) in
-            let tagView = TagView(title: title, color: color)
-            tagsStackView.addArrangedSubview(tagView)
-            
-            tagView.snp.makeConstraints { (make) in
-                make.height.equalTo(20)
-                make.top.bottom.equalToSuperview()
-            }
-        }
     }
 }
 
@@ -64,8 +51,8 @@ extension EventListItemTableViewCell {
         setUpContentContainerView()
         setUpLogoImageView()
         setUpNameLabel()
-        setUpAddressDateLabel()
-        setUpTagsStackView()
+        setUpAddressLabel()
+        setUpTypeLabel()
     }
     
     private func setUpDateLabel() {
@@ -108,7 +95,7 @@ extension EventListItemTableViewCell {
         }
     }
     
-    private func setUpAddressDateLabel() {
+    private func setUpAddressLabel() {
         contentContainerView.addSubview(addressLabel)
          
         addressLabel.snp.makeConstraints { (make) in
@@ -117,17 +104,47 @@ extension EventListItemTableViewCell {
         }
     }
     
-    private func setUpTagsStackView() {
-        tagsStackView.axis = .horizontal
-        tagsStackView.spacing = horizontalSpacing * 0.5
-        contentContainerView.addSubview(tagsStackView)
+    private func setUpTypeLabel() {
+        typeLabel.textInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
+        contentContainerView.addSubview(typeLabel)
         
-        tagsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(logoImageView)
-            make.top.equalTo(logoImageView.snp.bottom).offset(verticalSpacing * 0.75)
-            make.right.lessThanOrEqualTo(nameLabel)
-            make.width.equalTo(0).priority(.low)
-            make.bottom.equalToSuperview().inset(verticalSpacing)
+        typeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(addressLabel.snp.bottom).offset(verticalSpacing * 0.5)
+            make.right.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().inset(5)
         }
+    }
+}
+
+private class TypeLabel: BaseLabel {
+    var textInsets: UIEdgeInsets = .zero {
+        didSet { invalidateIntrinsicContentSize() }
+    }
+
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insetRect = bounds.inset(by: textInsets)
+        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
+        let invertedInsets = UIEdgeInsets(top: -textInsets.top,
+                                          left: -textInsets.left,
+                                          bottom: -textInsets.bottom,
+                                          right: -textInsets.right)
+        return textRect.inset(by: invertedInsets)
+    }
+
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: textInsets))
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = 5.0
+        layer.masksToBounds = true
+    }
+    
+    override func setUp() {
+        super.setUp()
+        backgroundColor = Theme.Colors.Components.primary
+        textColor = Theme.Colors.Components.foreground
+        font = Theme.Fonts.getFont(ofSize: .small, weight: .semibold)
     }
 }
