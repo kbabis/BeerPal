@@ -745,6 +745,8 @@
 			isa = PBXGroup;
 			children = (
 				E64C0E9B2517772200A605A1 /* Date+Format.swift */,
+				E6F1E0F9254E02A1004FE089 /* Double+Values.swift */,
+				E6F1E0F4254E0292004FE089 /* Int+StringValue.swift */,
 				E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */,
 				E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */,
 				E651BA5425196D3F00955F37 /* URL+QueryItem.swift */,
@@ -1381,6 +1383,7 @@
 				E660092124FED3D4009B5B45 /* BaseViewController.swift in Sources */,
 				E6DDEB9A2527EFFF00B5360D /* BeerListEvent.swift in Sources */,
 				E6A9C0C6251BE06B0070F8AF /* BeerListItemViewModel.swift in Sources */,
+				E6F1E0FA254E02A1004FE089 /* Double+Values.swift in Sources */,
 				E617039125214C7900B62DDA /* BeerDetailsDescriptionLabel.swift in Sources */,
 				E660092324FED570009B5B45 /* StateRendering.swift in Sources */,
 				E6B0193824F5CCEA0074291A /* R.generated.swift in Sources */,

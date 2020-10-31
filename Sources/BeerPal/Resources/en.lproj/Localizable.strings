@@ -29,7 +29,7 @@
 "beer.details.property.name.bitterness" = "bitterness";
 "beer.details.description.header" = "Characteristics";
 "beer.details.brewage.header" = "Brewage";
-"beer.details.recipe.button" = "Open recipe";
+"beer.details.recipe.button" = "Open the recipe";
 
 // MARK: - BeerRecipe
 "beer.recipe.title" = "How to make it?";
