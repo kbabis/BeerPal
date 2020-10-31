@@ -17,7 +17,8 @@ final class BeerListItemTableViewCell: UITableViewCell {
     private let nameLabel = BaseCellTitleLabel()
     private let descriptionLabel = BaseCellSubtitleLabel()
     private let firstBrewedYearLabel = BaseCellSubtitleLabel()
-    private let tagsStackView = UIStackView()
+    private let alcoholByVolumeBadgeView = BeerListItemBadgeView()
+    private let ibuBadgeView = BeerListItemBadgeView()
     
     var item: BeerListItemViewModel? {
         didSet { refresh() }
@@ -38,22 +39,12 @@ final class BeerListItemTableViewCell: UITableViewCell {
         nameLabel.text = beer.name
         descriptionLabel.text = beer.description
         firstBrewedYearLabel.text = beer.firstBrewedYear
-        setTags(beer.tags)
         beerImageView.loadImage(from: beer.imageURLString, estimatedSize: .init(width: 40, height: 120))
-    }
-    
-    private func setTags(_ tags: [EventListItemViewModel.Tag]) {
-        tagsStackView.removeAllArrangedSubviews()
-    
-        tags.forEach { (title, color) in
-            let tagView = TagView(title: title, color: color)
-            tagsStackView.addArrangedSubview(tagView)
-            
-            tagView.snp.makeConstraints { (make) in
-                make.height.equalTo(20)
-                make.top.bottom.equalToSuperview()
-            }
-        }
+        alcoholByVolumeBadgeView.name = beer.abvName
+        alcoholByVolumeBadgeView.value = beer.abvValue
+        ibuBadgeView.name = beer.ibuName
+        ibuBadgeView.value = beer.ibuValue
+        ibuBadgeView.isHidden = (beer.ibuValue == nil)
     }
 }
 
@@ -62,7 +53,8 @@ extension BeerListItemTableViewCell {
         selectionStyle = .none
         setUpContentContainerView()
         setUpBeerImageView()
-        setUpTagsStackView()
+        setUpAlcoholByVolumeBadgeView()
+        setUpIbuBadgeView()
         setUpFirstBrewedYearLabel()
         setUpDescriptionLabel()
         setUpNameLabel()
@@ -84,23 +76,30 @@ extension BeerListItemTableViewCell {
         
         beerImageView.snp.makeConstraints { (make) in
             make.left.equalTo(contentContainerView).offset(horizontalSpacing)
-            make.top.equalToSuperview().offset(-verticalSpacing * 2)
+            make.top.equalToSuperview().offset(verticalSpacing)
             make.width.equalTo(40)
-            make.height.equalTo(140)
+            make.height.equalTo(110)
             make.bottom.equalTo(contentContainerView).inset(verticalSpacing)
         }
     }
     
-    private func setUpTagsStackView() {
-        tagsStackView.axis = .horizontal
-        tagsStackView.spacing = horizontalSpacing * 0.5
-        contentContainerView.addSubview(tagsStackView)
+    private func setUpAlcoholByVolumeBadgeView() {
+        contentContainerView.addSubview(alcoholByVolumeBadgeView)
 
-        tagsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(beerImageView.snp.right).offset(horizontalSpacing)
-            make.right.lessThanOrEqualToSuperview().inset(horizontalSpacing)
-            make.bottom.equalTo(contentContainerView).inset(verticalSpacing)
-            make.width.equalTo(0).priority(.low)
+        alcoholByVolumeBadgeView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().inset(5)
+            make.bottom.equalTo(contentContainerView).offset(5)
+            make.width.greaterThanOrEqualTo(35)
+        }
+    }
+    
+    private func setUpIbuBadgeView() {
+        contentContainerView.addSubview(ibuBadgeView)
+
+        ibuBadgeView.snp.makeConstraints { (make) in
+            make.right.equalTo(alcoholByVolumeBadgeView.snp.left).offset(-5)
+            make.bottom.equalTo(alcoholByVolumeBadgeView)
+            make.width.greaterThanOrEqualTo(35)
         }
     }
     
@@ -108,9 +107,9 @@ extension BeerListItemTableViewCell {
         contentContainerView.addSubview(firstBrewedYearLabel)
          
         firstBrewedYearLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(tagsStackView)
-            make.right.equalToSuperview().inset(horizontalSpacing)
-            make.bottom.equalTo(tagsStackView.snp.top).offset(-verticalSpacing * 0.5)
+            make.left.equalTo(beerImageView.snp.right).offset(horizontalSpacing)
+            make.right.equalTo(ibuBadgeView.snp.left).offset(-5)
+            make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }
     
@@ -118,7 +117,8 @@ extension BeerListItemTableViewCell {
         contentContainerView.addSubview(descriptionLabel)
          
         descriptionLabel.snp.makeConstraints { (make) in
-            make.left.right.equalTo(firstBrewedYearLabel)
+            make.left.equalTo(firstBrewedYearLabel)
+            make.right.equalToSuperview().inset(horizontalSpacing)
             make.bottom.equalTo(firstBrewedYearLabel.snp.top).offset(-verticalSpacing * 0.5)
         }
     }
@@ -127,8 +127,9 @@ extension BeerListItemTableViewCell {
         contentContainerView.addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { (make) in
-            make.left.right.equalTo(descriptionLabel)
+            make.left.equalTo(descriptionLabel)
             make.top.equalToSuperview().offset(verticalSpacing)
+            make.right.equalToSuperview().inset(horizontalSpacing)
             make.bottom.equalTo(descriptionLabel.snp.top).offset(-verticalSpacing * 0.5)
         }
     }

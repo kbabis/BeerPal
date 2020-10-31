@@ -55,19 +55,3 @@ extension BeerDetailsItemViewModel {
         }
     }
 }
-
-private extension Double {
-    var stringValue: String {
-        return String(self)
-    }
-    
-    var intValue: Int {
-        return Int(self)
-    }
-}
-
-private extension Int {
-    var stringValue: String {
-        return String(self)
-    }
-}
