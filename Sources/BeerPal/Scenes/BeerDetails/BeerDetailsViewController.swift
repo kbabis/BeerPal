@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import class RxSwift.DisposeBag
 
 final class BeerDetailsViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     private var beerDetailsView: BeerDetailsView!
-    private let viewModel: BeerDetailsItemViewModel
+    private let viewModel: BeerDetailsViewModel
     
     override func loadView() {
-        beerDetailsView = BeerDetailsView(using: viewModel)
+        beerDetailsView = BeerDetailsView(using: viewModel.output.item)
         view = beerDetailsView
     }
     
-    init(viewModel: BeerDetailsItemViewModel) {
+    init(viewModel: BeerDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,5 +31,13 @@ final class BeerDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        makeBindings()
+    }
+    
+    private func makeBindings() {
+        beerDetailsView.recipeButton
+            .rx.tap
+            .bind(to: viewModel.input.openRecipe)
+            .disposed(by: disposeBag)
     }
 }

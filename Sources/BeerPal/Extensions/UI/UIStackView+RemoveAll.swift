@@ -6,7 +6,7 @@
 //  Copyright © 2020 Krzysztof Babis. All rights reserved.
 //
 
-import UIKit
+import class UIKit.UIStackView
 
 extension UIStackView {
     func removeAllArrangedSubviews() {

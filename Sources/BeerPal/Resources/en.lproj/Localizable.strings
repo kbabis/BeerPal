@@ -31,6 +31,14 @@
 "beer.details.brewage.header" = "Brewage";
 "beer.details.recipe.button" = "Open recipe";
 
+// MARK: - BeerRecipe
+"beer.recipe.title" = "How to make it?";
+"beer.recipe.section.tips" = "💡 Tips";
+"beer.recipe.section.pairing.foods" = "🍽️ Pairing foods";
+"beer.recipe.section.method" = "🍺 Method";
+"beer.recipe.section.ingredients" = "🌿 Ingredients";
+"beer.recipe.method.step.mash" = "Mash in";
+
 // MARK: - BreweryDetails
 "brewery.details.property.business" = "Still in business";
 "brewery.details.property.verified" = "Verified";

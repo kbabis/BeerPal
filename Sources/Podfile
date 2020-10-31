@@ -12,8 +12,9 @@ target 'BeerPal' do
    pod 'SwiftLint', '0.39.1'
    pod 'R.swift', '5.2.2'
    pod 'SnapKit', '~> 5.0.0'
-   pod 'RxSwift', '5.0'
+   pod 'RxSwift', '5.1.0'
    pod 'RxCocoa', '5.0'
+   pod 'RxDataSources', '4.0.1'
    pod 'RxFeedback', '3.0.0'
    pod 'Nuke', '9.1.2'
 
@@ -24,4 +25,12 @@ target 'BeerPal' do
   target 'BeerPalUITests' do
   end
 
+end
+
+post_install do |pi|
+    pi.pods_project.targets.each do |t|
+      t.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+      end
+    end
 end

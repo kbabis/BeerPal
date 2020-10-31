@@ -24,7 +24,7 @@ final class BeerDetailsView: UIView {
     private let colorView = BeerPropertyView()
     private let descriptionHeaderLabel = HeaderLabel()
     private let descriptionLabel = BeerDetailsDescriptionLabel()
-    private let recipeButton = BaseButton()
+    let recipeButton = BaseButton()
     
     init(using beer: BeerDetailsItemViewModel, frame: CGRect = .zero) {
         super.init(frame: frame)
