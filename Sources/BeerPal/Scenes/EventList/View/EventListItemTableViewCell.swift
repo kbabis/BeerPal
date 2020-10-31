@@ -13,11 +13,11 @@ final class EventListItemTableViewCell: UITableViewCell {
     private let verticalSpacing: CGFloat = 10
     
     private var dateLabel = BaseCellSubtitleLabel()
+    private var typeLabel = BaseCellSubtitleLabel()
     private var contentContainerView = ContainerView(cornerRadius: 5)
     private var logoImageView = UIImageView()
     private var nameLabel = BaseCellTitleLabel()
     private var addressLabel = BaseCellSubtitleLabel()
-    private var typeLabel = TypeLabel()
     
     var item: EventListItemViewModel? {
         didSet { refresh() }
@@ -48,19 +48,31 @@ extension EventListItemTableViewCell {
     private func setUp() {
         selectionStyle = .none
         setUpDateLabel()
+        setUpTypeLabel()
         setUpContentContainerView()
         setUpLogoImageView()
         setUpNameLabel()
         setUpAddressLabel()
-        setUpTypeLabel()
     }
     
     private func setUpDateLabel() {
+        dateLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         addSubview(dateLabel)
         
         dateLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(horizontalSpacing)
             make.top.equalToSuperview().offset(verticalSpacing)
+        }
+    }
+    
+    private func setUpTypeLabel() {
+        typeLabel.textAlignment = .right
+        typeLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        addSubview(typeLabel)
+        
+        typeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(dateLabel.snp.right).offset(horizontalSpacing * 0.5)
+            make.top.equalTo(dateLabel)
             make.right.equalToSuperview().inset(horizontalSpacing)
         }
     }
@@ -69,9 +81,10 @@ extension EventListItemTableViewCell {
         addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in
-            make.left.right.equalTo(dateLabel)
+            make.left.equalTo(dateLabel)
             make.top.equalTo(dateLabel.snp.bottom).offset(verticalSpacing * 0.4)
-            make.bottom.equalToSuperview().inset(verticalSpacing)
+            make.right.equalTo(typeLabel)
+            make.bottom.equalToSuperview().inset(verticalSpacing * 2)
         }
     }
     
@@ -79,9 +92,10 @@ extension EventListItemTableViewCell {
         contentContainerView.addSubview(logoImageView)
         
         logoImageView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(horizontalSpacing)
+            make.left.equalToSuperview().offset(horizontalSpacing * 0.5)
             make.top.equalToSuperview().offset(verticalSpacing)
-            make.width.height.equalTo(60)
+            make.width.height.equalTo(55)
+            make.bottom.lessThanOrEqualToSuperview().inset(verticalSpacing)
         }
     }
     
@@ -101,50 +115,7 @@ extension EventListItemTableViewCell {
         addressLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(nameLabel)
             make.top.equalTo(nameLabel.snp.bottom).offset(verticalSpacing * 0.25)
+            make.bottom.equalToSuperview().inset(verticalSpacing).priority(.medium)
         }
-    }
-    
-    private func setUpTypeLabel() {
-        typeLabel.textInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
-        contentContainerView.addSubview(typeLabel)
-        
-        typeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(addressLabel.snp.bottom).offset(verticalSpacing * 0.5)
-            make.right.equalToSuperview().offset(5)
-            make.bottom.equalToSuperview().inset(5)
-        }
-    }
-}
-
-private class TypeLabel: BaseLabel {
-    var textInsets: UIEdgeInsets = .zero {
-        didSet { invalidateIntrinsicContentSize() }
-    }
-
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let insetRect = bounds.inset(by: textInsets)
-        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
-        let invertedInsets = UIEdgeInsets(top: -textInsets.top,
-                                          left: -textInsets.left,
-                                          bottom: -textInsets.bottom,
-                                          right: -textInsets.right)
-        return textRect.inset(by: invertedInsets)
-    }
-
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: textInsets))
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = 5.0
-        layer.masksToBounds = true
-    }
-    
-    override func setUp() {
-        super.setUp()
-        backgroundColor = Theme.Colors.Components.primary
-        textColor = Theme.Colors.Components.foreground
-        font = Theme.Fonts.getFont(ofSize: .small, weight: .semibold)
     }
 }
