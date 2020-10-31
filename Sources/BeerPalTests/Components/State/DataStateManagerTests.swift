@@ -38,7 +38,7 @@ final class DataStateManagerTests: XCTestCase {
         var receivedState: DataState?
         let expectation = XCTestExpectation(description: "Produce a new state in 1 second")
         
-        sut.updateState(expectedState)
+        sut.update(expectedState)
         sut.currentState.drive(onNext: { (state) in
             receivedState = state
             expectation.fulfill()
