@@ -28,7 +28,11 @@ final class RichLinkView: UIView {
         isUserInteractionEnabled = false
         
         provider.startFetchingMetadata(for: url) { [weak self] metadata, _ in
-            defer { self?.isUserInteractionEnabled = true }
+            defer {
+                DispatchQueue.main.async {
+                    self?.isUserInteractionEnabled = true
+                }
+            }
             
             guard let metadata = metadata else { return }
             

@@ -35,6 +35,7 @@ final class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createBindings()
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = shareButtonItem
     }
     

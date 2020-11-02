@@ -55,6 +55,9 @@
 "common.of" = "of";
 "common.for" = "for";
 
+// MARK: - Event details
+"event.details.description.header" = "Why should you come?";
+
 // MARK: - Events
 "event.list.title" = "Events";
 "event.status.verified" = "Verified";

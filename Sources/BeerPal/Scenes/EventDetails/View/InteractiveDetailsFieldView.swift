@@ -18,11 +18,6 @@ final class InteractiveDetailsFieldView: DetailsFieldView {
         setUp()
     }
     
-    convenience init(text: String, icon: UIImage?) {
-        self.init()
-        set(text: text, icon: icon)
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }

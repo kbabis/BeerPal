@@ -158,6 +158,8 @@
 		E6F1E0ED254DE826004FE089 /* BeerListItemBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F1E0EC254DE826004FE089 /* BeerListItemBadgeView.swift */; };
 		E6F1E0F5254E0292004FE089 /* Int+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F1E0F4254E0292004FE089 /* Int+StringValue.swift */; };
 		E6F1E0FA254E02A1004FE089 /* Double+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F1E0F9254E02A1004FE089 /* Double+Values.swift */; };
+		E6F1E102254E3488004FE089 /* PropertyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F1E101254E3488004FE089 /* PropertyLabel.swift */; };
+		E6F1E10A254E3989004FE089 /* String+Prefixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F1E109254E3989004FE089 /* String+Prefixed.swift */; };
 		E6F5DF7B24FD7DD900E8B7F8 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */; };
 		ED3965246166DC3E714B9B8F /* Pods_BeerPal_BeerPalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AA83FF623DEC2AFD35910F /* Pods_BeerPal_BeerPalUITests.framework */; };
 /* End PBXBuildFile section */
@@ -343,6 +345,8 @@
 		E6F1E0EC254DE826004FE089 /* BeerListItemBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListItemBadgeView.swift; sourceTree = "<group>"; };
 		E6F1E0F4254E0292004FE089 /* Int+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StringValue.swift"; sourceTree = "<group>"; };
 		E6F1E0F9254E02A1004FE089 /* Double+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Values.swift"; sourceTree = "<group>"; };
+		E6F1E101254E3488004FE089 /* PropertyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLabel.swift; sourceTree = "<group>"; };
+		E6F1E109254E3989004FE089 /* String+Prefixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prefixed.swift"; sourceTree = "<group>"; };
 		E6F5DF7A24FD7DD900E8B7F8 /* DataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
 		EC36413464AB1FAC7B10AADB /* Pods-BeerPal-BeerPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPal-BeerPalTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerPal-BeerPalTests/Pods-BeerPal-BeerPalTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,6 +436,7 @@
 				E6BCBA5B2516C9BF0027D9CD /* RichLinkView.swift */,
 				E6AD18C7250E34AF00152842 /* TagView.swift */,
 				E6A53BDF253778E2005B3F17 /* Pages */,
+				E6F1E101254E3488004FE089 /* PropertyLabel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -756,6 +761,7 @@
 				E6F1E0F4254E0292004FE089 /* Int+StringValue.swift */,
 				E6B29E52251183E300AAE1CA /* Observable+Materialize.swift */,
 				E64C0E9D2517806C00A605A1 /* String+AppendLn.swift */,
+				E6F1E109254E3989004FE089 /* String+Prefixed.swift */,
 				E651BA5425196D3F00955F37 /* URL+QueryItem.swift */,
 				E651BA5625196E0000955F37 /* UI */,
 			);
@@ -1306,6 +1312,7 @@
 				E6A1A1302540ED6000037A21 /* BeerRecipeViewController.swift in Sources */,
 				E639ECD2250596280046E8E9 /* BaseLabel.swift in Sources */,
 				E6D0987B25136EE800FE4EC3 /* UIViewController+PopUp.swift in Sources */,
+				E6F1E102254E3488004FE089 /* PropertyLabel.swift in Sources */,
 				E6B29E53251183E300AAE1CA /* Observable+Materialize.swift in Sources */,
 				E67C2E0D2522990900AD6820 /* BeerColorHelper.swift in Sources */,
 				E6D0987925136E8400FE4EC3 /* ExtendableLabel.swift in Sources */,
@@ -1372,6 +1379,7 @@
 				E6B98FD424F861AF00F23124 /* AppConfig.swift in Sources */,
 				E6AD18CA250EB94A00152842 /* UIStackView+RemoveAll.swift in Sources */,
 				E64FE846250FF0D400F6B305 /* RequestInterceptor.swift in Sources */,
+				E6F1E10A254E3989004FE089 /* String+Prefixed.swift in Sources */,
 				E6BCBA5E2516CEB20027D9CD /* DetailsFieldView.swift in Sources */,
 				E66D6037251D319300CB0974 /* BeerDetailsView.swift in Sources */,
 				E64C0EA02517A11500A605A1 /* EventDetailsViewController.swift in Sources */,

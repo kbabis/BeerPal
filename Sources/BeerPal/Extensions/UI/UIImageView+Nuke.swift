@@ -29,7 +29,7 @@ extension UIImageView {
         if isCircular { processors.append(ImageProcessors.Circle()) }
         
         let request = ImageRequest(url: url, processors: processors)
-        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.5))
+        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.3))
         
         Nuke.loadImage(with: request, options: options, into: self)
     }
