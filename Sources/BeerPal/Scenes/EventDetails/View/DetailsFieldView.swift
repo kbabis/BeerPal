@@ -10,17 +10,16 @@ import UIKit
 
 class DetailsFieldView: UIView {
     private let horizontalSpacing: CGFloat = 5
-    private let verticalSpacing: CGFloat = 10
     
-    private let iconImageView = UIImageView()
-    private let titleLabel = ExtendableLabel()
+    private let iconLabel = BaseLabel()
+    private let titleLabel = PropertyLabel()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setUp()
     }
     
-    convenience init(text: String, icon: UIImage?) {
+    convenience init(text: String, icon: String?) {
         self.init()
         set(text: text, icon: icon)
     }
@@ -29,26 +28,25 @@ class DetailsFieldView: UIView {
         fatalError("init(coder:) is not supported")
     }
     
-    func set(text: String, icon: UIImage?) {
+    func set(text: String?, icon: String?) {
         titleLabel.text = text
-        iconImageView.image = icon
+        iconLabel.text = icon
     }
 }
 
 extension DetailsFieldView {
     private func setUp() {
-        setUpIconImageView()
+        setUpIconLabel()
         setUpTitleLabel()
     }
     
-    private func setUpIconImageView() {
-        iconImageView.contentMode = .scaleAspectFit
-        addSubview(iconImageView)
+    private func setUpIconLabel() {
+        addSubview(iconLabel)
 
-        iconImageView.snp.makeConstraints { (make) in
+        iconLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
-            make.top.equalToSuperview().offset(verticalSpacing)
-            make.height.width.equalTo(18)
+            make.top.equalToSuperview()
+            make.width.equalTo(25)
         }
     }
 
@@ -56,11 +54,11 @@ extension DetailsFieldView {
         addSubview(titleLabel)
 
         titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(iconImageView.snp.right).offset(horizontalSpacing)
-            make.top.equalTo(iconImageView)
+            make.left.equalTo(iconLabel.snp.right).offset(horizontalSpacing)
+            make.top.equalTo(iconLabel)
             make.right.equalToSuperview()
             //make.bottom.greaterThanOrEqualTo(iconImageView).priority(.medium)
-            make.bottom.equalToSuperview().inset(verticalSpacing)
+            make.bottom.equalToSuperview().priority(.medium)
         }
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 final class EventDetailsView: UIView {
-    private let horizontalSpacing: CGFloat = 20
-    private let verticalSpacing: CGFloat = 10
+    private let horizontalSpacing: CGFloat = 30
+    private let verticalSpacing: CGFloat = 24
     
     private let scrollView = UIScrollView()
     private let contentContainerView = UIView()
@@ -18,7 +18,8 @@ final class EventDetailsView: UIView {
     private let nameLabel = NameLabel()
     private let dateField = DetailsFieldView()
     private let fieldsStackView = UIStackView()
-    private let descriptionLabel = ExtendableLabel()
+    private let descriptionHeaderLabel = HeaderLabel()
+    private let descriptionContentLabel = ExtendableLabel()
     private(set) var phoneField: InteractiveDetailsFieldView?
     let addressField = InteractiveDetailsFieldView()
     let mapView = MapView()
@@ -35,19 +36,19 @@ final class EventDetailsView: UIView {
     
     private func fill(with event: EventDetailsItemViewModel) {
         nameLabel.text = event.name
-        dateField.set(text: event.dateInfo, icon: R.image.tabEvent())
-        addressField.set(text: event.fullAddress, icon: R.image.location())
-        descriptionLabel.text = event.description
+        dateField.set(text: event.dateInfo, icon: "📅")
+        addressField.set(text: event.fullAddress, icon: "🏠")
+        descriptionContentLabel.text = event.description
         logoImageView.loadCircularImage(from: event.imageURLString, estimatedSize: .init(width: 100, height: 100))
         mapView.setFocusPoint(latitude: event.coordinates.latitude, longitude: event.coordinates.longitude)
         
         if let price = event.priceFormatted {
-            let priceField = DetailsFieldView(text: price, icon: R.image.price())
-            fieldsStackView.addArrangedSubview(priceField)
+            let priceLabel = DetailsFieldView(text: price, icon: "💸")
+            fieldsStackView.addArrangedSubview(priceLabel)
         }
         
         if let phoneNumber = event.phoneNumber {
-            phoneField = InteractiveDetailsFieldView(text: phoneNumber, icon: R.image.phone())
+            phoneField = InteractiveDetailsFieldView(text: phoneNumber, icon: "☎️")
             fieldsStackView.addArrangedSubview(phoneField!)
         }
         
@@ -57,7 +58,7 @@ final class EventDetailsView: UIView {
                 websiteRichLinkView.loadURL(url)
                 fieldsStackView.addArrangedSubview(websiteRichLinkView)
             } else {
-                let websiteField = DetailsFieldView(text: url.absoluteString, icon: R.image.link())
+                let websiteField = DetailsFieldView(text: url.absoluteString, icon: "🌐")
                 fieldsStackView.addArrangedSubview(websiteField)
             }
         }
@@ -66,7 +67,7 @@ final class EventDetailsView: UIView {
 
 extension EventDetailsView {
     private func setUp() {
-        backgroundColor = .systemBlue
+        backgroundColor = Theme.Colors.Background.primary
         setUpScrollView()
         setUpContentContainerView()
         setUpMapView()
@@ -75,7 +76,8 @@ extension EventDetailsView {
         setUpDateField()
         setUpAddressField()
         setUpFieldsStackView()
-        setUpDescriptionLabel()
+        setUpDescriptionHeaderLabel()
+        setUpDescriptionContentLabel()
     }
     
     private func setUpScrollView() {
@@ -90,20 +92,16 @@ extension EventDetailsView {
         scrollView.addSubview(contentContainerView)
         
         contentContainerView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(200)
-            make.width.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.left.top.right.bottom.width.equalToSuperview()
         }
     }
     
     private func setUpMapView() {
-        scrollView.insertSubview(mapView, belowSubview: contentContainerView)
-        
-        mapView.snp.makeConstraints { [weak self] (make) in
-            guard let self = self else { return }
-            
-            make.left.top.right.equalTo(self)
-            make.bottom.equalTo(contentContainerView.snp.top).priority(.high)
+        contentContainerView.addSubview(mapView)
+         
+        mapView.snp.makeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(400)
         }
     }
     
@@ -112,7 +110,7 @@ extension EventDetailsView {
         contentContainerView.addSubview(logoImageView)
         
         logoImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(-size * 0.5)
+            make.top.equalTo(mapView.snp.bottom).offset(-size * 0.5)
             make.centerX.equalToSuperview()
             make.width.height.equalTo(size)
         }
@@ -128,7 +126,6 @@ extension EventDetailsView {
         }
     }
     
-    
     private func setUpDateField() {
         contentContainerView.addSubview(dateField)
         
@@ -142,28 +139,38 @@ extension EventDetailsView {
         contentContainerView.addSubview(addressField)
         
         addressField.snp.makeConstraints { (make) in
-            make.top.equalTo(dateField.snp.bottom)
+            make.top.equalTo(dateField.snp.bottom).offset(verticalSpacing * 0.5)
             make.left.right.equalTo(dateField)
         }
     }
     
     private func setUpFieldsStackView() {
         fieldsStackView.axis = .vertical
-        fieldsStackView.distribution = .fill
+        fieldsStackView.spacing = verticalSpacing * 0.5
         contentContainerView.addSubview(fieldsStackView)
         
         fieldsStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(addressField.snp.bottom)
+            make.top.equalTo(addressField.snp.bottom).offset(verticalSpacing * 0.5)
             make.left.right.equalTo(addressField)
         }
     }
     
-    private func setUpDescriptionLabel() {
-        contentContainerView.addSubview(descriptionLabel)
+    private func setUpDescriptionHeaderLabel() {
+        descriptionHeaderLabel.text = R.string.localizable.eventDetailsDescriptionHeader()
+        contentContainerView.addSubview(descriptionHeaderLabel)
+        descriptionHeaderLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(nameLabel)
+            make.top.equalTo(fieldsStackView.snp.bottom).offset(verticalSpacing * 1.5)
+            make.right.equalToSuperview().inset(horizontalSpacing)
+        }
+    }
+    
+    private func setUpDescriptionContentLabel() {
+        contentContainerView.addSubview(descriptionContentLabel)
         
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(fieldsStackView.snp.bottom).offset(verticalSpacing)
-            make.left.right.equalTo(fieldsStackView)
+        descriptionContentLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(descriptionHeaderLabel)
+            make.top.equalTo(descriptionHeaderLabel.snp.bottom).offset(verticalSpacing * 0.6)
             make.bottom.equalToSuperview().inset(verticalSpacing)
         }
     }

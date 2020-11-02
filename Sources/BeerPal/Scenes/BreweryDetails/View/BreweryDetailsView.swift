@@ -17,12 +17,12 @@ final class BreweryDetailsView: UIView {
     private let breweryImageView = UIImageView()
     private let nameLabel = TitleLabel()
     private let propertiesStackView = UIStackView()
-    private let typePropertyLabel = BreweryPropertyLabel()
-    private let inBusinessPropertyLabel = BreweryPropertyLabel()
-    private let verifiedPropertyLabel = BreweryPropertyLabel()
-    private let organicPropertyLabel = BreweryPropertyLabel()
-    private let addressPropertyLabel = BreweryPropertyLabel()
-    private let phoneNumberPropertyLabel = BreweryPropertyLabel()
+    private let typePropertyLabel = PropertyLabel()
+    private let inBusinessPropertyLabel = PropertyLabel()
+    private let verifiedPropertyLabel = PropertyLabel()
+    private let organicPropertyLabel = PropertyLabel()
+    private let addressPropertyLabel = PropertyLabel()
+    private let phoneNumberPropertyLabel = PropertyLabel()
     private let descriptionHeaderLabel = HeaderLabel()
     private let descriptionLabel = BeerDetailsDescriptionLabel()
     
@@ -58,7 +58,7 @@ final class BreweryDetailsView: UIView {
                 websiteRichLinkView.loadURL(url)
                 propertiesStackView.addArrangedSubview(websiteRichLinkView)
             } else {
-                let websiteLabel = BreweryPropertyLabel()
+                let websiteLabel = PropertyLabel()
                 websiteLabel.text = "🌎 " + url.absoluteString
                 propertiesStackView.addArrangedSubview(websiteLabel)
             }
@@ -155,12 +155,5 @@ extension BreweryDetailsView {
             make.top.equalTo(descriptionHeaderLabel.snp.bottom).offset(verticalSpacing * 0.6)
             make.bottom.equalToSuperview().inset(verticalSpacing)
         }
-    }
-}
-
-private class BreweryPropertyLabel: ExtendableLabel {
-    override func setUp() {
-        super.setUp()
-        font = Theme.Fonts.getFont(ofSize: .small, weight: .medium)
     }
 }

@@ -80,9 +80,3 @@ private class IndexLabel: BaseLabel {
         adjustsFontSizeToFitWidth = true
     }
 }
-
-private extension Int {
-    var stringValue: String {
-        return String(self)
-    }
-}

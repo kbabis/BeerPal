@@ -19,7 +19,7 @@ struct EventDetailsItemViewModel {
     var dateInfo: String { makeDateInfo(for: event) }
     var fullAddress: String { makeFullAddress(for: event) }
     var priceFormatted: String? { event.price }
-    var phoneNumber: String? { event.phone}
+    var phoneNumber: String? { event.phone }
     var description: String? { event.description }
     var websiteURL: URL? { event.website?.urlValue }
     

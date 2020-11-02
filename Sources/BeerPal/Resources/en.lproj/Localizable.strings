@@ -29,7 +29,7 @@
 "beer.details.property.name.bitterness" = "bitterness";
 "beer.details.description.header" = "Characteristics";
 "beer.details.brewage.header" = "Brewage";
-"beer.details.recipe.button" = "Open recipe";
+"beer.details.recipe.button" = "Open the recipe";
 
 // MARK: - BeerRecipe
 "beer.recipe.title" = "How to make it?";
@@ -55,16 +55,19 @@
 "common.of" = "of";
 "common.for" = "for";
 
+// MARK: - Event details
+"event.details.description.header" = "Why should you come?";
+
 // MARK: - Events
 "event.list.title" = "Events";
 "event.status.verified" = "Verified";
-"event.type.comboFestivalCompetition" = "🎉🏆Festival/Competition";
-"event.type.competition" = "🏆Competition";
-"event.type.festival" = "🎉Festival";
-"event.type.meetup" = "🤝Meetup";
+"event.type.comboFestivalCompetition" = "🎉🏆 Festival/Competition";
+"event.type.competition" = "🏆 Competition";
+"event.type.festival" = "🎉 Festival";
+"event.type.meetup" = "🤝 Meetup";
 "event.type.other" = "❓Other";
-"event.type.seminar" = "🎓Seminar";
-"event.type.tasting" = "👅Tasting";
+"event.type.seminar" = "🎓 Seminar";
+"event.type.tasting" = "👅 Tasting";
 "event.details.missing.price" = "Free";
 
 // MARK: - Tabs

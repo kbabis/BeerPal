@@ -31,8 +31,8 @@ final class EventListRepository {
         }
 
         networkingService.request(endpoint, then: { [weak self] (result) in
-            let breweries = try? result.get()
-            breweries.map { self?.cache[cacheKey] = $0 }
+            let events = try? result.get()
+            events.map { self?.cache[cacheKey] = $0 }
             handler(result)
         })
     }
