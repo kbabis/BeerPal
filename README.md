@@ -1,5 +1,7 @@
 ## All brewing data in your pocket.
 
+### 🏗️ ![](https://img.shields.io/badge/status-in_progress-yellow)
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](https://opensource.org/licenses/MIT) 
 [![Platforms](https://img.shields.io/badge/platform-iOS-black.svg)](https://www.apple.com/pl/ios/)
 [![Swift Version](https://img.shields.io/badge/swift-5.0-F16D39.svg?style=flat)](https://developer.apple.com/swift)
@@ -29,7 +31,7 @@ Briefly, the project consists of:
 
 ## Toolkit
 
-<img src="Github/beerpal-preview-detail.png" width="250" align="right" hspace="20">
+<img src="Github/beer-details-screenshot.png" width="250" align="right" hspace="20">
 
 Deployment target was set to iOS 13.0 as it is installed on 96.5% of devices (as of Oct 20, 2020). 
 
